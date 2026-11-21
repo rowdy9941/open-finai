@@ -178,7 +178,7 @@ Vous pouvez donner ses réponses à l'installateur sur la ligne, après `--domai
 | `--timezone <zone>` | Le fuseau horaire de la machine, par exemple `Europe/Paris`. Par défaut : laissé tel quel. |
 | `--swap <size>` | Taille du fichier d'échange, par exemple `2G`, ou `none`. Par défaut : `2G` sur une machine de moins de 4 Go de mémoire. |
 | `--ref <ref>` | La version à installer : un tag de release ou une branche. Par défaut : `master`. |
-| `--repo <owner/name>` | Le dépôt GitHub depuis lequel installer. Par défaut : `G-OTW/Open FinAI`. |
+| `--repo <owner/name>` | Le dépôt GitHub depuis lequel installer. Par défaut : `rowdy9941/open-finai`. |
 | `--yes` | Ne demande rien, prend toutes les valeurs par défaut. |
 
 ## Toujours bloqué ?
@@ -191,4 +191,4 @@ Vous pouvez donner ses réponses à l'installateur sur la ligne, après `--domai
    ```
 
 3. Il écrit un fichier et affiche où il se trouve. Le fichier ne contient aucun mot de passe.
-4. Ouvrez un ticket sur [GitHub](https://github.com/G-OTW/Open FinAI/issues), dites ce que vous faisiez, et joignez ce fichier.
+4. Ouvrez un ticket sur [GitHub](https://github.com/rowdy9941/open-finai/issues), dites ce que vous faisiez, et joignez ce fichier.

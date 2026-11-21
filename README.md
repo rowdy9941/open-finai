@@ -6,8 +6,8 @@
 
 [![Website](https://img.shields.io/badge/website-opentraderworld.com-1f6feb)](https://opentraderworld.com)
 [![License](https://img.shields.io/badge/license-FSL--1.1--MIT-blue)](LICENSE)
-[![Docs](https://img.shields.io/github/actions/workflow/status/G-OTW/Open FinAI/docs.yml?branch=master&label=docs)](https://g-otw.github.io/Open FinAI/)
-[![Docker Compose](https://img.shields.io/badge/deploy-Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://g-otw.github.io/Open FinAI/guide/install)
+[![Docs](https://img.shields.io/github/actions/workflow/status/rowdy9941/open-finai/docs.yml?branch=master&label=docs)](https://opentraderworld.com/docs/)
+[![Docker Compose](https://img.shields.io/badge/deploy-Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://opentraderworld.com/docs/guide/install)
 
 A free, self-hosted platform that bundles the tools traders and investors use every day:
 journal, charts, backtesting, portfolios, news and research. Your data stays on your machine,
@@ -15,7 +15,7 @@ and your own AI agent can run it alongside you.
 
 [**Live demo**](https://demo.opentraderworld.com) ·
 [Install](#quick-start) ·
-[Documentation](https://g-otw.github.io/Open FinAI/) ·
+[Documentation](https://opentraderworld.com/docs/) ·
 [Website](https://opentraderworld.com) ·
 [Suggest a feature](https://opentraderworld.com/suggestions)
 
@@ -49,12 +49,12 @@ with the data providers you already pay for, or the free ones.
 - **Private.** Runs on your computer or server with Docker. No account, no cloud, no telemetry.
   Answers on localhost only until you open it up.
 - **Modular.** 25+ modules. Keep what you use, detach the rest.
-- **AI on your terms.** A built-in [agent](https://g-otw.github.io/Open FinAI/modules/agent)
-  with your own provider, and an [MCP server](https://g-otw.github.io/Open FinAI/config/ai-agents)
+- **AI on your terms.** A built-in [agent](https://opentraderworld.com/docs/modules/agent)
+  with your own provider, and an [MCP server](https://opentraderworld.com/docs/config/ai-agents)
   for external agents. Both off until you turn them on, scoped by token.
-- **Automated, under your control.** Scheduled [workflows](https://g-otw.github.io/Open FinAI/modules/automator)
+- **Automated, under your control.** Scheduled [workflows](https://opentraderworld.com/docs/modules/automator)
   for imports, reports, scans and alerts. Nothing runs or sends unless you switched it on.
-- **Secrets sealed.** Credentials sit in an encrypted [Vault](https://g-otw.github.io/Open FinAI/config/settings#vault),
+- **Secrets sealed.** Credentials sit in an encrypted [Vault](https://opentraderworld.com/docs/config/settings#vault),
   write-only once saved and never sent to the browser.
 - **7 languages.** English, French, German, Spanish, Italian, Portuguese, Chinese.
 
@@ -145,7 +145,7 @@ fundamentals figures are sample data.
 
 ## Modules
 
-Every module ships with the app. Full tour in [the module docs](https://g-otw.github.io/Open FinAI/modules/).
+Every module ships with the app. Full tour in [the module docs](https://opentraderworld.com/docs/modules/).
 
 <table>
 <tr>
@@ -153,42 +153,42 @@ Every module ships with the app. Full tour in [the module docs](https://g-otw.gi
 
 **Trading**
 
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#backtest">Backtest</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#histviz">Charts</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#mindset">Mindset</a><br>
-<a href="https://g-otw.github.io/Open FinAI/config/paper-trading">Paper trading</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#scanner">Scanner</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/journal">Trading Journal</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/robots">Trading Bots</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#routines">Trading Routines</a>
+<a href="https://opentraderworld.com/docs/modules/market-data#backtest">Backtest</a><br>
+<a href="https://opentraderworld.com/docs/modules/market-data#histviz">Charts</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#mindset">Mindset</a><br>
+<a href="https://opentraderworld.com/docs/config/paper-trading">Paper trading</a><br>
+<a href="https://opentraderworld.com/docs/modules/market-data#scanner">Scanner</a><br>
+<a href="https://opentraderworld.com/docs/modules/journal">Trading Journal</a><br>
+<a href="https://opentraderworld.com/docs/modules/robots">Trading Bots</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#routines">Trading Routines</a>
 
 </td>
 <td valign="top" width="33%">
 
 **Market data and research**
 
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#community-docs">Community Docs</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#economics">Economic Calendar</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#findb">FinanceDatabase</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/fundamentals">Fundamentals</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#histdata">Historical Data</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#mailbox">Mailbox</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#news">News</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#options">Options</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/market-data#quant">Quant Tools</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/news-research#resources">Resources</a>
+<a href="https://opentraderworld.com/docs/modules/news-research#community-docs">Community Docs</a><br>
+<a href="https://opentraderworld.com/docs/modules/news-research#economics">Economic Calendar</a><br>
+<a href="https://opentraderworld.com/docs/modules/news-research#findb">FinanceDatabase</a><br>
+<a href="https://opentraderworld.com/docs/modules/fundamentals">Fundamentals</a><br>
+<a href="https://opentraderworld.com/docs/modules/market-data#histdata">Historical Data</a><br>
+<a href="https://opentraderworld.com/docs/modules/news-research#mailbox">Mailbox</a><br>
+<a href="https://opentraderworld.com/docs/modules/news-research#news">News</a><br>
+<a href="https://opentraderworld.com/docs/modules/market-data#options">Options</a><br>
+<a href="https://opentraderworld.com/docs/modules/market-data#quant">Quant Tools</a><br>
+<a href="https://opentraderworld.com/docs/modules/news-research#resources">Resources</a>
 
 </td>
 <td valign="top" width="33%">
 
 **Portfolios and money**
 
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#mportfolios">Managers' Portfolios</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#wealth">MyWealth</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#portfolios">Portfolio Tracker</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#subscriptions">Subscriptions</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#taxcalc">Tax Calculator</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/portfolio#watchlists">Watchlists</a>
+<a href="https://opentraderworld.com/docs/modules/portfolio#mportfolios">Managers' Portfolios</a><br>
+<a href="https://opentraderworld.com/docs/modules/portfolio#wealth">MyWealth</a><br>
+<a href="https://opentraderworld.com/docs/modules/portfolio#portfolios">Portfolio Tracker</a><br>
+<a href="https://opentraderworld.com/docs/modules/portfolio#subscriptions">Subscriptions</a><br>
+<a href="https://opentraderworld.com/docs/modules/portfolio#taxcalc">Tax Calculator</a><br>
+<a href="https://opentraderworld.com/docs/modules/portfolio#watchlists">Watchlists</a>
 
 </td>
 </tr>
@@ -197,25 +197,25 @@ Every module ships with the app. Full tour in [the module docs](https://g-otw.gi
 
 **Productivity**
 
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#calendar">Calendar</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#editor">Editor</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#goals">Goals</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#prompt-store">Prompt Store</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#remindme">RemindMe</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#time">Time Tracker</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#todos">ToDo</a>
+<a href="https://opentraderworld.com/docs/modules/productivity#calendar">Calendar</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#editor">Editor</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#goals">Goals</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#prompt-store">Prompt Store</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#remindme">RemindMe</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#time">Time Tracker</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#todos">ToDo</a>
 
 </td>
 <td valign="top" width="33%">
 
 **Automation and AI**
 
-<a href="https://g-otw.github.io/Open FinAI/modules/agent">Agent</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/automator">Automator</a><br>
-<a href="https://g-otw.github.io/Open FinAI/config/ai-agents">MCP server</a><br>
-<a href="https://g-otw.github.io/Open FinAI/config/settings">Notifications</a><br>
-<a href="https://g-otw.github.io/Open FinAI/config/voice">Voice control</a><br>
-<a href="https://g-otw.github.io/Open FinAI/modules/productivity#webhooks">Webhooks</a>
+<a href="https://opentraderworld.com/docs/modules/agent">Agent</a><br>
+<a href="https://opentraderworld.com/docs/modules/automator">Automator</a><br>
+<a href="https://opentraderworld.com/docs/config/ai-agents">MCP server</a><br>
+<a href="https://opentraderworld.com/docs/config/settings">Notifications</a><br>
+<a href="https://opentraderworld.com/docs/config/voice">Voice control</a><br>
+<a href="https://opentraderworld.com/docs/modules/productivity#webhooks">Webhooks</a>
 
 </td>
 </tr>
@@ -269,17 +269,17 @@ positions and orders, and sends orders only where you turn **Trading** on for it
 
 Real time on Interactive Brokers and Alpaca follows your market-data subscription; on Massive it
 needs a paid plan. Interactive Brokers runs through your own IB Gateway or TWS. Details in the
-[connectors](https://g-otw.github.io/Open FinAI/config/connectors),
-[broker accounts](https://g-otw.github.io/Open FinAI/config/brokers) and
-[trading](https://g-otw.github.io/Open FinAI/config/trading) guides.
-Missing a provider? [Ask for it](https://github.com/G-OTW/Open FinAI/issues).
+[connectors](https://opentraderworld.com/docs/config/connectors),
+[broker accounts](https://opentraderworld.com/docs/config/brokers) and
+[trading](https://opentraderworld.com/docs/config/trading) guides.
+Missing a provider? [Ask for it](https://github.com/rowdy9941/open-finai/issues).
 
 ## Quick start
 
-Requires [Docker](https://g-otw.github.io/Open FinAI/guide/docker) on macOS, Linux or Windows.
+Requires [Docker](https://opentraderworld.com/docs/guide/docker) on macOS, Linux or Windows.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 The installer generates secrets, pulls the images, starts the stack and prints your admin
@@ -289,9 +289,9 @@ password once. Then open **http://localhost:5454**.
 - A rented Debian or Ubuntu server under your own domain: the server installer hardens the
   machine, installs over HTTPS and sets up nightly backups, in one line:
   `curl -fsSL https://get.opentraderworld.com/configure_install.sh | bash -s -- --domain app.example.com`.
-  See the [installation guide](https://g-otw.github.io/Open FinAI/guide/install#server-installer).
+  See the [installation guide](https://opentraderworld.com/docs/guide/install#server-installer).
 - Manual setup, headless servers, LAN, HTTPS, public exposure, backups:
-  [installation guide](https://g-otw.github.io/Open FinAI/guide/install).
+  [installation guide](https://opentraderworld.com/docs/guide/install).
 - Page not loading over HTTP on your LAN? Your browser's HTTPS-only mode rewrites `http://`
   into `https://` and caches it. Allow HTTP for that host, or switch to LAN + HTTPS in
   Settings → Network.
@@ -307,7 +307,7 @@ are kept.
 
 On a machine set up with the server installer, `otw update` does it all: backup, update,
 and a roll back if the new version does not answer
-([server install](https://g-otw.github.io/Open FinAI/guide/updating#server-install)).
+([server install](https://opentraderworld.com/docs/guide/updating#server-install)).
 
 <details>
 <summary>Default install (prebuilt images)</summary>
@@ -315,7 +315,7 @@ and a roll back if the new version does not answer
 ```bash
 cd /path/to/openfinai
 TMP=$(mktemp -d)
-curl -fsSL https://codeload.github.com/G-OTW/Open FinAI/tar.gz/master | tar -xz -C "$TMP"
+curl -fsSL https://codeload.github.com/rowdy9941/open-finai/tar.gz/master | tar -xz -C "$TMP"
 cp -R "$TMP"/*/deploy/. deploy/
 rm -rf "$TMP"
 docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml \
@@ -345,7 +345,7 @@ docker compose -f deploy/docker-compose.yml \
 
 </details>
 
-Details in [the updating guide](https://g-otw.github.io/Open FinAI/guide/updating).
+Details in [the updating guide](https://opentraderworld.com/docs/guide/updating).
 
 ## Architecture
 
@@ -376,13 +376,13 @@ Open FinAI is actively developed and grows on user feedback.
 
 - **Star the repo** and share it: it helps other traders find the project.
 - **Suggest and vote** on features at [opentraderworld.com/suggestions](https://opentraderworld.com/suggestions).
-- **Report bugs** in [GitHub issues](https://github.com/G-OTW/Open FinAI/issues), with the symptom and a few log lines.
+- **Report bugs** in [GitHub issues](https://github.com/rowdy9941/open-finai/issues), with the symptom and a few log lines.
 - **Write a guide** in the app's Editor and submit it to the [Community Docs](https://opentraderworld.com/docs).
 
 | Link | What you'll find |
 |---|---|
 | [opentraderworld.com](https://opentraderworld.com) | Project home, module overview, roadmap voting |
-| [Documentation](https://g-otw.github.io/Open FinAI/) | Install, configuration and module reference |
+| [Documentation](https://opentraderworld.com/docs/) | Install, configuration and module reference |
 | [Live demo](https://demo.opentraderworld.com) | Shared sandbox, reset every 15 minutes |
 | [Guided install](https://opentraderworld.com/hosting/setup) | Setup, step by step |
 

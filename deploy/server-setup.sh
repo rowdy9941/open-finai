@@ -38,7 +38,7 @@
 #   --ssh-port <n>      Port the machine already listens on     (default: from sshd, else 22)
 #   --dir <path>        Install directory                       (default /home/<user>/otw)
 #   --ref <ref>         Product tag or branch to install        (default master)
-#   --repo <slug>       GitHub repo slug                        (default G-OTW/Open FinAI)
+#   --repo <slug>       GitHub repo slug                        (default rowdy9941/open-finai)
 #   --timezone <tz>     Machine timezone, e.g. Europe/Paris     (default: leave as is)
 #   --swap <size>       Swap file size, e.g. 2G, or "none"      (default: 2G under 4 GB of RAM)
 #   --yes               Never ask anything; take every default
@@ -59,7 +59,7 @@ set -euo pipefail
 ORIG_ARGS=("$@")
 
 VERSION="1"
-REPO="${OTW_REPO:-G-OTW/Open FinAI}"
+REPO="${OTW_REPO:-rowdy9941/open-finai}"
 REF="${OTW_REF:-master}"
 STATE_DIR="/var/lib/otw"
 STATE_FILE="$STATE_DIR/install-state"
@@ -244,7 +244,7 @@ if [[ -r "$CONF_FILE" ]]; then
   SSH_PORT="${SSH_PORT:-$saved_ssh_port}"
   LOGIN_MODE="${LOGIN_MODE:-$saved_login}"
   [[ "$REF" == "master" && -n "$saved_ref" ]] && REF="$saved_ref"
-  [[ "$REPO" == "G-OTW/Open FinAI" && -n "$saved_repo" ]] && REPO="$saved_repo"
+  [[ "$REPO" == "rowdy9941/open-finai" && -n "$saved_repo" ]] && REPO="$saved_repo"
 fi
 
 # Keep the account already in use; make one called otw only when the machine was

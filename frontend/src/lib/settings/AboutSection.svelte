@@ -8,8 +8,8 @@
   import { t } from '$lib/i18n';
 
   const WEBSITE = 'https://opentraderworld.com';
-  const GITHUB = 'https://github.com/G-OTW/Open FinAI';
-  const DOCS_URL = 'https://g-otw.github.io/Open FinAI/';
+  const GITHUB = 'https://github.com/rowdy9941/open-finai';
+  const DOCS_URL = 'https://opentraderworld.com/docs/';
 
   const COMMUNITY_DOCS_URL = `${WEBSITE}/docs`;
 

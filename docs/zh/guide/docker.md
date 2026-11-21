@@ -65,7 +65,7 @@ docker run --rm hello-world
 一条命令，然后按提示操作：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 完整的流程说明（提示的含义、选项、手动替代方式、结果验证）见[安装](/zh/guide/install)页面。

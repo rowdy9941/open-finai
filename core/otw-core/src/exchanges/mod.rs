@@ -28,7 +28,7 @@ use crate::automator::schedule;
 const EMBEDDED: &str = include_str!("calendars.json");
 /// Where the weekly sync reads the newest snapshot.
 const REMOTE: &str =
-    "https://github.com/G-OTW/Open FinAI/releases/download/exchange-calendars/calendars.json";
+    "https://github.com/rowdy9941/open-finai/releases/download/exchange-calendars/calendars.json";
 const KEY_BODY: &str = "exchange_calendar";
 const KEY_CHECKED: &str = "exchange_calendar_checked_at";
 /// How often the remote copy is looked at.

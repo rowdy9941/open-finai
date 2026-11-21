@@ -365,8 +365,8 @@
         <p class="muted small selfhost">
           <Icon name="info" size={13} />
           {$t('voice.settings.selfHostHint')}
-          <a href="https://g-otw.github.io/Open FinAI/config/voice#whisper-example" target="_blank" rel="noopener">
-            g-otw.github.io/Open FinAI/config/voice
+          <a href="https://opentraderworld.com/docs/config/voice#whisper-example" target="_blank" rel="noopener">
+            opentraderworld.com/docs/config/voice
           </a>
         </p>
       {/if}

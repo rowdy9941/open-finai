@@ -22,7 +22,7 @@ docker compose version
 ## 一条命令安装（推荐）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 安装程序会检查 Docker 是否就绪，将部署文件（仅 `deploy/` 目录，不含源代码和工具链）下载到 `./openfinai`，然后交给下面的引导式设置，它会从 Docker Hub **拉取预构建镜像**。
@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh 
 选项写在 `bash -s --` 之后：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash -s -- --dir ~/otw
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash -s -- --dir ~/otw
 ```
 
 | 选项 | 默认值 | 说明 |
@@ -41,12 +41,12 @@ curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh 
 | `--yes` | 关闭 | 传给 `setup.sh`：没有可用于提问的终端时，全部采用默认值。 |
 | `--wipe-volumes` | 关闭 | 传给 `setup.sh`：不经询问就删除上次安装的卷。**这会删除那次安装的数据。** |
 
-`OTW_DIR` 和 `OTW_REF` 设置与 `--dir` 和 `--ref` 相同的值（选项优先于对应变量），`OTW_REPO` 设置 GitHub 仓库（默认 `G-OTW/Open FinAI`）。
+`OTW_DIR` 和 `OTW_REF` 设置与 `--dir` 和 `--ref` 相同的值（选项优先于对应变量），`OTW_REPO` 设置 GitHub 仓库（默认 `rowdy9941/open-finai`）。
 
 ## 通过 git 克隆（替代方式）
 
 ```bash
-git clone https://github.com/G-OTW/Open FinAI.git
+git clone https://github.com/rowdy9941/open-finai.git
 cd Open FinAI/deploy
 ./setup.sh
 ```

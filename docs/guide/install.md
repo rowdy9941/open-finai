@@ -22,7 +22,7 @@ docker compose version
 ## One-command install (recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 The installer checks Docker is ready, downloads the deploy files (only the `deploy/` directory, no source code, no toolchain) into `./openfinai`, then hands off to the guided setup below, which **pulls the prebuilt images** from Docker Hub.
@@ -30,7 +30,7 @@ The installer checks Docker is ready, downloads the deploy files (only the `depl
 Options go after `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash -s -- --dir ~/otw
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash -s -- --dir ~/otw
 ```
 
 | Option | Default | Notes |
@@ -41,12 +41,12 @@ curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh 
 | `--yes` | off | Passed to `setup.sh`: take every default when there is no terminal to ask through. |
 | `--wipe-volumes` | off | Passed to `setup.sh`: remove the volumes of a previous install without asking. **This deletes that install's data.** |
 
-`OTW_DIR` and `OTW_REF` set the same values as `--dir` and `--ref` (a flag wins over its variable), and `OTW_REPO` the GitHub repository (default `G-OTW/Open FinAI`).
+`OTW_DIR` and `OTW_REF` set the same values as `--dir` and `--ref` (a flag wins over its variable), and `OTW_REPO` the GitHub repository (default `rowdy9941/open-finai`).
 
 ## From a git clone (alternative)
 
 ```bash
-git clone https://github.com/G-OTW/Open FinAI.git
+git clone https://github.com/rowdy9941/open-finai.git
 cd Open FinAI/deploy
 ./setup.sh
 ```

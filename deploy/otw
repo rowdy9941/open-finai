@@ -249,7 +249,7 @@ load_dump() {
 # The image tags are pinned in docker-compose.images.yml, so pulling alone only
 # ever fetches the version the machine was installed with. An update therefore
 # brings the deploy files of the newest release first, then pulls what they name.
-REPO="${OTW_REPO:-G-OTW/Open FinAI}"
+REPO="${OTW_REPO:-rowdy9941/open-finai}"
 
 current_version() {
   sed -n 's/.*otw-core:\([0-9][0-9.]*\).*/\1/p' "$OTW_DIR/deploy/docker-compose.images.yml" | head -n 1
@@ -353,7 +353,7 @@ cmd_report() {
   } > "$out" 2>&1
   chmod 600 "$out"
   info "Written: $out"
-  info "Send that file to https://github.com/G-OTW/Open FinAI/issues — it holds no password."
+  info "Send that file to https://github.com/rowdy9941/open-finai/issues — it holds no password."
 }
 
 ORIG_ARGS=("$@")

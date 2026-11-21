@@ -178,7 +178,7 @@ You can give the installer its answers on the line, after `--domain`. Anything y
 | `--timezone <zone>` | The machine's time zone, for example `Europe/Paris`. Default: left as it is. |
 | `--swap <size>` | Swap file size, for example `2G`, or `none`. Default: `2G` on a machine with less than 4 GB of memory. |
 | `--ref <ref>` | The version to install: a release tag or a branch. Default: `master`. |
-| `--repo <owner/name>` | The GitHub repository to install from. Default: `G-OTW/Open FinAI`. |
+| `--repo <owner/name>` | The GitHub repository to install from. Default: `rowdy9941/open-finai`. |
 | `--yes` | Asks nothing, takes every default. |
 
 ## Still stuck?
@@ -191,4 +191,4 @@ You can give the installer its answers on the line, after `--domain`. Anything y
    ```
 
 3. It writes one file and prints where it is. The file holds no password.
-4. Open an issue on [GitHub](https://github.com/G-OTW/Open FinAI/issues), say what you were doing, and attach that file.
+4. Open an issue on [GitHub](https://github.com/rowdy9941/open-finai/issues), say what you were doing, and attach that file.

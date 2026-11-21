@@ -2,7 +2,7 @@
 #
 # Open FinAI — one-command installer.
 #
-#   curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 #
 # Downloads only the deploy/ directory (compose stack + setup script) and runs the
 # interactive setup, which pulls prebuilt images from Docker Hub — no Rust/Node
@@ -15,10 +15,10 @@
 #   --build        Full source checkout + local image build (requires git)
 #   -h, --help     Show this help
 #
-#   OTW_REPO       GitHub repo slug               (default G-OTW/Open FinAI)
+#   OTW_REPO       GitHub repo slug               (default rowdy9941/open-finai)
 set -euo pipefail
 
-REPO="${OTW_REPO:-G-OTW/Open FinAI}"
+REPO="${OTW_REPO:-rowdy9941/open-finai}"
 REF="${OTW_REF:-master}"
 DIR="${OTW_DIR:-$PWD/openfinai}"
 BUILD=0
@@ -41,7 +41,7 @@ Options (flags win over the matching env var):
   --build        Full source checkout + local image build (requires git)
   -h, --help     Show this help
 
-  OTW_REPO       GitHub repo slug               (default G-OTW/Open FinAI)
+  OTW_REPO       GitHub repo slug               (default rowdy9941/open-finai)
 EOF
 }
 

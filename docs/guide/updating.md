@@ -38,7 +38,7 @@ An `otw` command from 0.0.17 or earlier only pulls the images already pinned in 
 it never moves to a new version. Replace it once, then update:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/deploy/otw -o /tmp/otw
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/deploy/otw -o /tmp/otw
 sudo install -m 755 /tmp/otw /usr/local/bin/otw
 otw update
 ```
@@ -51,7 +51,7 @@ Nothing is built and there is no git checkout, so refresh `deploy/` from the rel
 ```bash
 cd /path/to/openfinai
 TMP=$(mktemp -d)
-curl -fsSL https://codeload.github.com/G-OTW/Open FinAI/tar.gz/master | tar -xz -C "$TMP"
+curl -fsSL https://codeload.github.com/rowdy9941/open-finai/tar.gz/master | tar -xz -C "$TMP"
 cp -R "$TMP"/*/deploy/. deploy/
 rm -rf "$TMP"
 docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml \

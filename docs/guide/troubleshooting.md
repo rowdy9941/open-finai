@@ -107,4 +107,4 @@ Answer `y` when `setup.sh` asks to overwrite the existing `.env`.
 
 ## Still stuck?
 
-Open an issue on [GitHub](https://github.com/G-OTW/Open FinAI/issues) with the symptom and the relevant log lines.
+Open an issue on [GitHub](https://github.com/rowdy9941/open-finai/issues) with the symptom and the relevant log lines.

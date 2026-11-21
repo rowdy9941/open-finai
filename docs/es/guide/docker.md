@@ -65,7 +65,7 @@ Los tres funcionan → estás listo.
 Un solo comando y luego sigue las indicaciones:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 El recorrido completo (qué significan las preguntas, opciones, alternativa manual, verificación del resultado) está en la página de [Instalación](/es/guide/install).

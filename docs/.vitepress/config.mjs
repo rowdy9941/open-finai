@@ -150,9 +150,9 @@ const themeFor = (lang) => {
         ]
       }
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/G-OTW/Open FinAI' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/rowdy9941/open-finai' }],
     editLink: {
-      pattern: 'https://github.com/G-OTW/Open FinAI/edit/master/docs/:path',
+      pattern: 'https://github.com/rowdy9941/open-finai/edit/master/docs/:path',
       text: t.ui.editLink
     },
     outline: UI[lang] ? { level: [2, 4], label: UI[lang].outline } : { level: [2, 4] },
@@ -176,7 +176,7 @@ const locales = Object.fromEntries(
 
 export default defineConfig({
   title: 'Open FinAI',
-  base: '/Open FinAI/',
+  base: '/open-finai/',
   cleanUrls: true,
   lastUpdated: true,
   srcExclude: ['README.md'],

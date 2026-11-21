@@ -65,7 +65,7 @@ All three succeed → you're ready.
 One command, then follow the prompts:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rowdy9941/open-finai/master/install.sh | bash
 ```
 
 The full walkthrough (what the prompts mean, options, manual alternative, verifying the result) is on the [Installation](/guide/install) page.

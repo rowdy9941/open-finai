@@ -107,4 +107,4 @@ Rispondi `y` quando `setup.sh` chiede di sovrascrivere il `.env` esistente.
 
 ## Ancora bloccato?
 
-Apri una issue su [GitHub](https://github.com/G-OTW/Open FinAI/issues) con il sintomo e le righe di log pertinenti.
+Apri una issue su [GitHub](https://github.com/rowdy9941/open-finai/issues) con il sintomo e le righe di log pertinenti.

@@ -38,6 +38,14 @@ URLs pointing at `opentraderworld.com`, `demo.opentraderworld.com` and
 install endpoints. They are intentionally **not** renamed, because those hosts are
 operated by the upstream project and renaming them would produce dead links.
 
+Module documentation links (`https://opentraderworld.com/docs/...`) resolve to the live
+documentation site for the same release (v0.1.5) that this repository is derived from.
+They will be repointed once Open FinAI publishes its own documentation site.
+
+Repository and issue links point at `https://github.com/rowdy9941/open-finai`.
+`CHANGELOG.md` compare links point at the upstream repository, because the release tags
+they reference exist only there.
+
 ## Third-party components studied or adopted
 
 | Project | License | How used |

@@ -107,4 +107,4 @@ Responde `y` cuando `setup.sh` pregunte si sobrescribe el `.env` existente.
 
 ## ¿Sigues atascado?
 
-Abre un issue en [GitHub](https://github.com/G-OTW/Open FinAI/issues) con el síntoma y las líneas de registro relevantes.
+Abre un issue en [GitHub](https://github.com/rowdy9941/open-finai/issues) con el síntoma y las líneas de registro relevantes.

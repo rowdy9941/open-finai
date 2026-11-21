@@ -104,4 +104,4 @@ Antworte mit `y`, wenn `setup.sh` fragt, ob die vorhandene `.env` überschrieben
 
 ## Immer noch festgefahren?
 
-Eröffne ein Issue auf [GitHub](https://github.com/G-OTW/Open FinAI/issues) mit dem Symptom und den relevanten Logzeilen.
+Eröffne ein Issue auf [GitHub](https://github.com/rowdy9941/open-finai/issues) mit dem Symptom und den relevanten Logzeilen.

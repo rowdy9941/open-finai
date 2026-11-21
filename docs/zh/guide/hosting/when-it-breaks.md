@@ -178,7 +178,7 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
 | `--timezone <zone>` | 机器的时区，例如 `Europe/Paris`。默认：保持不变。 |
 | `--swap <size>` | 交换文件大小，例如 `2G`，或 `none`。默认：内存少于 4 GB 的机器使用 `2G`。 |
 | `--ref <ref>` | 要安装的版本：一个 release tag 或一个分支。默认：`master`。 |
-| `--repo <owner/name>` | 从哪个 GitHub 仓库安装。默认：`G-OTW/Open FinAI`。 |
+| `--repo <owner/name>` | 从哪个 GitHub 仓库安装。默认：`rowdy9941/open-finai`。 |
 | `--yes` | 什么都不问，全部采用默认值。 |
 
 ## 仍然解决不了？
@@ -191,4 +191,4 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
    ```
 
 3. 它会写出一个文件并打印其位置。该文件不含任何密码。
-4. 在 [GitHub](https://github.com/G-OTW/Open FinAI/issues) 上提交 issue，说明你当时在做什么，并附上该文件。
+4. 在 [GitHub](https://github.com/rowdy9941/open-finai/issues) 上提交 issue，说明你当时在做什么，并附上该文件。

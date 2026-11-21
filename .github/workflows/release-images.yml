@@ -29,7 +29,7 @@ env:
 jobs:
   # ── Build each (image × arch) natively, push by digest ──────────────────────
   build:
-    if: github.repository == 'G-OTW/Open FinAI'
+    if: github.repository == 'rowdy9941/open-finai'
     strategy:
       fail-fast: false
       matrix:

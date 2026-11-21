@@ -4,7 +4,7 @@ This folder is the source of the documentation site, built with [VitePress](http
 and deployed to GitHub Pages by `.github/workflows/docs.yml` on every push to `master` that
 touches `docs/` or the workflow itself (or by hand from the Actions tab).
 
-**Read it online:** https://g-otw.github.io/Open FinAI/
+**Read it online:** https://opentraderworld.com/docs/
 
 **Project website:** https://opentraderworld.com (demo, community docs, suggestions & polls)
 

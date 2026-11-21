@@ -15,7 +15,7 @@ the repository for updates.
 
 Even without code, you can make a real difference:
 
-- 🐛 **Report bugs** — open an [issue](https://github.com/G-OTW/Open FinAI/issues)
+- 🐛 **Report bugs** — open an [issue](https://github.com/rowdy9941/open-finai/issues)
   with clear steps to reproduce, your version/commit, and your deployment setup.
 - 💡 **Suggest features** — tell us what would make Open FinAI more useful for 
   your trading or investing workflow [here](https://opentraderworld.com/suggestions)

@@ -17,7 +17,7 @@ hero:
       link: https://demo.opentraderworld.com
     - theme: alt
       text: GitHub
-      link: https://github.com/G-OTW/Open FinAI
+      link: https://github.com/rowdy9941/open-finai
 
 features:
   - icon: 🔒

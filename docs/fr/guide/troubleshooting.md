@@ -107,4 +107,4 @@ Répondez `y` quand `setup.sh` demande s'il faut écraser le `.env` existant.
 
 ## Toujours bloqué ?
 
-Ouvrez un ticket sur [GitHub](https://github.com/G-OTW/Open FinAI/issues) avec le symptôme et les lignes de log pertinentes.
+Ouvrez un ticket sur [GitHub](https://github.com/rowdy9941/open-finai/issues) avec le symptôme et les lignes de log pertinentes.

@@ -33,7 +33,7 @@ permissions:
 jobs:
   mutants:
     name: cargo mutants (${{ matrix.scope }} ${{ matrix.shard }}/${{ matrix.of }})
-    if: github.repository == 'G-OTW/Open FinAI'
+    if: github.repository == 'rowdy9941/open-finai'
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:

@@ -23,7 +23,7 @@ members = [
 version = "0.1.5"
 edition = "2021"
 license = "FSL-1.1-MIT"
-repository = "https://github.com/G-OTW/Open FinAI"
+repository = "https://github.com/rowdy9941/open-finai"
 
 [workspace.dependencies]
 mimalloc = { version = "0.1", default-features = false }

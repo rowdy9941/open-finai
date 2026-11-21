@@ -178,7 +178,7 @@ Puedes darle al instalador sus respuestas en la misma línea, después de `--dom
 | `--timezone <zone>` | La zona horaria de la máquina, por ejemplo `Europe/Paris`. Por defecto: se deja como está. |
 | `--swap <size>` | Tamaño del archivo de swap, por ejemplo `2G`, o `none`. Por defecto: `2G` en una máquina con menos de 4 GB de memoria. |
 | `--ref <ref>` | La versión que instalar: una etiqueta de release o una rama. Por defecto: `master`. |
-| `--repo <owner/name>` | El repositorio de GitHub desde el que instalar. Por defecto: `G-OTW/Open FinAI`. |
+| `--repo <owner/name>` | El repositorio de GitHub desde el que instalar. Por defecto: `rowdy9941/open-finai`. |
 | `--yes` | No pregunta nada y toma todos los valores por defecto. |
 
 ## ¿Sigues atascado?
@@ -191,4 +191,4 @@ Puedes darle al instalador sus respuestas en la misma línea, después de `--dom
    ```
 
 3. Escribe un archivo e imprime dónde está. El archivo no contiene ninguna contraseña.
-4. Abre un issue en [GitHub](https://github.com/G-OTW/Open FinAI/issues), cuenta qué estabas haciendo y adjunta ese archivo.
+4. Abre un issue en [GitHub](https://github.com/rowdy9941/open-finai/issues), cuenta qué estabas haciendo y adjunta ese archivo.

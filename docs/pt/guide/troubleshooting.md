@@ -107,4 +107,4 @@ Responda `y` quando o `setup.sh` perguntar se deve sobrescrever o `.env` existen
 
 ## Ainda travado?
 
-Abra uma issue no [GitHub](https://github.com/G-OTW/Open FinAI/issues) com o sintoma e as linhas de log relevantes.
+Abra uma issue no [GitHub](https://github.com/rowdy9941/open-finai/issues) com o sintoma e as linhas de log relevantes.

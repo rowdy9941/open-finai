@@ -178,7 +178,7 @@ Du kannst dem Installationsprogramm seine Antworten in der Zeile mitgeben, nach 
 | `--timezone <zone>` | Die Zeitzone der Maschine, zum Beispiel `Europe/Paris`. Standard: bleibt, wie sie ist. |
 | `--swap <size>` | Größe der Swap-Datei, zum Beispiel `2G`, oder `none`. Standard: `2G` auf einer Maschine mit weniger als 4 GB Arbeitsspeicher. |
 | `--ref <ref>` | Die zu installierende Version: ein Release-Tag oder ein Branch. Standard: `master`. |
-| `--repo <owner/name>` | Das GitHub-Repository, aus dem installiert wird. Standard: `G-OTW/Open FinAI`. |
+| `--repo <owner/name>` | Das GitHub-Repository, aus dem installiert wird. Standard: `rowdy9941/open-finai`. |
 | `--yes` | Fragt nichts, nimmt jede Vorgabe. |
 
 ## Immer noch festgefahren?
@@ -191,4 +191,4 @@ Du kannst dem Installationsprogramm seine Antworten in der Zeile mitgeben, nach 
    ```
 
 3. Es schreibt eine Datei und gibt aus, wo sie liegt. Die Datei enthält kein Passwort.
-4. Eröffne ein Issue auf [GitHub](https://github.com/G-OTW/Open FinAI/issues), schreibe, was du gerade getan hast, und hänge diese Datei an.
+4. Eröffne ein Issue auf [GitHub](https://github.com/rowdy9941/open-finai/issues), schreibe, was du gerade getan hast, und hänge diese Datei an.

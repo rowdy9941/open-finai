@@ -106,4 +106,4 @@ docker compose --env-file .env --env-file network.env down -v
 
 ## 仍然解决不了？
 
-在 [GitHub](https://github.com/G-OTW/Open FinAI/issues) 上提交 issue，附上现象和相关日志行。
+在 [GitHub](https://github.com/rowdy9941/open-finai/issues) 上提交 issue，附上现象和相关日志行。
