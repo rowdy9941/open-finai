@@ -122,7 +122,7 @@ futures, keyed by `n` = `<interval>_<symbol>`. Keepalive: `{"time","channel":"sp
   next pages too (cursor `cond:unified:<offset>`); a key refused the mode check reads the
   list with no `account`. **(SDK only)**: every one of these facts is from the SDK
   (`SpotApi.md`, `FuturesApi.md` and the model pages): the doc site answered no page.
-  Placing a price-triggered order from OpenTraderWorld is not declared.
+  Placing a price-triggered order from Open FinAI is not declared.
 - Summary: spot reads `/account/detail` (user id, key mode, IP list size); futures the USDT
   futures account total and unrealised PnL. Gate.io publishes no call that names a key's
   permissions, so `can_trade` is unknown.

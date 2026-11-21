@@ -109,7 +109,7 @@ OTW 会在保存时联系服务商：错误的租户或 issuer 会在这里失�
 在主机上：
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 这会移除关联、开启密码登录并让所有会话退出登录。如果密码
@@ -126,7 +126,7 @@ docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
 
    ```bash
    docker compose --env-file .env --env-file network.env exec -T postgres \
-     psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -c "
+     psql -U otw -d openfinai -v ON_ERROR_STOP=1 -c "
        BEGIN;
        DROP TABLE IF EXISTS recovery_codes;
        DROP TABLE IF EXISTS social_login;

@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld connector framework: deterministic clock, mock venue, conformance checks"
+description = "Open FinAI connector framework: deterministic clock, mock venue, conformance checks"
 
 [dependencies]
 otw-connector-model = { path = "../model" }

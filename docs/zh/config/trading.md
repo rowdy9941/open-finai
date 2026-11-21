@@ -18,7 +18,7 @@ broker 账户不只是读取您的账簿：打开 **trading** 后，图表会向
 - **Deribit**（期货与永续合约：线性 USDC 合约与反向 BTC、ETH 合约），支持实盘账户及 test.deribit.com。等级为 **E2D**，实盘账户需要同样的确认。
 - **Paper trading**，由应用自身运行的模拟账户。见 [模拟交易](/zh/config/paper-trading)。
 
-其他 broker 都会回答它们不接受来自 OpenTraderWorld 的订单，并保持 [只读](/zh/config/brokers)。
+其他 broker 都会回答它们不接受来自 Open FinAI 的订单，并保持 [只读](/zh/config/brokers)。
 
 ::: danger 实验性
 从图表交易是**实验性**功能：支持 Interactive Brokers、Binance、Binance USDⓈ-M Futures、Bybit、Bybit EU、OKX、Bitget、Gate.io、KuCoin、KuCoin Futures、Kraken、Kraken Futures、Coinbase、MEXC、Bitfinex 和 Deribit，以及模拟交易。Interactive Brokers 和两个 Binance 账户已在模拟交易场所和各 broker 自己的测试环境中经过大量测试。其他 broker 依据各自的文档开发，尚未在真实账户上试用过。它们都可能存在缺陷。请在 broker 处核对每一笔订单，从小额开始，交易风险自负。
@@ -397,7 +397,7 @@ client id 由应用选择（3100 至 3115），因此多个会话可以共用一
 
 在 **设置 → Brokers** 中，每个交易账户显示其 **订单指标**（调用次数、已下单、被拒、延迟 p50 / p99、最后一笔订单）以及 **撤销所有订单** 按钮。与 [紧急开关](#halts) 不同，它只针对该账户，也不会暂停任何东西：
 
-- 它会要求确认，然后在 broker 处撤销该账户的 **所有挂单**，包括在 OpenTraderWorld 之外下的订单。在 Interactive Brokers，这是 Gateway 各账户的所有订单，包括在 TWS 中手动下的订单；
+- 它会要求确认，然后在 broker 处撤销该账户的 **所有挂单**，包括在 Open FinAI 之外下的订单。在 Interactive Brokers，这是 Gateway 各账户的所有订单，包括在 TWS 中手动下的订单；
 - 它报告撤销了多少笔。在 Interactive Brokers，它会先最多等待 10 秒，直到没有挂单；
 - 在交易关闭和交易锁未开时同样有效。
 

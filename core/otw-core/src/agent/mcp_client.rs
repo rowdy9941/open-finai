@@ -40,7 +40,7 @@ impl McpClient {
                 json!({
                     "protocolVersion": PROTOCOL_VERSION,
                     "capabilities": {},
-                    "clientInfo": { "name": "opentraderworld-agent", "version": env!("CARGO_PKG_VERSION") }
+                    "clientInfo": { "name": "openfinai-agent", "version": env!("CARGO_PKG_VERSION") }
                 }),
                 Some(1),
             )

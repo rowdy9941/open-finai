@@ -308,7 +308,7 @@ impl Kraken {
 
     /// The AddOrder fields of `o` (sorted, as the doc's examples write them).
     fn order_params(&self, o: &OrderRequest, p: &Placing) -> Result<BTreeMap<&'static str, String>, ConnectorError> {
-        let no = |what: &str| Err(ConnectorError::unsupported(format!("Kraken takes no {what} from OpenTraderWorld")));
+        let no = |what: &str| Err(ConnectorError::unsupported(format!("Kraken takes no {what} from Open FinAI")));
         if o.opts.reduce_only {
             return no("reduce-only order: a spot sale of what is held is a plain sell");
         }
@@ -449,7 +449,7 @@ impl Kraken {
         // "Amount to multiply lot volume by to get currency volume": a pair whose volume is
         // not the base coin is never sized by a guess.
         if r.lot_multiplier.0.is_some_and(|m| m != Decimal::ONE) {
-            v.status = TradingStatus::Closed(format!("lot_multiplier {}: sized in lots, not taken by OpenTraderWorld", dec_text(r.lot_multiplier.0.unwrap_or_default())));
+            v.status = TradingStatus::Closed(format!("lot_multiplier {}: sized in lots, not taken by Open FinAI", dec_text(r.lot_multiplier.0.unwrap_or_default())));
         }
         v
     }
@@ -533,7 +533,7 @@ impl TradeMapper for Kraken {
         }
         pack(otw_id).ok_or_else(|| {
             ConnectorError::invalid(format!(
-                "Kraken takes client order ids of 1 to {FREE_TEXT_MAX} letters, digits, - and _, or a UUID that OpenTraderWorld packs from 19 to {PACKED_MAX} lower-case letters and digits (a 24-character one from about `x` up does not fit; {otw_id:?} is neither)"
+                "Kraken takes client order ids of 1 to {FREE_TEXT_MAX} letters, digits, - and _, or a UUID that Open FinAI packs from 19 to {PACKED_MAX} lower-case letters and digits (a 24-character one from about `x` up does not fit; {otw_id:?} is neither)"
             ))
         })
     }

@@ -18,7 +18,7 @@ Un compte broker peut faire plus que lire votre book : avec le **trading** activ
 - **Deribit** (futures et perpétuels : contrats linéaires USDC et contrats inverses BTC et ETH), sur les comptes réels et sur test.deribit.com. Classé **E2D**, avec la même acceptation pour un compte réel.
 - **Paper trading**, un compte simulé géré par l'application elle-même. Voir [Paper trading](/fr/config/paper-trading).
 
-Tout autre broker répond qu'il ne prend pas d'ordres depuis OpenTraderWorld, et reste en [lecture seule](/fr/config/brokers).
+Tout autre broker répond qu'il ne prend pas d'ordres depuis Open FinAI, et reste en [lecture seule](/fr/config/brokers).
 
 ::: danger Expérimental
 Le trading depuis le graphique est **expérimental** : il fonctionne avec Interactive Brokers, Binance, Binance USDⓈ-M Futures, Bybit, Bybit EU, OKX, Bitget, Gate.io, KuCoin, KuCoin Futures, Kraken, Kraken Futures, Coinbase, MEXC, Bitfinex et Deribit, ainsi qu'avec le paper trading. Interactive Brokers et les deux comptes Binance sont longuement testés, sur des marchés simulés et sur les environnements de test des brokers. Les autres sont construits à partir de la documentation de chaque broker et n'ont pas encore été essayés sur un vrai compte. Des bugs peuvent subsister chez chacun d'eux. Vérifiez chaque ordre chez votre broker, commencez petit, et tradez à vos propres risques.
@@ -397,7 +397,7 @@ Chaque passage, modification, annulation, annulation globale et clôture est éc
 
 Dans **Paramètres → Brokers**, chaque compte de trading montre ses **métriques d'ordres** (appels, passés, refusés, latence p50 / p99, dernier ordre) et un bouton **Annuler tous les ordres**. Contrairement au [coupe-circuit](#suspensions), il ne couvre que ce compte et ne suspend rien :
 
-- il demande confirmation, puis annule **tous les ordres actifs** du compte chez le broker, ordres passés hors d'OpenTraderWorld compris. Chez Interactive Brokers, ce sont tous les ordres des comptes de la Gateway, y compris ceux passés à la main dans la TWS ;
+- il demande confirmation, puis annule **tous les ordres actifs** du compte chez le broker, ordres passés hors d'Open FinAI compris. Chez Interactive Brokers, ce sont tous les ordres des comptes de la Gateway, y compris ceux passés à la main dans la TWS ;
 - il indique combien ont été annulés. Chez Interactive Brokers, il attend d'abord jusqu'à 10 secondes qu'il n'en reste aucun actif ;
 - il fonctionne trading coupé et verrou fermé.
 

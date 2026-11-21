@@ -1,10 +1,10 @@
-# Qu'est-ce que OpenTraderWorld ?
+# Qu'est-ce que Open FinAI ?
 
 > Site du projet : **[opentraderworld.com](https://opentraderworld.com)** : visite des modules,
 > [démo en ligne](https://demo.opentraderworld.com), [guides de la communauté](https://opentraderworld.com/docs)
 > et [vote sur la feuille de route](https://opentraderworld.com/suggestions).
 
-OpenTraderWorld est une **plateforme web auto-hébergée pour traders et investisseurs**. Vous l'installez une fois avec Docker sur votre ordinateur ou votre serveur, l'ouvrez dans un navigateur, et obtenez un espace privé composé de modules : un journal de trading, des données de marché historiques avec graphiques et backtesting, le suivi de portefeuille et de patrimoine, un agrégateur d'actualités, des notes, des listes de contrôle et plus encore.
+Open FinAI est une **plateforme web auto-hébergée pour traders et investisseurs**. Vous l'installez une fois avec Docker sur votre ordinateur ou votre serveur, l'ouvrez dans un navigateur, et obtenez un espace privé composé de modules : un journal de trading, des données de marché historiques avec graphiques et backtesting, le suivi de portefeuille et de patrimoine, un agrégateur d'actualités, des notes, des listes de contrôle et plus encore.
 
 **Gratuit pour tous, usage personnel ou professionnel. Code source disponible (FSL-1.1-MIT).** La seule chose interdite est de le revendre ou de le proposer comme service payant. Le principe directeur : *devenez rentable avant de dépenser un centime.*
 
@@ -46,7 +46,7 @@ Voir la [liste complète des modules](/fr/modules/).
 
 ## Étapes suivantes
 
-1. [Installer OpenTraderWorld](/fr/guide/install) : environ 5 minutes avec Docker.
+1. [Installer Open FinAI](/fr/guide/install) : environ 5 minutes avec Docker.
 2. [Faire vos premiers pas](/fr/guide/first-steps) : connexion, choix des valeurs par défaut, installation des modules.
 3. [Configurer l'accès réseau](/fr/config/network) : si vous voulez y accéder depuis d'autres appareils.
 

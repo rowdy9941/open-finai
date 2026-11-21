@@ -150,9 +150,9 @@ const themeFor = (lang) => {
         ]
       }
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/G-OTW/OpenTraderWorld' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/G-OTW/Open FinAI' }],
     editLink: {
-      pattern: 'https://github.com/G-OTW/OpenTraderWorld/edit/master/docs/:path',
+      pattern: 'https://github.com/G-OTW/Open FinAI/edit/master/docs/:path',
       text: t.ui.editLink
     },
     outline: UI[lang] ? { level: [2, 4], label: UI[lang].outline } : { level: [2, 4] },
@@ -175,13 +175,13 @@ const locales = Object.fromEntries(
 );
 
 export default defineConfig({
-  title: 'OpenTraderWorld',
-  base: '/OpenTraderWorld/',
+  title: 'Open FinAI',
+  base: '/Open FinAI/',
   cleanUrls: true,
   lastUpdated: true,
   srcExclude: ['README.md'],
 
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/OpenTraderWorld/favicon.svg' }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/Open FinAI/favicon.svg' }]],
 
   locales,
 

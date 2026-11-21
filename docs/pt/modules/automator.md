@@ -1,6 +1,6 @@
 # Automator
 
-*Workflows que rodam o seu próprio app.* Um workflow é uma lista de passos: chamar um endpoint da API do seu OpenTraderWorld, chamar qualquer URL fora dela, fazer uma pergunta ao seu provedor de IA, remodelar a resposta, notificar a si mesmo. Execute à mão, em agenda ou a partir de um webhook de entrada.
+*Workflows que rodam o seu próprio app.* Um workflow é uma lista de passos: chamar um endpoint da API do seu Open FinAI, chamar qualquer URL fora dela, fazer uma pergunta ao seu provedor de IA, remodelar a resposta, notificar a si mesmo. Execute à mão, em agenda ou a partir de um webhook de entrada.
 
 Usos típicos: um resumo pré-mercado de segunda-feira que lê os eventos econômicos da semana e suas watchlists e envia uma mensagem no Telegram; uma exportação noturna do journal para um serviço externo; um webhook de preço distribuído em uma notificação; um resumo semanal escrito pelo assistente a partir dos seus próprios números.
 

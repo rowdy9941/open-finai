@@ -38,7 +38,7 @@ const INTER_CALL_PAUSE: Duration = Duration::from_millis(250);
 fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(HTTP_TIMEOUT)
-        .user_agent("OpenTraderWorld/watchlists")
+        .user_agent("Open FinAI/watchlists")
         .build()
         .map_err(|e| anyhow!("building http client: {e}"))
 }

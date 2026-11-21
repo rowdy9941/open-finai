@@ -32,9 +32,9 @@
   // the release tarball: that is where the new image tags are pinned. .env / network.env /
   // dns.env are not in the release, so the copy leaves the operator's config alone.
   const pullImages =
-    'cd /path/to/opentraderworld\n' +
+    'cd /path/to/openfinai\n' +
     'TMP=$(mktemp -d)\n' +
-    'curl -fsSL https://codeload.github.com/G-OTW/OpenTraderWorld/tar.gz/master | tar -xz -C "$TMP"\n' +
+    'curl -fsSL https://codeload.github.com/G-OTW/Open FinAI/tar.gz/master | tar -xz -C "$TMP"\n' +
     'cp -R "$TMP"/*/deploy/. deploy/\n' +
     'rm -rf "$TMP"\n' +
     'docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml \\\n' +
@@ -47,7 +47,7 @@
   // Releases are force-pushed as fresh snapshots, so `git pull` fails with "divergent
   // branches". The checkout must be reset to the release instead (docs/guide/updating.md).
   const buildSource =
-    'cd /path/to/OpenTraderWorld\n' +
+    'cd /path/to/Open FinAI\n' +
     'git fetch origin\n' +
     'git reset --hard origin/master\n' +
     'docker compose -f deploy/docker-compose.yml \\\n' +

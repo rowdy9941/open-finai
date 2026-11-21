@@ -7,14 +7,14 @@
  * Fields: id (stable slug), name, url, description key handled in the page (plain text
  * here to keep the catalog self-contained), authHeader/authHint ('' = no auth), docsUrl.
  *
- * `selfHosted: true` marks the built-in OpenTraderWorld gateway: it is not "added" as a
+ * `selfHosted: true` marks the built-in Open FinAI gateway: it is not "added" as a
  * remote server (the agent reaches it in-process), so its card links to Settings → AI
  * agents instead of offering an Add button.
  */
 export const MCP_CATALOG = [
   {
-    id: 'opentraderworld',
-    name: 'OpenTraderWorld',
+    id: 'openfinai',
+    name: 'Open FinAI',
     url: '/api/mcp',
     description:
       'This instance: journal, portfolios, watchlists, news and more, exposed to the agent through the built-in gateway.',

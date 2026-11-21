@@ -24,7 +24,7 @@ use otw_store::findb::{self, ImportRow};
 /// Default release asset URL. Overridable via the `FINDB_ARCHIVE_URL` env var so the
 /// archive host can be chosen at deploy time without a rebuild.
 const DEFAULT_ARCHIVE_URL: &str =
-    "https://github.com/G-OTW/OpenTraderWorld/releases/download/findb-data/findb.tar.zst";
+    "https://github.com/G-OTW/Open FinAI/releases/download/findb-data/findb.tar.zst";
 
 /// Rows per multi-row INSERT. ~13 cols × 1000 = 13k bind params, under Postgres' 65535 cap.
 const BATCH: usize = 1000;

@@ -1,10 +1,10 @@
-# What is OpenTraderWorld?
+# What is Open FinAI?
 
 > Project website: **[opentraderworld.com](https://opentraderworld.com)**: module tour,
 > [live demo](https://demo.opentraderworld.com), [community guides](https://opentraderworld.com/docs)
 > and [roadmap voting](https://opentraderworld.com/suggestions).
 
-OpenTraderWorld is a **self-hosted web platform for traders and investors**. You install it once with Docker on your own computer or server, open it in a browser, and get a private workspace made of modules: a trading journal, historical market data with charting and backtesting, portfolio and net-worth tracking, a news aggregator, notes, checklists and more.
+Open FinAI is a **self-hosted web platform for traders and investors**. You install it once with Docker on your own computer or server, open it in a browser, and get a private workspace made of modules: a trading journal, historical market data with charting and backtesting, portfolio and net-worth tracking, a news aggregator, notes, checklists and more.
 
 **Free for everyone, personal or professional. Source-available (FSL-1.1-MIT).** The only thing you can't do is resell it or offer it as a paid service. The guiding principle: *get profitable before spending a dime.*
 
@@ -46,7 +46,7 @@ See the [full module list](/modules/).
 
 ## Next steps
 
-1. [Install OpenTraderWorld](/guide/install): about 5 minutes with Docker.
+1. [Install Open FinAI](/guide/install): about 5 minutes with Docker.
 2. [Take your first steps](/guide/first-steps): sign in, pick defaults, install modules.
 3. [Configure network access](/config/network): if you want to reach it from other devices.
 

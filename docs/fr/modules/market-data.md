@@ -127,7 +127,7 @@ Une source HTTP personnalisée passe en direct par interrogation, comme les four
 
 ### Source push {#custom-push}
 
-Une source qu'OpenTraderWorld ne peut pas récupérer (requêtes signées, OAuth, pagination par curseur, protobuf, plusieurs symboles par réponse) est alimentée par votre propre script : **Ajouter un connector**, choisissez **Custom push source**, puis créez un webhook dans [Webhooks](/fr/modules/productivity#webhooks) avec la cible **Historical data** qui lui est liée. Le script envoie du JSON en POST à l'URL du webhook, dans n'importe quel langage.
+Une source qu'Open FinAI ne peut pas récupérer (requêtes signées, OAuth, pagination par curseur, protobuf, plusieurs symboles par réponse) est alimentée par votre propre script : **Ajouter un connector**, choisissez **Custom push source**, puis créez un webhook dans [Webhooks](/fr/modules/productivity#webhooks) avec la cible **Historical data** qui lui est liée. Le script envoie du JSON en POST à l'URL du webhook, dans n'importe quel langage.
 
 | Champ | Ce qu'il dit |
 |---|---|
@@ -745,7 +745,7 @@ Une exécution représente des dizaines de requêtes au fournisseur, cadencées 
 
 ## Options {#options}
 
-*Lisez la chaîne d'options d'un sous-jacent, construisez une stratégie, voyez ce qu'elle peut rapporter et ce qu'elle immobilise.* Pour l'analyse uniquement : OpenTraderWorld n'envoie aucun ordre sur options et les refuse sur tous les comptes. Une position optionnelle ouverte peut toujours être clôturée depuis le carnet du courtier.
+*Lisez la chaîne d'options d'un sous-jacent, construisez une stratégie, voyez ce qu'elle peut rapporter et ce qu'elle immobilise.* Pour l'analyse uniquement : Open FinAI n'envoie aucun ordre sur options et les refuse sur tous les comptes. Une position optionnelle ouverte peut toujours être clôturée depuis le carnet du courtier.
 
 ### Sources
 

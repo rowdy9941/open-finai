@@ -63,7 +63,7 @@ pub async fn fetch_with(feed: &Feed, secrets: &HashMap<String, String>, cfg: &Fe
 
 fn client(cfg: &FetchConfig) -> anyhow::Result<reqwest::Client> {
     reqwest::Client::builder()
-        .user_agent("OpenTraderWorld/feeds")
+        .user_agent("Open FinAI/feeds")
         .timeout(cfg.timeout)
         .build()
         .context("building http client")

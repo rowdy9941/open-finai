@@ -1190,7 +1190,7 @@ impl TradeMapper for Gateio {
             Some("single") => Ok(Some(PositionMode::OneWay)),
             Some("dual") => Ok(Some(PositionMode::Hedge)),
             Some(other) if !other.is_empty() => Err(ConnectorError::unsupported(format!(
-                "{}: this account holds positions in {other} mode, which OpenTraderWorld does not send orders in: nothing was sent, switch it to single or dual at Gate.io",
+                "{}: this account holds positions in {other} mode, which Open FinAI does not send orders in: nothing was sent, switch it to single or dual at Gate.io",
                 self.venue_label()
             ))),
             // `in_dual_mode`, deprecated, where `position_mode` is absent.

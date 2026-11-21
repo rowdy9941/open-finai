@@ -101,7 +101,7 @@ fn lone_username(args: impl Iterator<Item = String>, command: &str) -> String {
 /// Print usage and exit. Never returns.
 fn usage(problem: &str) -> ! {
     eprintln!("otw-core: {problem}\n");
-    eprintln!("Account recovery (run on the host, e.g. `docker exec -it opentraderworld-core-1 /app/otw-core …`):");
+    eprintln!("Account recovery (run on the host, e.g. `docker exec -it openfinai-core-1 /app/otw-core …`):");
     eprintln!("  reset-password <username>           set a printed one-time password");
     eprintln!("  reset-password <username> --stdin   read the new password from stdin instead");
     eprintln!("  list-users                          print the account names");

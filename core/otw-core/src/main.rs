@@ -1,4 +1,4 @@
-//! OpenTraderWorld core service.
+//! Open FinAI core service.
 //!
 //! Phase 0/3 skeleton: health check, setup-state, first-run admin creation, and login.
 //! The engine crates (scheduler, runner, modules, queue, i18n, theme) are wired into the

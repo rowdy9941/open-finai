@@ -8,8 +8,8 @@
   import { t } from '$lib/i18n';
 
   const WEBSITE = 'https://opentraderworld.com';
-  const GITHUB = 'https://github.com/G-OTW/OpenTraderWorld';
-  const DOCS_URL = 'https://g-otw.github.io/OpenTraderWorld/';
+  const GITHUB = 'https://github.com/G-OTW/Open FinAI';
+  const DOCS_URL = 'https://g-otw.github.io/Open FinAI/';
 
   const COMMUNITY_DOCS_URL = `${WEBSITE}/docs`;
 
@@ -49,7 +49,7 @@
 
   async function nativeShare(text) {
     try {
-      await navigator.share({ title: 'OpenTraderWorld', text, url: WEBSITE });
+      await navigator.share({ title: 'Open FinAI', text, url: WEBSITE });
     } catch {
       /* user dismissed the sheet */
     }
@@ -59,7 +59,7 @@
 <div class="section">
   <h2>{$t('settings.about.title')}</h2>
   <p class="version">
-    OpenTraderWorld
+    Open FinAI
     {#if version}<strong>v{version}</strong>{/if}
   </p>
   <p class="muted">{$t('settings.about.subtitle')}</p>

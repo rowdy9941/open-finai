@@ -1,12 +1,12 @@
 # 语音控制
 
-用声音操控 OpenTraderWorld，或在任意文本字段中听写。**仅限按键说话**：按下时麦克风打开，松开时关闭。两者之间不会监听任何内容。
+用声音操控 Open FinAI，或在任意文本字段中听写。**仅限按键说话**：按下时麦克风打开，松开时关闭。两者之间不会监听任何内容。
 
 **默认关闭。**在**设置 → 语音与快捷键 → 语音识别与快捷键**中开启。
 
 ## 麦克风需要 HTTPS 或 localhost {#https}
 
-浏览器只会在**安全来源**上向网页提供麦克风（以及其内置语音识别）：即通过 **HTTPS** 提供的页面，或在 **localhost** 上打开的页面。这是浏览器的规则，不是 OpenTraderWorld 的，应用内的任何设置都无法解除。
+浏览器只会在**安全来源**上向网页提供麦克风（以及其内置语音识别）：即通过 **HTTPS** 提供的页面，或在 **localhost** 上打开的页面。这是浏览器的规则，不是 Open FinAI 的，应用内的任何设置都无法解除。
 
 | 你如何打开 OTW | 语音能用吗？ |
 |---|---|
@@ -49,7 +49,7 @@
 
 ```bash
 docker compose -f deploy/docker-compose.yml --env-file deploy/.env --env-file deploy/network.env --profile voice up -d whisper
-docker logs -f opentraderworld-whisper-1
+docker logs -f openfinai-whisper-1
 ```
 
 等待出现 `Uvicorn running on http://0.0.0.0:8000`，然后按 `Ctrl+C`。该端口只有 Docker 内部的 OTW 能访问，浏览器无法访问，这是有意为之。
@@ -57,13 +57,13 @@ docker logs -f opentraderworld-whisper-1
 **2. 下载模型**（约 500 MB，需要几分钟）：
 
 ```bash
-docker exec opentraderworld-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen(urllib.request.Request('http://localhost:8000/v1/models/Systran/faster-whisper-small',method='POST'),timeout=1800).read())"
+docker exec openfinai-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen(urllib.request.Request('http://localhost:8000/v1/models/Systran/faster-whisper-small',method='POST'),timeout=1800).read())"
 ```
 
 **3. 检查是否已安装**：返回结果必须列出 `Systran/faster-whisper-small`。
 
 ```bash
-docker exec opentraderworld-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen('http://localhost:8000/v1/models').read())"
+docker exec openfinai-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen('http://localhost:8000/v1/models').read())"
 ```
 
 **4. 接入 OTW。**在 `http://localhost:5454` 上打开应用（或通过 HTTPS，参见[上文](#https)），然后进入**设置 → 语音与快捷键 → 语音识别与快捷键**：

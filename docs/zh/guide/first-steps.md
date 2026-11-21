@@ -1,6 +1,6 @@
 # 第一步
 
-你已经[安装](/zh/guide/install)了 OpenTraderWorld，并拿到了管理员凭据。下面介绍如何把它调成你想要的样子。
+你已经[安装](/zh/guide/install)了 Open FinAI，并拿到了管理员凭据。下面介绍如何把它调成你想要的样子。
 
 ## 登录
 

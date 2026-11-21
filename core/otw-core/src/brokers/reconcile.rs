@@ -1,4 +1,4 @@
-//! What OpenTraderWorld sent, against what the broker says (onboarding spec 6 and 7.2).
+//! What Open FinAI sent, against what the broker says (onboarding spec 6 and 7.2).
 //!
 //! - **Stored before sent.** Each leg of a ticket is written `pending` under its client id
 //!   before the call leaves ([`claim`]); an id the account was already sent is refused, across
@@ -11,7 +11,7 @@
 //! - **The broker wins.** On start and on a cycle ([`spawn`]), every leg still followed is
 //!   looked up and takes the broker's state; working orders OTW did not send are noted as
 //!   external. The account's positions are not watched: the user trades freely outside
-//!   OpenTraderWorld, and a robot checks its own instruments against its own orders. Every
+//!   Open FinAI, and a robot checks its own instruments against its own orders. Every
 //!   difference is written to the audit log (`reconcile`), and unsettled legs are notified.
 
 use std::collections::{HashMap, HashSet};
@@ -365,7 +365,7 @@ async fn settle(state: &AppState, account: &BrokerRow, connector: &dyn Broker, s
                     state,
                     format!("Order {} on {} not settled", leg.client_id, leg.ticker),
                     format!(
-                        "OpenTraderWorld sent order {} on {} from “{}” and got no answer, and the broker could not be asked since ({e:#}).\n\nCheck the order at the broker. New orders on {} wait until it is settled.",
+                        "Open FinAI sent order {} on {} from “{}” and got no answer, and the broker could not be asked since ({e:#}).\n\nCheck the order at the broker. New orders on {} wait until it is settled.",
                         leg.client_id, leg.ticker, account.name, leg.ticker
                     ),
                 );

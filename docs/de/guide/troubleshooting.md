@@ -33,16 +33,16 @@ Es gibt weder eine Reset-Mail noch ein Reset-Formular ohne Anmeldung: OTW läuft
 Öffne eine Shell auf der Maschine, die OTW betreibt, und gib ein Einmalpasswort aus:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
+docker exec -it openfinai-core-1 /app/otw-core reset-password USERNAME
 ```
 
 Melde dich damit an; die App verlangt sofort ein neues Passwort.
 
 | Fall | Was auszuführen ist |
 |---|---|
-| Auch den Benutzernamen vergessen | `docker exec opentraderworld-core-1 /app/otw-core list-users` |
-| Passwort selbst wählen | `printf '%s' 'my-new-password' \| docker exec -i opentraderworld-core-1 /app/otw-core reset-password USERNAME --stdin` |
-| Container heißt anders | `docker ps`, dann den Core-Container anstelle von `opentraderworld-core-1` verwenden. |
+| Auch den Benutzernamen vergessen | `docker exec openfinai-core-1 /app/otw-core list-users` |
+| Passwort selbst wählen | `printf '%s' 'my-new-password' \| docker exec -i openfinai-core-1 /app/otw-core reset-password USERNAME --stdin` |
+| Container heißt anders | `docker ps`, dann den Core-Container anstelle von `openfinai-core-1` verwenden. |
 | Kein Docker im Einsatz | Führe die Binärdatei `otw-core` mit denselben Argumenten und gesetztem `DATABASE_URL` aus. |
 
 Übergib ein Passwort nie als Kommandozeilenargument: Die Kommandozeile eines Prozesses ist auf dem Host lesbar, deshalb gibt es `--stdin`.
@@ -54,7 +54,7 @@ Hinweise: Ein Zurücksetzen **meldet jedes Gerät ab**, und nichts geht verloren
 Gleiches Prinzip wie beim Passwort: Stelle den Zugang über die Shell des Hosts wieder her.
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 Der zweite Faktor wird entfernt und jede Sitzung abgemeldet. Melde dich mit deinem Passwort an
@@ -68,7 +68,7 @@ Das verknüpfte Anbieterkonto ist gesperrt, gelöscht oder nicht erreichbar: Wä
 Auch die Wiederherstellungscodes verloren, auf dem Host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Entfernt die Verknüpfung, schaltet die Passwort-Anmeldung ein und meldet jede Sitzung ab. Auch das Passwort verloren:
@@ -104,4 +104,4 @@ Antworte mit `y`, wenn `setup.sh` fragt, ob die vorhandene `.env` überschrieben
 
 ## Immer noch festgefahren?
 
-Eröffne ein Issue auf [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) mit dem Symptom und den relevanten Logzeilen.
+Eröffne ein Issue auf [GitHub](https://github.com/G-OTW/Open FinAI/issues) mit dem Symptom und den relevanten Logzeilen.

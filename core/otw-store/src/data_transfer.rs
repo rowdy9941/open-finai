@@ -177,10 +177,10 @@ pub async fn export_bundle(
 /// contains before they commit to it.
 pub fn read_manifest(bundle: &[u8]) -> anyhow::Result<Manifest> {
     let mut zip = zip::ZipArchive::new(std::io::Cursor::new(bundle))
-        .context("this file is not an OpenTraderWorld data file")?;
+        .context("this file is not an Open FinAI data file")?;
     let entry = zip
         .by_name("manifest.json")
-        .context("this file is not an OpenTraderWorld data file (no manifest inside)")?;
+        .context("this file is not an Open FinAI data file (no manifest inside)")?;
     serde_json::from_reader(entry).context("the data file's manifest is damaged")
 }
 
@@ -238,7 +238,7 @@ pub async fn preview_bundle(
 ) -> anyhow::Result<Preview> {
     let manifest = read_manifest(bundle)?;
     if manifest.format > FORMAT_VERSION {
-        bail!("this data file was written by a newer version of OpenTraderWorld. Update this instance first, then load it again.");
+        bail!("this data file was written by a newer version of Open FinAI. Update this instance first, then load it again.");
     }
     if is_newer(&manifest.app_version, app_version) {
         bail!(
@@ -330,7 +330,7 @@ pub async fn import_bundle(
 ) -> anyhow::Result<Vec<ImportedModule>> {
     let manifest = read_manifest(bundle)?;
     if manifest.format > FORMAT_VERSION {
-        bail!("this data file was written by a newer version of OpenTraderWorld. Update this instance first, then load it again.");
+        bail!("this data file was written by a newer version of Open FinAI. Update this instance first, then load it again.");
     }
     if is_newer(&manifest.app_version, app_version) {
         bail!(
@@ -341,7 +341,7 @@ pub async fn import_bundle(
     }
 
     let mut zip = zip::ZipArchive::new(std::io::Cursor::new(bundle))
-        .context("this file is not an OpenTraderWorld data file")?;
+        .context("this file is not an Open FinAI data file")?;
 
     let mut tx = pool.begin().await?;
     let mut report = Vec::new();

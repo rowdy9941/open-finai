@@ -1,4 +1,4 @@
-# Navigating the OpenTraderWorld API
+# Navigating the Open FinAI API
 
 ## When to use
 

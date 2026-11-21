@@ -1,6 +1,6 @@
 # Obtener Docker
 
-OpenTraderWorld se distribuye como un conjunto de contenedores Docker, y actualmente esa es la **única forma admitida de ejecutarlo**. Una instalación nativa (ejecutar el core en Rust, PostgreSQL y el frontend directamente en el host) es posible si sabes lo que haces, pero **no se recomienda ni está documentada**. Docker se prioriza a propósito:
+Open FinAI se distribuye como un conjunto de contenedores Docker, y actualmente esa es la **única forma admitida de ejecutarlo**. Una instalación nativa (ejecutar el core en Rust, PostgreSQL y el frontend directamente en el host) es posible si sabes lo que haces, pero **no se recomienda ni está documentada**. Docker se prioriza a propósito:
 
 - **Poco intrusivo**: no se instala nada en tu sistema salvo el propio Docker. La app, la base de datos y el proxy viven en contenedores; tus datos viven en volúmenes con nombre. Eliminarlo todo es `docker compose down -v` más borrar la carpeta.
 - **Idéntico en todas partes**: la misma pila se ejecuta sin cambios en macOS, Linux y Windows.
@@ -35,7 +35,7 @@ Instala **Docker Desktop** con el backend WSL 2:
 
 3. Abre Docker Desktop y mantén el ajuste predeterminado *Use WSL 2*.
 
-Ejecuta los comandos de OpenTraderWorld (el instalador, `setup.sh`, las copias de seguridad) desde una shell de WSL: son scripts de bash. Docker Desktop hace que `docker` esté disponible ahí para tu distribución de WSL por defecto. Docker Compose está incluido.
+Ejecuta los comandos de Open FinAI (el instalador, `setup.sh`, las copias de seguridad) desde una shell de WSL: son scripts de bash. Docker Desktop hace que `docker` esté disponible ahí para tu distribución de WSL por defecto. Docker Compose está incluido.
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 Los tres funcionan → estás listo.
 
-## Desplegar OpenTraderWorld
+## Desplegar Open FinAI
 
 Un solo comando y luego sigue las indicaciones:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 El recorrido completo (qué significan las preguntas, opciones, alternativa manual, verificación del resultado) está en la página de [Instalación](/es/guide/install).

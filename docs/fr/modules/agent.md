@@ -1,11 +1,11 @@
 # Agent
 
-Un **assistant de chat IA** intégré : un volet de chat dans l'application qui peut aussi agir sur vos données OpenTraderWorld. Ouvrez-le depuis le module **Agent**, le raccourci cerveau de la barre du haut (à côté de la recherche), ou le [bouton flottant](#the-floating-assistant) situé dans le coin de chaque page.
+Un **assistant de chat IA** intégré : un volet de chat dans l'application qui peut aussi agir sur vos données Open FinAI. Ouvrez-le depuis le module **Agent**, le raccourci cerveau de la barre du haut (à côté de la recherche), ou le [bouton flottant](#the-floating-assistant) situé dans le coin de chaque page.
 
 L'assistant est **bring-your-own-provider** : rien n'est activé ni imposé par un éditeur tant que vous n'avez pas ajouté un fournisseur et une clé à vous.
 
 ::: tip Deux "agents IA" différents
-Cette page concerne l'**assistant de chat qui vit dans l'application** et parle à un fournisseur que *vous* configurez. Ce n'est pas la même chose que la page [Agents IA (MCP)](/fr/config/ai-agents), qui traite des agents *externes* qui se connectent **à** OpenTraderWorld via la passerelle MCP intégrée. L'assistant de chat peut *utiliser* cette même passerelle pour atteindre vos données : voir [Outils sur vos données](#tools-over-your-data) ci-dessous.
+Cette page concerne l'**assistant de chat qui vit dans l'application** et parle à un fournisseur que *vous* configurez. Ce n'est pas la même chose que la page [Agents IA (MCP)](/fr/config/ai-agents), qui traite des agents *externes* qui se connectent **à** Open FinAI via la passerelle MCP intégrée. L'assistant de chat peut *utiliser* cette même passerelle pour atteindre vos données : voir [Outils sur vos données](#tools-over-your-data) ci-dessous.
 :::
 
 ## Ajouter un fournisseur
@@ -134,7 +134,7 @@ Chaque conversation porte **son propre** token MCP (le token défini dans les pa
 
 **Agent → Gérer les serveurs** est une section pleine page pour ajouter des serveurs MCP distants afin que l'assistant atteigne des plateformes extérieures :
 
-- un **catalogue** contenant la passerelle intégrée **OpenTraderWorld**, qui renvoie vers **Paramètres → MCP** au lieu d'être ajoutée (l'assistant l'atteint en interne), plus des **serveurs personnalisés** par URL ;
+- un **catalogue** contenant la passerelle intégrée **Open FinAI**, qui renvoie vers **Paramètres → MCP** au lieu d'être ajoutée (l'assistant l'atteint en interne), plus des **serveurs personnalisés** par URL ;
 - **Streamable-HTTP uniquement** : rien ne s'exécute jamais en local ;
 - les valeurs d'authentification sont **chiffrées au repos et en écriture seule** ;
 - un bouton **Tester** se connecte et liste les outils du serveur ;

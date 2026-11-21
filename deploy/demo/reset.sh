@@ -52,7 +52,7 @@ fi
 
 # Stop core so no pool connection blocks the drop, then restore and restart.
 "${COMPOSE[@]}" stop core >/dev/null
-"${PSQL[@]}" -d postgres -c "DROP DATABASE IF EXISTS opentraderworld WITH (FORCE);"
-"${PSQL[@]}" -d postgres -c "CREATE DATABASE opentraderworld OWNER otw TEMPLATE otw_seed;"
+"${PSQL[@]}" -d postgres -c "DROP DATABASE IF EXISTS openfinai WITH (FORCE);"
+"${PSQL[@]}" -d postgres -c "CREATE DATABASE openfinai OWNER otw TEMPLATE otw_seed;"
 "${COMPOSE[@]}" start core >/dev/null
 echo "demo reset done ($(date -u +%FT%TZ))"

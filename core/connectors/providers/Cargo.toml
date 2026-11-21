@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld connector framework: one module per venue, each behind its own feature"
+description = "Open FinAI connector framework: one module per venue, each behind its own feature"
 
 [features]
 default = ["alpaca", "alphavantage", "binance", "bitfinex", "bitget", "bybit", "capitalcom", "coinbase", "deribit", "eodhd", "forexcom", "gateio", "ibkr", "kraken", "kraken_futures", "kucoin", "massive", "mexc", "ninjatrader", "oanda", "okx", "tradestation", "yahoo"]

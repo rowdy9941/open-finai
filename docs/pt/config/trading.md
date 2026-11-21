@@ -18,7 +18,7 @@ Uma conta de broker pode fazer mais do que ler o seu livro: com o **trading** at
 - **Deribit** (futuros e perpétuos: contratos lineares USDC e contratos inversos BTC e ETH), em contas reais e em test.deribit.com. Classificado **E2D**, com a mesma aceitação para uma conta real.
 - **Paper trading**, uma conta simulada gerida pela própria aplicação. Veja [Conta de simulação](/pt/config/paper-trading).
 
-Qualquer outro broker responde que não aceita ordens do OpenTraderWorld e continua em [somente leitura](/pt/config/brokers).
+Qualquer outro broker responde que não aceita ordens do Open FinAI e continua em [somente leitura](/pt/config/brokers).
 
 ::: danger Experimental
 Operar a partir do gráfico é **experimental**: funciona com Interactive Brokers, Binance, Binance USDⓈ-M Futures, Bybit, Bybit EU, OKX, Bitget, Gate.io, KuCoin, KuCoin Futures, Kraken, Kraken Futures, Coinbase, MEXC, Bitfinex e Deribit, e com o paper trading. A Interactive Brokers e as duas contas Binance foram amplamente testadas, em mercados simulados e nos ambientes de teste dos brokers. Os outros foram feitos a partir da documentação de cada broker e ainda não foram experimentados numa conta real. Podem subsistir erros em qualquer um deles. Verifique cada ordem no seu broker, comece pequeno e negocie por sua conta e risco.
@@ -397,7 +397,7 @@ Cada envio, alteração, cancelamento, cancelamento global e fecho é escrito nu
 
 Em **Definições → Brokers**, cada conta de trading mostra as suas **métricas de ordens** (chamadas, enviadas, recusadas, latência p50 / p99, última ordem) e um botão **Cancelar todas as ordens**. Ao contrário do [corta-circuito](#suspensoes), abrange apenas essa conta e não suspende nada:
 
-- pede confirmação e depois cancela **todas as ordens ativas** da conta no broker, incluindo as colocadas fora do OpenTraderWorld. Na Interactive Brokers são todas as ordens das contas do Gateway, incluindo as colocadas à mão na TWS;
+- pede confirmação e depois cancela **todas as ordens ativas** da conta no broker, incluindo as colocadas fora do Open FinAI. Na Interactive Brokers são todas as ordens das contas do Gateway, incluindo as colocadas à mão na TWS;
 - indica quantas foram canceladas. Na Interactive Brokers espera primeiro até 10 segundos até não restar nenhuma ativa;
 - funciona com o trading desligado e com o bloqueio fechado.
 

@@ -127,7 +127,7 @@ Parquet 文件会被读入与 CSV 相同的网格，所以列检测、映射步�
 
 ### Push 来源 {#custom-push}
 
-OpenTraderWorld 无法获取的来源（签名请求、OAuth、游标分页、protobuf、一次响应含多个品种）改由你自己的脚本提供：**Add connector**，选择 **Custom push source**，然后在 [Webhooks](/zh/modules/productivity#webhooks) 中创建一个目标为 **Historical data** 并绑定到它的 webhook。脚本向 webhook URL POST JSON，语言不限。
+Open FinAI 无法获取的来源（签名请求、OAuth、游标分页、protobuf、一次响应含多个品种）改由你自己的脚本提供：**Add connector**，选择 **Custom push source**，然后在 [Webhooks](/zh/modules/productivity#webhooks) 中创建一个目标为 **Historical data** 并绑定到它的 webhook。脚本向 webhook URL POST JSON，语言不限。
 
 | 字段 | 含义 |
 |---|---|
@@ -727,7 +727,7 @@ OpenTraderWorld 无法获取的来源（签名请求、OAuth、游标分页、pr
 
 ## 期权 {#options}
 
-*读取标的的期权链，构建策略，查看它能赚多少、占用多少资金。* 仅用于分析：OpenTraderWorld 不发送期权订单，并在所有账户上拒绝此类订单。未平仓的期权头寸仍可在经纪商账簿中平仓。
+*读取标的的期权链，构建策略，查看它能赚多少、占用多少资金。* 仅用于分析：Open FinAI 不发送期权订单，并在所有账户上拒绝此类订单。未平仓的期权头寸仍可在经纪商账簿中平仓。
 
 ### 数据来源
 

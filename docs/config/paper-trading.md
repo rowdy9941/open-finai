@@ -1,6 +1,6 @@
 # Paper trading
 
-A **paper trading account** is a broker run by OpenTraderWorld itself. Orders sent to it fill on the live price of the chart they come from, against your own simulated cash, with the commissions, slippage and leverage you set. No key, no venue, no real money.
+A **paper trading account** is a broker run by Open FinAI itself. Orders sent to it fill on the live price of the chart they come from, against your own simulated cash, with the commissions, slippage and leverage you set. No key, no venue, no real money.
 
 It trades from the chart exactly like a real broker: the same ticket, quick bar, order and position lines, panel tabs and audit log. Those are described in [Trading from the chart](/config/trading); this page covers what is specific to paper.
 

@@ -1,0 +1,56 @@
+# NOTICE
+
+## Open FinAI
+
+Full Personal Financial Platform — personal finance, investment management, quant
+research, trading terminal, AI financial intelligence and risk management.
+
+## Derivative work statement
+
+Open FinAI is a **derivative work** of [OpenTraderWorld](https://github.com/G-OTW/OpenTraderWorld)
+(commit `9af11e9`, release v0.1.5), which is licensed under the
+**Functional Source License, Version 1.1, MIT Future License (FSL-1.1-MIT)**.
+
+Modifications by the Open FinAI project include, but are not limited to:
+
+- Renaming of the product surface from "OpenTraderWorld" to "Open FinAI".
+- Local Docker image tags changed from `opentraderworld/otw-*` to `openfinai/otw-*`.
+- Feature work adopted from separately-licensed projects (see below).
+
+Per the Functional Source License, this derivative work remains governed by
+FSL-1.1-MIT. The upstream copyright notice is preserved in `LICENSE` and is not
+modified or removed.
+
+## Permitted use
+
+FSL-1.1-MIT permits use, copy, modification and redistribution for any **Permitted
+Purpose**, defined as any purpose other than a **Competing Use** — making the software
+available to others in a commercial product or service that substitutes for it, or
+offers substantially similar functionality.
+
+**Internal use and access is expressly permitted.** Each release converts to the MIT
+license on its second anniversary.
+
+## Upstream services retained
+
+URLs pointing at `opentraderworld.com`, `demo.opentraderworld.com` and
+`get.opentraderworld.com` are references to upstream's live documentation, demo and
+install endpoints. They are intentionally **not** renamed, because those hosts are
+operated by the upstream project and renaming them would produce dead links.
+
+## Third-party components studied or adopted
+
+| Project | License | How used |
+|---|---|---|
+| [OpenTraderWorld](https://github.com/G-OTW/OpenTraderWorld) | FSL-1.1-MIT | Foundation (this repository) |
+| [openchart](https://github.com/longsurf-ai/openchart) | MIT | Design study: chart intelligence, agent workflow patterns, agent-authored widgets |
+| [lightweight-charts-indicators](https://github.com/deepentropy/lightweight-charts-indicators) | MIT | Candidate dependency: indicator catalogue via `oakscriptjs` |
+| [opennews-mcp](https://github.com/6551Team/opennews-mcp) | MIT | Design study: multi-source news discovery and market-event monitoring |
+| OpenStock | AGPL-3.0 | **Design study only — no code copied.** AGPL is incompatible with this codebase. |
+
+## Internal identifiers
+
+Internal identifiers retain the upstream `otw` prefix (`otw-core`, `otw-store`,
+`OTW_SECRET_KEY`, `otw_mcp_*`). These are private implementation details, deliberately
+not renamed, to keep database migrations, issued MCP tokens and existing deployment
+configuration stable across the rebrand.

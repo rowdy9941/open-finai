@@ -61,7 +61,7 @@ pub(crate) static BINANCE: BrokerCapability = BrokerCapability {
     docs_url: "https://developers.binance.com/docs/binance-spot-api-docs",
     rate_limit: "6000 request weight per minute; a trade page costs 20.",
     key_note: "An API key with **Enable Reading**, plus **Enable Spot & Margin Trading** \
-               only if orders are sent from OpenTraderWorld (the account's trading switch). \
+               only if orders are sent from Open FinAI (the account's trading switch). \
                Never enable withdrawals.",
     required_secrets: &["api_key", "api_secret"],
     config_fields: BINANCE_FIELDS,
@@ -96,7 +96,7 @@ pub(crate) static BINANCE_FUTURES: BrokerCapability = BrokerCapability {
     rate_limit: "2400 request weight per minute per IP; a trade page costs 5. Fills are \
                  asked one instrument and one week at a time.",
     key_note: "An API key with **Enable Reading**, plus **Enable Futures** only if orders \
-               are sent from OpenTraderWorld (the account's trading switch). Never enable \
+               are sent from Open FinAI (the account's trading switch). Never enable \
                withdrawals. Binance \
                serves **90 days** of futures fills; anything older is a download from the \
                web site. Coin-M (inverse) contracts are not read here.",
@@ -147,7 +147,7 @@ pub(crate) static BITGET: BrokerCapability = BrokerCapability {
     rate_limit: "10 requests per second per account on the fill endpoints, 6000 per minute \
                  per IP overall. Spot fills page 90 days at a time, futures fills a week.",
     key_note: "An API key with **Read-only** permission, plus the passphrase you chose when \
-               creating it. To send orders from OpenTraderWorld (the account's trading switch) \
+               creating it. To send orders from Open FinAI (the account's trading switch) \
                the key needs **Read and write** with spot and futures trading; a read-only key \
                still reads. Never grant Withdraw. Bitget serves **90 days** of fills over the API; anything older is a download \
                from the web site. Only spot and USDT-M futures are read, so a Coin-M or \
@@ -197,7 +197,7 @@ pub(crate) static BYBIT: BrokerCapability = BrokerCapability {
                  per settle coin.",
     key_note: "An API key of a unified trading account, system-generated (HMAC) or \
                self-generated (RSA: paste the private key in PEM as the secret). **Read-Only** \
-               reads; to send orders from OpenTraderWorld (the account's trading switch) the key \
+               reads; to send orders from Open FinAI (the account's trading switch) the key \
                needs **Read-Write** with orders and positions. Never grant Withdraw. Bybit serves **two years** of fills over the API. Inverse fills are not \
                imported, their positions and orders are. Bybit EU is its own broker.",
     required_secrets: &["api_key", "api_secret"],
@@ -235,7 +235,7 @@ pub(crate) static BYBIT_EU: BrokerCapability = BrokerCapability {
                  page a week at a time.",
     key_note: "An API key created on bybit.eu, system-generated (HMAC) or self-generated (RSA: \
                paste the private key in PEM as the secret). **Read-Only** reads; to send orders \
-               from OpenTraderWorld (the account's trading switch) the key needs **Read-Write** \
+               from Open FinAI (the account's trading switch) the key needs **Read-Write** \
                with spot trading. Never grant Withdraw. Bybit EU is a separate platform \
                from bybit.com: its own spot book and its own keys. Two years of fills.",
     required_secrets: &["api_key", "api_secret"],
@@ -285,7 +285,7 @@ pub(crate) static GATEIO: BrokerCapability = BrokerCapability {
                  page a week at a time, narrower in a busy week.",
     key_note: "An API v4 key with **read-only** access to Spot (and Unified Account if the \
                account runs in a unified mode) and to Perpetual Futures. To send orders from \
-               OpenTraderWorld (the account's trading switch) the key needs **read-write** on \
+               Open FinAI (the account's trading switch) the key needs **read-write** on \
                Spot and Perpetual Futures; a read-only key still reads. Never grant Withdraw. \
                Gate.io has no call that names a key's permissions, so the test cannot tell a \
                read-only key from one that could trade. BTC-settled and dated futures and margin are \
@@ -329,7 +329,7 @@ pub(crate) static MEXC: BrokerCapability = BrokerCapability {
                  call, one pair at a time, narrower in a busy week; futures fills page 100 at \
                  a time, a month per window.",
     key_note: "An API key with spot Account and Order read and futures Order and Position \
-               read reads the account. To send orders from OpenTraderWorld (the account's \
+               read reads the account. To send orders from Open FinAI (the account's \
                trading switch) the key also needs spot trading (SPOT_DEAL_WRITE) and futures \
                Order Placing, and each spot pair added to the key's trading pairs; futures \
                order placing needs KYC. A read-only key still reads. Never grant withdrawals. \
@@ -363,11 +363,11 @@ pub(crate) static BITFINEX: BrokerCapability = BrokerCapability {
     rate_limit: "90 calls per minute per authenticated read; fills come 1000 per call, every \
                  instrument at once.",
     key_note: "An API key with **read** access to Account, Wallets, Orders, Positions and \
-               History reads the account. To send orders from OpenTraderWorld the key also \
+               History reads the account. To send orders from Open FinAI the key also \
                needs **write** access to Orders; a read-only key still reads. Never grant \
                withdrawals. One key reads the exchange, margin and funding wallets and both \
                books (spot pairs and perpetuals); orders go to the exchange wallet's pairs and \
-               to the perpetuals, not to the margin book. Give OpenTraderWorld a key of its own: \
+               to the perpetuals, not to the margin book. Give Open FinAI a key of its own: \
                Bitfinex refuses a key whose nonce another program has moved ahead.",
     required_secrets: &["api_key", "api_secret"],
     config_fields: &[],
@@ -405,7 +405,7 @@ pub(crate) static DERIBIT: BrokerCapability = BrokerCapability {
                  per call, a currency and a kind at a time.",
     key_note: "An API key (Client Id and Client Secret) with the scopes **account:read** and \
                **trade:read**, plus **trade:read_write** only if orders are sent from \
-               OpenTraderWorld (the account's trading switch); a read-only key still reads. \
+               Open FinAI (the account's trading switch); a read-only key still reads. \
                Never grant withdrawals. Orders go to futures and perpetuals only; on the \
                inverse contracts (BTC-PERPETUAL, BTC-27DEC26) sizes, positions and orders are in \
                USD. Options, linear (USDC) futures and spot fills are imported; fills of the \
@@ -436,7 +436,7 @@ pub(crate) static KUCOIN: BrokerCapability = BrokerCapability {
     rate_limit: "4000 request weight per 30 seconds per account on the spot pool; a fill page \
                  costs 2. Fills are asked one pair and one week at a time.",
     key_note: "An API key with the **General** permission, plus the passphrase you chose when \
-               creating it, plus **Spot Trading** only if orders are sent from OpenTraderWorld \
+               creating it, plus **Spot Trading** only if orders are sent from Open FinAI \
                (the account's trading switch); a key with General only still reads. Never grant \
                Margin or Withdrawal. KuCoin \
                answers spot fills one pair at a time, so name the pairs to pull. The margin \
@@ -465,7 +465,7 @@ pub(crate) static KUCOIN_FUTURES: BrokerCapability = BrokerCapability {
     rate_limit: "2000 request weight per 30 seconds per account on the futures pool; a fill \
                  page costs 5 and holds 1000 fills, a week at a time.",
     key_note: "An API key with the **General** permission, plus its passphrase, plus **Futures \
-               Trading** only if orders are sent from OpenTraderWorld (the account's trading \
+               Trading** only if orders are sent from Open FinAI (the account's trading \
                switch); a key with General only still reads. Never grant Withdrawal. USDT- and \
                USDC-margined contracts are read; coin-margined ones are not. Orders and \
                positions show the base coin (lots times the multiplier KuCoin publishes), as \
@@ -506,7 +506,7 @@ pub(crate) static COINBASE: BrokerCapability = BrokerCapability {
                  HTTP 429 and new orders wait. A fill page is one request and the walk pages by \
                  cursor.",
     key_note: "A CDP API key (Ed25519, or ECDSA as Coinbase's API key page asks) with **View** \
-               permission, which reads. To send orders from OpenTraderWorld (the account's \
+               permission, which reads. To send orders from Open FinAI (the account's \
                trading switch) the key needs **Trade** too; a View-only key still reads. Never \
                grant Transfer. Orders go to the spot book only; Coinbase has no test account, so \
                orders reach the live account once trading is turned on with the acknowledgement \
@@ -535,9 +535,9 @@ pub(crate) static KRAKEN: BrokerCapability = BrokerCapability {
                  a long period is walked with a pause between pages.",
     key_note: "An API key with **Query Funds**, **Query Open Orders & Trades** and **Query \
                Closed Orders & Trades**, plus **Create & Modify Orders** and **Cancel/Close \
-               Orders** only if orders are sent from OpenTraderWorld (the account's trading \
+               Orders** only if orders are sent from Open FinAI (the account's trading \
                switch), and **Access WebSocket API** for live order updates; a key without the \
-               order permissions still reads. Never grant Withdraw Funds. Give OpenTraderWorld \
+               order permissions still reads. Never grant Withdraw Funds. Give Open FinAI \
                a key of its own: Kraken refuses a call whose nonce is not above the key's last \
                one, so a key another program also uses fails at random.",
     required_secrets: &["api_key", "api_secret"],
@@ -579,7 +579,7 @@ pub(crate) static KRAKEN_FUTURES: BrokerCapability = BrokerCapability {
                still reads. Never grant the Withdrawal API. Orders go on the multi-collateral \
                contracts (PF_, FF_) only, sized in the coin; inverse contracts (PI_, FI_) show \
                as positions and orders converted to coins at their price, take no order from \
-               OpenTraderWorld, and their fills are not imported (their profit is counted in \
+               Open FinAI, and their fills are not imported (their profit is counted in \
                the coin). The fee of a fill is read without its currency, which the API does not \
                state. No private stream: orders are followed by polling.",
     required_secrets: &["api_key", "api_secret"],
@@ -785,7 +785,7 @@ pub(crate) static OKX: BrokerCapability = BrokerCapability {
     rate_limit: "10 requests per 2 seconds per account on the fill archive, and the same on \
                  positions and orders. A pull walks five instrument types.",
     key_note: "An API key with **Read** permission, plus the passphrase you chose when creating \
-               it, plus **Trade** only if orders are sent from OpenTraderWorld (the account's \
+               it, plus **Trade** only if orders are sent from Open FinAI (the account's \
                trading switch); a read-only key still reads. Never grant Withdraw. OKX serves **90 days** of fills; anything older is a download from the web \
                site. Derivative fills are counted in contracts, and the contract size is \
                read from OKX's own instrument list.",

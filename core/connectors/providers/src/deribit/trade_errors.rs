@@ -227,7 +227,7 @@ pub(super) fn of(code: i64, msg: &str, param: Option<&str>) -> VenueError {
     match row(&shown) {
         Some((_, Unknown, _)) => VenueError::new(Unknown, Some(shown.clone()), format!("Deribit did not say whether it went through: {msg} (code {shown})")),
         Some((_, canon, _)) => VenueError::new(*canon, Some(shown.clone()), format!("Deribit refused it: {msg} (code {shown})")),
-        None => VenueError::unmapped(Some(shown.clone()), format!("Deribit answered code {shown} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(shown.clone()), format!("Deribit answered code {shown} ({msg}), which Open FinAI does not map")),
     }
 }
 
@@ -268,7 +268,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
                 ErrorKind::Auth => Auth,
                 ErrorKind::Permission => Permission,
                 ErrorKind::InvalidRequest | ErrorKind::NotFound if *status < 500 => {
-                    return Some(VenueError::unmapped(e.provider_code.clone(), format!("Deribit answered HTTP {status} without a JSON-RPC error, which OpenTraderWorld does not map ({})", e.message)));
+                    return Some(VenueError::unmapped(e.provider_code.clone(), format!("Deribit answered HTTP {status} without a JSON-RPC error, which Open FinAI does not map ({})", e.message)));
                 }
                 // A 5xx, a gateway: the venue may have acted.
                 _ => Unknown,
@@ -360,7 +360,7 @@ mod tests {
         assert!(e.canon == InvalidRequest && e.message.contains("amount: must be a number"), "{e:?}");
         // The "Common Error Codes" table's 11000 to 11009 are not in the complete one: unmapped.
         let e = decode(&http_frame(1, "buy", 400, r#"{"jsonrpc":"2.0","error":{"code":11004,"message":"order_not_found"}}"#)).unwrap();
-        assert!(!e.mapped && e.canon == Unknown && e.message == "Deribit answered code 11004 (order_not_found), which OpenTraderWorld does not map", "{e:?}");
+        assert!(!e.mapped && e.canon == Unknown && e.message == "Deribit answered code 11004 (order_not_found), which Open FinAI does not map", "{e:?}");
         // Success.
         assert!(decode(&http_frame(1, "buy", 200, r#"{"jsonrpc":"2.0","id":1,"result":{"order":{},"trades":[]}}"#)).is_none());
     }

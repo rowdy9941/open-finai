@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# OpenTraderWorld — one-command installer.
+# Open FinAI — one-command installer.
 #
-#   curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 #
 # Downloads only the deploy/ directory (compose stack + setup script) and runs the
 # interactive setup, which pulls prebuilt images from Docker Hub — no Rust/Node
@@ -10,17 +10,17 @@
 # images locally.
 #
 # Options (flags win over the matching env var):
-#   --dir <path>   Install directory              (OTW_DIR,  default ./opentraderworld)
+#   --dir <path>   Install directory              (OTW_DIR,  default ./openfinai)
 #   --ref <ref>    Branch or tag to install       (OTW_REF,  default master)
 #   --build        Full source checkout + local image build (requires git)
 #   -h, --help     Show this help
 #
-#   OTW_REPO       GitHub repo slug               (default G-OTW/OpenTraderWorld)
+#   OTW_REPO       GitHub repo slug               (default G-OTW/Open FinAI)
 set -euo pipefail
 
-REPO="${OTW_REPO:-G-OTW/OpenTraderWorld}"
+REPO="${OTW_REPO:-G-OTW/Open FinAI}"
 REF="${OTW_REF:-master}"
-DIR="${OTW_DIR:-$PWD/opentraderworld}"
+DIR="${OTW_DIR:-$PWD/openfinai}"
 BUILD=0
 # Flags forwarded verbatim to deploy/setup.sh.
 SETUP_ARGS=()
@@ -31,17 +31,17 @@ die()  { printf 'error: %s\n' "$1" >&2; exit 1; }
 
 usage() {
   cat <<EOF
-OpenTraderWorld — one-command installer.
+Open FinAI — one-command installer.
 
   curl -fsSL https://raw.githubusercontent.com/${REPO}/master/install.sh | bash
 
 Options (flags win over the matching env var):
-  --dir <path>   Install directory              (OTW_DIR,  default ./opentraderworld)
+  --dir <path>   Install directory              (OTW_DIR,  default ./openfinai)
   --ref <ref>    Branch or tag to install       (OTW_REF,  default master)
   --build        Full source checkout + local image build (requires git)
   -h, --help     Show this help
 
-  OTW_REPO       GitHub repo slug               (default G-OTW/OpenTraderWorld)
+  OTW_REPO       GitHub repo slug               (default G-OTW/Open FinAI)
 EOF
 }
 
@@ -57,7 +57,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-bold "OpenTraderWorld — installer"
+bold "Open FinAI — installer"
 echo
 
 # ── Prerequisites ──

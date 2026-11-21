@@ -1,6 +1,6 @@
 # 更新
 
-有新版本时，OpenTraderWorld 会在**设置 → 更新应用**中提示你（它会检查 GitHub）。出于设计，应用**无法自行更新**（它运行时没有 shell 或 Docker 访问权限，以缩小攻击面），因此更新就是在主机上执行几条命令。
+有新版本时，Open FinAI 会在**设置 → 更新应用**中提示你（它会检查 GitHub）。出于设计，应用**无法自行更新**（它运行时没有 shell 或 Docker 访问权限，以缩小攻击面），因此更新就是在主机上执行几条命令。
 
 ## 更新之前
 
@@ -35,7 +35,7 @@ otw update
 0.0.17 及更早版本的 `otw` 命令只会重新拉取 `deploy/` 中已固定的镜像，因此永远不会升级到新版本。先替换一次，再更新：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/deploy/otw -o /tmp/otw
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/deploy/otw -o /tmp/otw
 sudo install -m 755 /tmp/otw /usr/local/bin/otw
 otw update
 ```
@@ -46,9 +46,9 @@ otw update
 （新的镜像标签固定在那里），然后拉取并重启：
 
 ```bash
-cd /path/to/opentraderworld
+cd /path/to/openfinai
 TMP=$(mktemp -d)
-curl -fsSL https://codeload.github.com/G-OTW/OpenTraderWorld/tar.gz/master | tar -xz -C "$TMP"
+curl -fsSL https://codeload.github.com/G-OTW/Open FinAI/tar.gz/master | tar -xz -C "$TMP"
 cp -R "$TMP"/*/deploy/. deploy/
 rm -rf "$TMP"
 docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml \
@@ -68,7 +68,7 @@ docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml 
 刷新检出的代码，然后重新构建：
 
 ```bash
-cd /path/to/OpenTraderWorld
+cd /path/to/Open FinAI
 git fetch origin
 git reset --hard origin/master
 docker compose -f deploy/docker-compose.yml \

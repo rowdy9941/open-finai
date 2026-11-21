@@ -32,7 +32,7 @@ Reminders, one-off or recurring (with start date, end date or max count), that f
 
 ## Webhooks {#webhooks}
 
-Give any external service a private URL to **POST alerts into OpenTraderWorld**: charting and alerting platforms, broker notifications, uptime monitors, scripts, anything that can fire an HTTP request. The payload is received and routed into a module.
+Give any external service a private URL to **POST alerts into Open FinAI**: charting and alerting platforms, broker notifications, uptime monitors, scripts, anything that can fire an HTTP request. The payload is received and routed into a module.
 
 - **Private URL, no headers**: each endpoint carries a **256-bit token in the URL path** (`/api/hooks/<token>`), because many alerting senders can't set an `Authorization` header. Tokens are stored **hashed** and shown **once** at creation; failed lookups are throttled.
 - **Liberal payloads**: send plain text or JSON; the parser accepts loose field names, so most senders work without special formatting.

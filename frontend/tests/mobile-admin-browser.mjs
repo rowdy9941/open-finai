@@ -123,7 +123,7 @@ function populated(p, method, url, body) {
     if (method === 'POST') return { ok: true };
     return { mode: 'lan_https', port: 5454, domain: 'otw.a-very-long-subdomain-for-the-home-lab.duckdns.org', dns_provider: 'duckdns', dns_token_set: true, lan_ip: '192.168.100.200' };
   }
-  if (p === '/api/settings/backup/status') return { configured: true, result: 'error', stale: true, age_seconds: 200000, destination: `/mnt/nas/backups/opentraderworld/${LONG}/nightly`, verified: false, schedule: 'every day at 03:15', size_bytes: 1234567890, error: 'pg_dump: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: password authentication failed for user "otw"' };
+  if (p === '/api/settings/backup/status') return { configured: true, result: 'error', stale: true, age_seconds: 200000, destination: `/mnt/nas/backups/openfinai/${LONG}/nightly`, verified: false, schedule: 'every day at 03:15', size_bytes: 1234567890, error: 'pg_dump: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: password authentication failed for user "otw"' };
   if (p === '/api/settings/data') return { database_bytes: 9876543210, modules: [
     { id: 'histdata', name: 'Historical data', rows: 123456789, size_bytes: 8765432109, tables: [{ name: 'histdata_bars_with_a_long_table_name', rows: 123456789, size_bytes: 8765432109 }] },
     { id: 'journal', name: `Journal ${LONG}`, rows: 1234, size_bytes: 567890, tables: [{ name: 'journal_trades', rows: 1234, size_bytes: 567890 }] }

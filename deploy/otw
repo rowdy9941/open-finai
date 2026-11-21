@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# OpenTraderWorld — the one command for the machine, after install day.
+# Open FinAI — the one command for the machine, after install day.
 #
 #   otw status     is everything working, in plain words
 #   otw backup     take a backup now
@@ -16,7 +16,7 @@
 set -euo pipefail
 
 CONF="/etc/otw.conf"
-[[ -r "$CONF" ]] || { echo "OpenTraderWorld is not installed on this machine." >&2; exit 1; }
+[[ -r "$CONF" ]] || { echo "Open FinAI is not installed on this machine." >&2; exit 1; }
 # shellcheck disable=SC1090
 . "$CONF"
 
@@ -67,7 +67,7 @@ need_root() {
 # ── status ───────────────────────────────────────────────────────────────────
 cmd_status() {
   local d; d="$(domain)"
-  bold "OpenTraderWorld"
+  bold "Open FinAI"
 
   local running
   running="$(compose ps --status running --format '{{.Service}}' 2>/dev/null | sort | tr '\n' ' ' || true)"
@@ -140,7 +140,7 @@ cmd_backup() {
 
   local user db kind excludes=() stamp out
   user="$(env_value POSTGRES_USER)"; db="$(env_value POSTGRES_DB)"
-  : "${user:=otw}"; : "${db:=opentraderworld}"
+  : "${user:=otw}"; : "${db:=openfinai}"
 
   # One full copy a week, a light one the other nights. The light one leaves out
   # only what can be downloaded again; everything you typed is in both.
@@ -212,7 +212,7 @@ cmd_restore() {
   [[ "$confirm" == "RESTORE" ]] || { info "Nothing was changed."; return 0; }
 
   user="$(env_value POSTGRES_USER)"; db="$(env_value POSTGRES_DB)"
-  : "${user:=otw}"; : "${db:=opentraderworld}"
+  : "${user:=otw}"; : "${db:=openfinai}"
 
   info "Taking a safety copy of what is there now…"
   OTW_FULL=1 cmd_backup >/dev/null
@@ -249,7 +249,7 @@ load_dump() {
 # The image tags are pinned in docker-compose.images.yml, so pulling alone only
 # ever fetches the version the machine was installed with. An update therefore
 # brings the deploy files of the newest release first, then pulls what they name.
-REPO="${OTW_REPO:-G-OTW/OpenTraderWorld}"
+REPO="${OTW_REPO:-G-OTW/Open FinAI}"
 
 current_version() {
   sed -n 's/.*otw-core:\([0-9][0-9.]*\).*/\1/p' "$OTW_DIR/deploy/docker-compose.images.yml" | head -n 1
@@ -339,7 +339,7 @@ cmd_card() {
 cmd_report() {
   local out="/tmp/otw-report-$(date -u +%Y%m%d-%H%M).txt"
   {
-    echo "OpenTraderWorld report — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    echo "Open FinAI report — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
     echo "machine: $(uname -srm)  $( . /etc/os-release 2>/dev/null; echo "${PRETTY_NAME:-unknown}")"
     echo "address: $(domain)"
     echo; echo "── memory and disk ──"; free -m 2>/dev/null; df -h /
@@ -353,7 +353,7 @@ cmd_report() {
   } > "$out" 2>&1
   chmod 600 "$out"
   info "Written: $out"
-  info "Send that file to https://github.com/G-OTW/OpenTraderWorld/issues — it holds no password."
+  info "Send that file to https://github.com/G-OTW/Open FinAI/issues — it holds no password."
 }
 
 ORIG_ARGS=("$@")

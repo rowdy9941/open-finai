@@ -220,7 +220,7 @@ Orders By Symbol and [Batch Cancel Stop Orders](https://www.kucoin.com/docs-new/
 `cancelledOrderIds`), then cancels what is still listed one by one. A lookup by id of a spot
 stop order is not made. Its `stop` filter ("stop: stop loss order, oco: oco order") is not
 sent: which kinds the list answers without it is not stated. Placing a spot stop from
-OpenTraderWorld is not declared.
+Open FinAI is not declared.
 
 ### Time in force
 
@@ -292,7 +292,7 @@ Otherwise, the order will return an invalid priceIncrement error").
 futures: `200001`, `200002`, `200003`). A test asserts each row maps as listed, that an
 unlisted code is Unknown and alerts, and that these tables match the code. Every refusal
 reads "KuCoin refused it: <msg> (code <code>)"; an unlisted code "KuCoin answered code X (msg),
-which OpenTraderWorld does not map".
+which Open FinAI does not map".
 
 | Answer | Canonical | Action |
 | --- | --- | --- |

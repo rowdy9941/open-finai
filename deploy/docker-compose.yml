@@ -1,4 +1,4 @@
-# OpenTraderWorld — Phase 0 stack.
+# Open FinAI — Phase 0 stack.
 #
 #   cp .env.example .env   # then edit secrets
 #   docker compose --env-file .env --env-file network.env up --build
@@ -9,7 +9,7 @@
 #
 # Brings up: caddy (proxy/TLS) → frontend (static) + core (Rust API) → postgres.
 
-name: opentraderworld
+name: openfinai
 
 services:
   # ── Reverse proxy / TLS, serves the SPA and proxies /api to core ─────────────
@@ -18,7 +18,7 @@ services:
     # required by the "LAN + HTTPS" network mode. Built automatically on first `up`.
     # `image:` names the locally built tag; the image-based install (docker-compose.images.yml)
     # pulls this same name from Docker Hub instead of building.
-    image: opentraderworld/otw-caddy:latest
+    image: openfinai/otw-caddy:latest
     build:
       context: ./caddy
     restart: unless-stopped
@@ -69,7 +69,7 @@ services:
 
   # ── Static frontend: builds assets into the shared web-assets volume, then exits ─
   frontend:
-    image: opentraderworld/otw-frontend:latest
+    image: openfinai/otw-frontend:latest
     build:
       context: ../frontend
       # The browser build of the script engine is compiled from the Rust workspace.
@@ -88,7 +88,7 @@ services:
 
   # ── Core service: Rust/Axum orchestrator + API ──────────────────────────────
   core:
-    image: opentraderworld/otw-core:latest
+    image: openfinai/otw-core:latest
     build:
       context: ../core
     restart: unless-stopped
@@ -225,14 +225,14 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-otw}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
-      POSTGRES_DB: ${POSTGRES_DB:-opentraderworld}
+      POSTGRES_DB: ${POSTGRES_DB:-openfinai}
     volumes:
       # Postgres 18+ expects the mount at /var/lib/postgresql (it stores data in a
       # version-specific subdirectory). Mounting the old .../data path makes 18 refuse
       # to start. See docker-library/postgres#37 and PR #1259.
       - postgres-data:/var/lib/postgresql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-otw} -d ${POSTGRES_DB:-opentraderworld}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-otw} -d ${POSTGRES_DB:-openfinai}"]
       interval: 5s
       timeout: 5s
       retries: 10

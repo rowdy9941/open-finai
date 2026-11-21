@@ -266,7 +266,7 @@ export const ALL_MODULES = '*';
  *  turning it on asks for the password every time. */
 export const TRADING = 'trading';
 
-/** The broker OpenTraderWorld runs itself: orders fill on the chart's live price. */
+/** The broker Open FinAI runs itself: orders fill on the chart's live price. */
 export const PAPER = 'paper';
 
 /** Whether trading was switched on for an account. */

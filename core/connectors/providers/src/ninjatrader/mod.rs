@@ -39,7 +39,7 @@ const CAPS_TOML: &str = include_str!("capabilities.toml");
 /// A token lasts about ninety minutes; the answer carries the exact moment.
 const TOKEN_TTL_SECS: i64 = 90 * 60;
 /// What the app calls itself to the platform. Not a credential.
-const APP_ID: &str = "OpenTraderWorld";
+const APP_ID: &str = "Open FinAI";
 /// Order states that are still working: everything else is history.
 const WORKING: &[&str] = &["Working", "PendingNew", "PendingReplace"];
 /// Every charge the platform books against a fill, each on its own line.

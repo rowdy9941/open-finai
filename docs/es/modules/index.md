@@ -1,6 +1,6 @@
 # Resumen de módulos
 
-OpenTraderWorld es un conjunto de **módulos**, paquetes de funciones que activas individualmente en **Ajustes → Módulos**. Todo viene con la app; instalar un módulo hace que aparezca en el selector de módulos (arriba a la izquierda) y en el dashboard. Desvincula un módulo para ocultarlo de nuevo (sus datos se conservan salvo que también los elimines).
+Open FinAI es un conjunto de **módulos**, paquetes de funciones que activas individualmente en **Ajustes → Módulos**. Todo viene con la app; instalar un módulo hace que aparezca en el selector de módulos (arriba a la izquierda) y en el dashboard. Desvincula un módulo para ocultarlo de nuevo (sus datos se conservan salvo que también los elimines).
 
 El [dashboard, la búsqueda y las notificaciones](/es/modules/dashboard) están por encima de todos ellos y siempre están ahí.
 

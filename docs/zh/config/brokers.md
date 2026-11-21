@@ -52,7 +52,7 @@ broker 账户只读取，直到您为某个账户打开 **Trading**。这里要�
 - **Gate.io** 用一把密钥读取两个账簿，由*要读取的账簿*选择（`spot`、`futures`，默认两者都读）：现货，以及以 USDT 结算的永续合约，其成交以合约张数计，并按 Gate.io 公布的合约面值估值。统一账户的余额从统一账户读取。Gate.io 没有任何接口能说明密钥的权限，所以*测试连接*无法区分只读密钥和能交易的密钥。BTC 结算合约、交割合约、杠杆和止损单不读取。
 - **KuCoin 是两个 broker。**现货和期货是独立平台，用同一把密钥读取：*KuCoin* 读现货，*KuCoin Futures* 读 USDT 和 USDC 保证金合约（币本位合约不读取）。现货成交一次只回答一个交易对，所以拉取要指明交易对（`BTC-USDT`）；期货成交按整个账户返回，以合约张数计，并按 KuCoin 公布的合约面值估值。*测试连接*会说明该密钥是否能交易。保证金账户不读取。
 - **MEXC** 用一把密钥读取两个账簿，由*要读取的账簿*选择（`spot`、`futures`，默认两者都读）：现货，以及以 USDT、USDC 或 USD1 结算的永续合约，其成交以合约张数计，并按 MEXC 公布的合约面值估值。两者都一次只回答一个品种的成交历史：现货交易对写作 `BTCUSDT`，合约写作 `BTC_USDT`，每个账簿只读按自己写法写的名称。MEXC 通过 API 只提供 **30 天**的现货成交，更早的需要从网站导出。未绑定 IP 地址的密钥 90 天后过期。币本位合约和止损单不读取。
-- **Bitfinex** 用一把密钥读取整个账户：exchange、margin 和 funding 钱包，现货交易对和永续合约都包括在内，所有成交在一个列表里返回，无需指明品种，也没有历史期限。请给 OpenTraderWorld 一把专用密钥：如果另一个程序用更大的 nonce 使用过这把密钥，Bitfinex 会拒绝它。品种保留 Bitfinex 的写法（`tBTCUSD`、`tBTCF0:USTF0`），币种保留其代码（`UST` 即 USDt）。
+- **Bitfinex** 用一把密钥读取整个账户：exchange、margin 和 funding 钱包，现货交易对和永续合约都包括在内，所有成交在一个列表里返回，无需指明品种，也没有历史期限。请给 Open FinAI 一把专用密钥：如果另一个程序用更大的 nonce 使用过这把密钥，Bitfinex 会拒绝它。品种保留 Bitfinex 的写法（`tBTCUSD`、`tBTCF0:USTF0`），币种保留其代码（`UST` 即 USDt）。
 - **Deribit** 用一把密钥读取所有类型，并永久保留成交：期权、USDC 结算的合约和现货会被导入，按币种而不是按品种读取，因此无需指明任何品种。**反向合约的成交不导入**（`BTC-PERPETUAL`、`BTC-27DEC26`），原因与 Bybit 相同；其持仓和订单会被读取，并换算为币。
 - **Kraken Futures 是单独的 broker。**它是与 Kraken 现货分开的平台，有自己的密钥，在期货站点创建。其*环境*设置为 `live` 或 `demo`：演示环境（`demo-futures.kraken.com`）是另一个主机，有自己的注册和密钥，演示账户从不读取实盘。多抵押合约（`PF_XBTUSD`、`FF_XBTUSD_261225`）按币数量读取。反向合约（`PI_`、`FI_`）的持仓和订单按其价格换算成币数量显示；**其成交不会导入**，原因与 Bybit 相同。成交的手续费读取时不带币种，因为 API 没有说明。成交按整个账户返回，每页 1000 笔；超过 100 页后，历史 API 让每页等待约 6 秒。
 - **衍生品账户不同于现货账户。**Bitfinex、Bitget、Bybit、Deribit、Gate.io、Kraken Futures、KuCoin Futures、MEXC、OKX 和 Binance 期货可以做空，所以那里默认勾选*该账户可以做空*。对于仅设为现货账簿的 Bitget 账户，请取消勾选：没有未平仓头寸的现货卖出，是卖掉先前买入的币，而不是做空。
@@ -175,7 +175,7 @@ Alpaca、Binance（现货和期货）、Bitfinex、Bitget、Bybit、Bybit EU、C
    - **Open Positions**，用于投资组合对齐和图表叠加。
 
    保存并记下 **query id**，即显示在其名称旁边的数字。
-3. 在 OpenTraderWorld 中：添加账户，粘贴 token，填写 **Flex query id** 和 **Statement time zone**，然后**测试连接**。它会报告账户号码、对账单覆盖的时间段以及它携带的交易行数，这是发现查询缺少某一部分的最快方式。
+3. 在 Open FinAI 中：添加账户，粘贴 token，填写 **Flex query id** 和 **Statement time zone**，然后**测试连接**。它会报告账户号码、对账单覆盖的时间段以及它携带的交易行数，这是发现查询缺少某一部分的最快方式。
 
 ::: tip 决定导入是否正确的两项设置
 **时间段是查询的，不是你的。**Flex 查询自带日期范围（*Last 365 Calendar Days*、*Year to Date*、自定义窗口），而该 web 服务根本不接受日期。你在应用中选择的日期是对返回的对账单进行**过滤**，所以设为 *Last 30 days* 的查询无论你回溯多远都不会产出三月的数据，而且 IBKR 提供的数据不超过一年。把查询设宽，在应用中过滤。

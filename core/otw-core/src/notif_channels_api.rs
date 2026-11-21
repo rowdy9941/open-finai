@@ -171,7 +171,7 @@ async fn test(
     let res = notif_send::send_one(
         &s.http,
         &ch,
-        "OpenTraderWorld test",
+        "Open FinAI test",
         "This is a test notification. If you can read this, the channel works.",
     )
     .await;

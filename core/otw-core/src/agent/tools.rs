@@ -227,7 +227,7 @@ impl ToolContext {
         defs.extend([
             ToolDef {
                 name: "otw_catalog".into(),
-                description: "Discover OpenTraderWorld API endpoints. With no argument, returns a \
+                description: "Discover Open FinAI API endpoints. With no argument, returns a \
                     compact index of the modules you can access. Pass a \"module\" to list that \
                     module's endpoints, or an \"endpoint\" (or several in \"endpoints\") to get its \
                     description, a working example and its body fields before writing it; add \
@@ -246,7 +246,7 @@ impl ToolContext {
             },
             ToolDef {
                 name: "otw_read".into(),
-                description: "GET an allowlisted OpenTraderWorld endpoint and return its JSON body. \
+                description: "GET an allowlisted Open FinAI endpoint and return its JSON body. \
                     Use concrete paths with query strings, e.g. /api/journal/trades?limit=20. For \
                     large responses, pass \"pick\" to extract only the fields the user asked for."
                     .into(),
@@ -264,7 +264,7 @@ impl ToolContext {
         if self.can_write_any() {
             defs.push(ToolDef {
                 name: "otw_write".into(),
-                description: "Mutate through an allowlisted OpenTraderWorld endpoint \
+                description: "Mutate through an allowlisted Open FinAI endpoint \
                     (POST/PUT/PATCH/DELETE). Only use after confirming the target with otw_catalog."
                     .into(),
                 input_schema: json!({

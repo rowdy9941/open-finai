@@ -191,7 +191,7 @@ pub async fn send_internal(
 fn refuse_options(ticket: &OrderTicket) -> Result<(), ApiError> {
     if matches!(ticket.asset_type.trim().to_ascii_lowercase().as_str(), "option" | "options") {
         return Err(ApiError::bad_request(
-            "OpenTraderWorld does not send option orders yet. Place this one at your broker; an open position can still be closed from here",
+            "Open FinAI does not send option orders yet. Place this one at your broker; an open position can still be closed from here",
         ));
     }
     Ok(())

@@ -1,6 +1,6 @@
 # Papierhandel
 
-Ein **Papierhandelskonto** ist ein Broker, den OpenTraderWorld selbst führt. Orders an dieses Konto werden zum Live-Preis des Charts ausgeführt, aus dem sie kommen, gegen Ihr eigenes simuliertes Guthaben, mit den Provisionen, dem Slippage und dem Hebel, die Sie festlegen. Kein Schlüssel, kein Handelsplatz, kein echtes Geld.
+Ein **Papierhandelskonto** ist ein Broker, den Open FinAI selbst führt. Orders an dieses Konto werden zum Live-Preis des Charts ausgeführt, aus dem sie kommen, gegen Ihr eigenes simuliertes Guthaben, mit den Provisionen, dem Slippage und dem Hebel, die Sie festlegen. Kein Schlüssel, kein Handelsplatz, kein echtes Geld.
 
 Es wird aus dem Chart genau wie ein echter Broker gehandelt: dasselbe Ticket, dieselbe Schnellleiste, dieselben Order- und Positionslinien, Panel-Tabs und dasselbe Audit-Log. Diese sind unter [Handel aus dem Chart](/de/config/trading) beschrieben; diese Seite behandelt, was nur für Papier gilt.
 

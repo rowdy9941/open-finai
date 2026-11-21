@@ -981,7 +981,7 @@ pub fn ical_calendar(subs: &[Subscription], today: Date, stamp: &str) -> String 
     let mut lines: Vec<String> = vec![
         "BEGIN:VCALENDAR".into(),
         "VERSION:2.0".into(),
-        "PRODID:-//OpenTraderWorld//Subscriptions//EN".into(),
+        "PRODID:-//Open FinAI//Subscriptions//EN".into(),
         "CALSCALE:GREGORIAN".into(),
         "X-WR-CALNAME:Subscriptions".into(),
     ];
@@ -990,7 +990,7 @@ pub fn ical_calendar(subs: &[Subscription], today: Date, stamp: &str) -> String 
             let amount = s.price * s.share();
             let summary = format!("{} {:.2} {}", s.name, amount, s.currency);
             lines.push("BEGIN:VEVENT".into());
-            lines.push(format!("UID:{}-{}@opentraderworld", s.id, ical_day(d)));
+            lines.push(format!("UID:{}-{}@openfinai", s.id, ical_day(d)));
             lines.push(format!("DTSTAMP:{stamp}"));
             lines.push(format!("DTSTART;VALUE=DATE:{}", ical_day(d)));
             lines.push(format!("DTEND;VALUE=DATE:{}", ical_day(d + Duration::days(1))));

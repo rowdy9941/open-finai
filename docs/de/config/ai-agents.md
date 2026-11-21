@@ -1,11 +1,11 @@
 # KI-Agenten (MCP)
 
-OpenTraderWorld liefert einen integrierten **MCP-Server** mit, damit KI-Agenten (jeder [MCP](https://modelcontextprotocol.io)-kompatible Client) deine Module über ein kontrolliertes Gateway lesen und ändern können. Ein Agent kann Journal-Trades für dich erfassen, deine News-Feeds zusammenfassen, ToDos hinzufügen, deine Backtest-Ergebnisse abfragen und so weiter.
+Open FinAI liefert einen integrierten **MCP-Server** mit, damit KI-Agenten (jeder [MCP](https://modelcontextprotocol.io)-kompatible Client) deine Module über ein kontrolliertes Gateway lesen und ändern können. Ein Agent kann Journal-Trades für dich erfassen, deine News-Feeds zusammenfassen, ToDos hinzufügen, deine Backtest-Ergebnisse abfragen und so weiter.
 
 **Standardmäßig ist es aus.** Nichts lauscht auf Agenten, bis du es aktivierst.
 
 ::: tip Du suchst den Chat-Assistenten in der App?
-Diese Seite handelt von **externen** Agenten, die sich *in* OpenTraderWorld verbinden. Den integrierten Chat-Assistenten, der in der App lebt (eigener Anbieter), findest du im [Agent-Modul](/de/modules/agent): Er kann dasselbe Gateway *nutzen*, um deine Daten zu erreichen.
+Diese Seite handelt von **externen** Agenten, die sich *in* Open FinAI verbinden. Den integrierten Chat-Assistenten, der in der App lebt (eigener Anbieter), findest du im [Agent-Modul](/de/modules/agent): Er kann dasselbe Gateway *nutzen*, um deine Daten zu erreichen.
 :::
 
 ## Sicherheitsmodell {#security-model}
@@ -57,7 +57,7 @@ Jeder konforme Client funktioniert. Beispiel für eine MCP-Konfiguration:
 ```json
 {
   "mcpServers": {
-    "opentraderworld": {
+    "openfinai": {
       "type": "http",
       "url": "http://localhost:5454/api/mcp",
       "headers": { "Authorization": "Bearer <TOKEN>" }

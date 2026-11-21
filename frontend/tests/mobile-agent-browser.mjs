@@ -398,7 +398,7 @@ async function mcpFlow(vp) {
     await tap(dialog.getByRole('button', { name: 'Delete' }));
     await dialog.waitFor({ state: 'detached' });
     await tap(page.locator('.card .btn').first());
-    dialog = page.getByRole('dialog', { name: 'Connect OpenTraderWorld' });
+    dialog = page.getByRole('dialog', { name: 'Connect Open FinAI' });
     await dialog.waitFor();
     await dialog.locator('.permrow').first().waitFor();
     if (mobile) {

@@ -68,7 +68,7 @@
         command: JSON.stringify(
           {
             mcpServers: {
-              opentraderworld: {
+              openfinai: {
                 type: 'http',
                 url: endpoint,
                 headers: { Authorization: bearer },
@@ -82,7 +82,7 @@
       {
         id: 'cli',
         label: 'Claude Code / CLI',
-        command: `claude mcp add --transport http opentraderworld ${endpoint} --header "Authorization: ${bearer}"`,
+        command: `claude mcp add --transport http openfinai ${endpoint} --header "Authorization: ${bearer}"`,
       },
     ];
   }

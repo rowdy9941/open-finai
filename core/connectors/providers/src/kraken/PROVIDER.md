@@ -264,7 +264,7 @@ the request reaching our servers". A `W...` string is a warning on a success. Co
 by prefix, without case, the spaces around `:` dropped (`EGeneral:Invalid arguments:ordertype`,
 `EGeneral:Internal error:5`, `EService: Throttled: 1700000000`); the longest code listed wins. A
 refusal reads "Kraken refused it: <the venue's strings> (code <code>)"; an unlisted code
-"Kraken answered code X (...), which OpenTraderWorld does not map" (`Unknown`, alerts). A cancel
+"Kraken answered code X (...), which Open FinAI does not map" (`Unknown`, alerts). A cancel
 answered `count: 0` cancelled nothing: `Rejected(not found)`, and the order is read by its id
 to say how it ended.
 
@@ -272,7 +272,7 @@ to say how it ended.
 | --- | --- | --- | --- |
 | `EAPI:Invalid key` | key missing, malformed or revoked | Auth | fix the key; retrying an unknown key locks the IP out |
 | `EAPI:Invalid signature` | signature mismatch | Auth | fix the secret |
-| `EAPI:Invalid nonce` | nonce not above the last one accepted | Auth | another program uses the key: give OpenTraderWorld its own key, or set a nonce window |
+| `EAPI:Invalid nonce` | nonce not above the last one accepted | Auth | another program uses the key: give Open FinAI its own key, or set a nonce window |
 | `EGeneral:Temporary lockout` | too many unknown keys from the IP, "about 20 minutes" | Auth | wait |
 | `EGeneral:Permission denied` | the key lacks the permission | Permission | add Create & Modify Orders, Cancel/Close Orders |
 | `EAuth:Account temporary disabled` | account suspended | Auth | Kraken support |

@@ -663,7 +663,7 @@ async fn backup_status() -> Json<Value> {
 /// Raw workspace manifest on master. Updates ship as `git pull` from master (see the
 /// Update section), so master's `[workspace.package] version` *is* the latest release.
 const MANIFEST_URL: &str =
-    "https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/core/Cargo.toml";
+    "https://raw.githubusercontent.com/G-OTW/Open FinAI/master/core/Cargo.toml";
 
 /// Successful checks are cached in-process so reopening the Update page doesn't re-hit
 /// GitHub. Failures are not cached: the next open retries.

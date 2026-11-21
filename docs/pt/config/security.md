@@ -49,7 +49,7 @@ Não há código de backup nem e-mail de recuperação, pelo mesmo motivo que n�
 de redefinição de senha. Recupere pelo shell da máquina:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 O segundo fator e seu segredo são removidos e todas as sessões são encerradas. Entre com

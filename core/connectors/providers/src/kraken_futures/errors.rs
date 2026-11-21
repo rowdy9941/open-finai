@@ -80,7 +80,7 @@ fn advice(word: &str) -> Option<&'static str> {
     match word {
         "authenticationError" => Some("check the key and its private key, and that the key belongs to this environment (live or demo)"),
         "nonceBelowThreshold" | "nonceDuplicate" => {
-            Some("another application signs with this key using a larger nonce: give OpenTraderWorld a key of its own")
+            Some("another application signs with this key using a larger nonce: give Open FinAI a key of its own")
         }
         _ => None,
     }

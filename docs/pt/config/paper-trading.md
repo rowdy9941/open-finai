@@ -1,6 +1,6 @@
 # Conta de simulação
 
-Uma **conta de paper trading** é um broker gerido pelo próprio OpenTraderWorld. As ordens que recebe são executadas ao preço em direto do gráfico de onde saem, contra o seu próprio dinheiro simulado, com as comissões, o slippage e a alavancagem que definir. Sem chave, sem mercado, sem dinheiro real.
+Uma **conta de paper trading** é um broker gerido pelo próprio Open FinAI. As ordens que recebe são executadas ao preço em direto do gráfico de onde saem, contra o seu próprio dinheiro simulado, com as comissões, o slippage e a alavancagem que definir. Sem chave, sem mercado, sem dinheiro real.
 
 Negoceia-se a partir do gráfico exatamente como um broker real: o mesmo ticket, a mesma barra rápida, as mesmas linhas de ordens e posições, separadores do painel e registo de auditoria. Estão descritos em [Operar a partir do gráfico](/pt/config/trading); esta página cobre o que é próprio da simulação.
 

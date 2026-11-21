@@ -13,7 +13,7 @@
 //!   the doc does not say which `side` code a one-way order takes, nor how `reduceOnly` ("only
 //!   applicable in one-way mode") combines with it, so every order of a one-way account, a close
 //!   included, is refused before I/O. The margin (`openType`) and leverage are the ones the
-//!   venue holds (`position/leverage`), never chosen by OpenTraderWorld.
+//!   venue holds (`position/leverage`), never chosen by Open FinAI.
 //! - Client id: spot `newClientOrderId`, futures `externalOid` ("max. 32 digit").
 //! - Private streams: spot protobuf frames behind a listen key (made before each connection,
 //!   extended every 30 minutes); futures JSON on `contract.mexc.com/edge`, everything pushed
@@ -724,7 +724,7 @@ impl Mexc {
         // included) takes, so none is sent.
         let side = fut_side_code(p.position, o.side).ok_or_else(|| {
             ConnectorError::unsupported(format!(
-                "{}: this account holds positions in one-way mode, and MEXC's documentation does not say which order side a one-way order takes: OpenTraderWorld sends futures orders in hedge mode only, a close included, so nothing was sent. Switch the futures account to hedge mode at MEXC to trade from here",
+                "{}: this account holds positions in one-way mode, and MEXC's documentation does not say which order side a one-way order takes: Open FinAI sends futures orders in hedge mode only, a close included, so nothing was sent. Switch the futures account to hedge mode at MEXC to trade from here",
                 self.label()
             ))
         })?;

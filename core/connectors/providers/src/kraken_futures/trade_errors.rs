@@ -135,7 +135,7 @@ pub(super) fn of(word: &str, said: Option<&str>) -> VenueError {
     match row(word) {
         Some((_, Unknown, doc)) => VenueError::new(Unknown, Some(word.to_string()), format!("Kraken Futures did not say whether it went through{} (code {word})", words(doc))),
         Some((_, canon, doc)) => VenueError::new(*canon, Some(word.to_string()), format!("Kraken Futures refused it{} (code {word})", words(doc))),
-        None => VenueError::unmapped(Some(word.to_string()), format!("Kraken Futures answered code {word} ({}), which OpenTraderWorld does not map", said.unwrap_or(word))),
+        None => VenueError::unmapped(Some(word.to_string()), format!("Kraken Futures answered code {word} ({}), which Open FinAI does not map", said.unwrap_or(word))),
     }
 }
 
@@ -221,7 +221,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
             let word = st.map(|s| s.status).unwrap_or_default();
             if word.is_empty() {
                 // A success with no status word: nobody can tell what it did.
-                return Some(VenueError::unmapped(None, format!("Kraken Futures answered {endpoint_id} with no status word, which OpenTraderWorld does not map")));
+                return Some(VenueError::unmapped(None, format!("Kraken Futures answered {endpoint_id} with no status word, which Open FinAI does not map")));
             }
             if accepted(endpoint_id, &word) {
                 return None;
@@ -396,7 +396,7 @@ mod tests {
         let t = RawFrame::Timeout { corr_id: otw_connector_model::CorrId(1), endpoint_id: SEND };
         assert_eq!(decode(&t).unwrap().canon, Unknown);
         let e = decode(&http_frame(1, SEND, 200, r#"{"result":"success","sendStatus":{"status":"somethingNew"}}"#)).unwrap();
-        assert!(!e.mapped && e.canon == Unknown && e.message == "Kraken Futures answered code somethingNew (somethingNew), which OpenTraderWorld does not map", "{e:?}");
+        assert!(!e.mapped && e.canon == Unknown && e.message == "Kraken Futures answered code somethingNew (somethingNew), which Open FinAI does not map", "{e:?}");
         // A duplicate client id: looked up, never resent.
         let e = decode(&http_frame(1, SEND, 200, r#"{"result":"success","sendStatus":{"status":"clientOrderIdAlreadyExist"}}"#)).unwrap();
         assert_eq!(e.canon, Unknown);

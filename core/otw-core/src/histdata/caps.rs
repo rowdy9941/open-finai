@@ -736,7 +736,7 @@ static IBKR_FIELDS: &[ConfigField] = &[
         placeholder: "host.docker.internal",
         kind: "text",
         required: true,
-        help: "Where IB Gateway or TWS is running. OpenTraderWorld runs in a container, so its own \
+        help: "Where IB Gateway or TWS is running. Open FinAI runs in a container, so its own \
                localhost is not yours: use host.docker.internal for a gateway on this machine.",
     },
     ConfigField {

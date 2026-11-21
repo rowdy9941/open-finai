@@ -1,11 +1,11 @@
 # Agent IA (MCP)
 
-OpenTraderWorld include un **server MCP** integrato, così gli agent IA (qualsiasi client compatibile con [MCP](https://modelcontextprotocol.io)) possono leggere e aggiornare i tuoi moduli tramite un gateway controllato. Un agent può registrare operazioni nel journal per te, riassumere i tuoi feed di notizie, aggiungere todo, interrogare i risultati dei tuoi backtest, e così via.
+Open FinAI include un **server MCP** integrato, così gli agent IA (qualsiasi client compatibile con [MCP](https://modelcontextprotocol.io)) possono leggere e aggiornare i tuoi moduli tramite un gateway controllato. Un agent può registrare operazioni nel journal per te, riassumere i tuoi feed di notizie, aggiungere todo, interrogare i risultati dei tuoi backtest, e così via.
 
 **È disattivato per impostazione predefinita.** Nulla è in ascolto per gli agent finché non lo abiliti.
 
 ::: tip Cerchi l'assistente chat dentro l'app?
-Questa pagina riguarda gli agent **esterni** che si collegano *a* OpenTraderWorld. Se vuoi l'assistente chat integrato che vive dentro l'app (porta il tuo provider), vedi il [modulo Agent](/it/modules/agent): può *usare* questo stesso gateway per raggiungere i tuoi dati.
+Questa pagina riguarda gli agent **esterni** che si collegano *a* Open FinAI. Se vuoi l'assistente chat integrato che vive dentro l'app (porta il tuo provider), vedi il [modulo Agent](/it/modules/agent): può *usare* questo stesso gateway per raggiungere i tuoi dati.
 :::
 
 ## Modello di sicurezza {#security-model}
@@ -57,7 +57,7 @@ Funziona qualsiasi client conforme. Esempio per una configurazione MCP:
 ```json
 {
   "mcpServers": {
-    "opentraderworld": {
+    "openfinai": {
       "type": "http",
       "url": "http://localhost:5454/api/mcp",
       "headers": { "Authorization": "Bearer <TOKEN>" }

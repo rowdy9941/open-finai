@@ -1,6 +1,6 @@
 # Premiers pas
 
-Vous avez [installé](/fr/guide/install) OpenTraderWorld et vous avez vos identifiants admin. Voici comment le personnaliser.
+Vous avez [installé](/fr/guide/install) Open FinAI et vous avez vos identifiants admin. Voici comment le personnaliser.
 
 ## Se connecter
 

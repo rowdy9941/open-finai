@@ -24,12 +24,12 @@ permissions:
   contents: read
 
 env:
-  NS: opentraderworld
+  NS: openfinai
 
 jobs:
   # ── Build each (image × arch) natively, push by digest ──────────────────────
   build:
-    if: github.repository == 'G-OTW/OpenTraderWorld'
+    if: github.repository == 'G-OTW/Open FinAI'
     strategy:
       fail-fast: false
       matrix:
@@ -62,7 +62,7 @@ jobs:
           platforms: linux/${{ matrix.platform.arch }}
           # Attach a build-provenance attestation and an SBOM to each image.
           #
-          # Without them, someone who pulls opentraderworld/otw-core has no way to check
+          # Without them, someone who pulls openfinai/otw-core has no way to check
           # that the bytes came from this repository and this workflow, and no machine-
           # readable list of what is inside to match against a new advisory. Both are
           # produced by buildx at no cost beyond a few seconds, and `docker buildx

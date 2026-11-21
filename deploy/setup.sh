@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# OpenTraderWorld — infra setup.
+# Open FinAI — infra setup.
 #
 # Interactively collects host-level configuration (ports, domain) and generates
 # strong secrets, writes deploy/.env, then optionally brings the stack up.
@@ -130,7 +130,7 @@ project_volumes() {
   docker volume ls -q --filter "name=^${COMPOSE_PROJECT}_" 2>/dev/null
 }
 
-bold "OpenTraderWorld — setup"
+bold "Open FinAI — setup"
 echo
 
 # Offer to remove leftover data volumes from a previous install before doing anything else.
@@ -309,7 +309,7 @@ prompt_default OTW_LOG "Log level (trace|debug|info|warn|error)" "info"
 bold "4) Secrets"
 info "Generating strong database secrets…"
 POSTGRES_USER="otw"
-POSTGRES_DB="opentraderworld"
+POSTGRES_DB="openfinai"
 POSTGRES_PASSWORD="$(gen_secret)"
 # Master key for encrypting feed secrets (API keys/tokens) at rest. Changing it
 # later makes existing stored secrets unreadable — keep it stable.

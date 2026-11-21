@@ -6,7 +6,7 @@
 //! Run with:
 //! `OTW_BINANCE_TESTNET=<spot account id>,<futures account id> OTW_SECRET_KEY=... cargo test -p otw-core binance_testnet -- --nocapture`.
 //! The keys are read from the running stack's database (`docker exec` on the postgres
-//! container, `OTW_PG_CONTAINER`, default `opentraderworld-postgres-1`) and opened with
+//! container, `OTW_PG_CONTAINER`, default `openfinai-postgres-1`) and opened with
 //! `OTW_SECRET_KEY`; they are never printed.
 
 use std::collections::HashMap;
@@ -18,10 +18,10 @@ use super::{Broker, OrderLeg, OrderTicket};
 
 /// One account's settings and secrets, as `brokers_api::resolve` hands them to a broker.
 fn account(id: &str) -> (String, HashMap<String, String>) {
-    let container = std::env::var("OTW_PG_CONTAINER").unwrap_or_else(|_| "opentraderworld-postgres-1".into());
+    let container = std::env::var("OTW_PG_CONTAINER").unwrap_or_else(|_| "openfinai-postgres-1".into());
     let psql = |sql: &str| -> String {
         let out = std::process::Command::new("docker")
-            .args(["exec", &container, "psql", "-U", "otw", "-d", "opentraderworld", "-At", "-F", "\t", "-c", sql])
+            .args(["exec", &container, "psql", "-U", "otw", "-d", "openfinai", "-At", "-F", "\t", "-c", sql])
             .output()
             .unwrap_or_else(|e| panic!("docker exec: {e}"));
         assert!(out.status.success(), "psql: {}", String::from_utf8_lossy(&out.stderr));

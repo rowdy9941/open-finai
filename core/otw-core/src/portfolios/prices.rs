@@ -34,7 +34,7 @@ const HTTP_TIMEOUT: Duration = Duration::from_secs(20);
 fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(HTTP_TIMEOUT)
-        .user_agent("OpenTraderWorld/portfolios")
+        .user_agent("Open FinAI/portfolios")
         .build()
         .map_err(|e| anyhow!("building http client: {e}"))
 }

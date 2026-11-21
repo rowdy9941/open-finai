@@ -398,7 +398,7 @@ impl RuleRow {
         // No smallest size is published (`minimumTradeSize` "Not populated for any markets")
         // and `maxPositionSize` bounds a position, not an order: the venue checks both.
         v.status = if self.kind != TRADED || !traded(&self.symbol) {
-            TradingStatus::Closed(format!("{}: sized in USD contracts or not a future, not taken by OpenTraderWorld", if self.kind.is_empty() { "unknown type" } else { &self.kind }))
+            TradingStatus::Closed(format!("{}: sized in USD contracts or not a future, not taken by Open FinAI", if self.kind.is_empty() { "unknown type" } else { &self.kind }))
         } else if positive(self.contract_size) != Some(Decimal::ONE) {
             // A multi-collateral contract is one base coin; any other size is not read as one.
             TradingStatus::Closed(format!("contract size {} is not one coin", self.contract_size.0.map(dec_text).unwrap_or_else(|| "none".into())))
@@ -492,7 +492,7 @@ impl KrakenFutures {
             return Ok(());
         }
         Err(ConnectorError::unsupported(format!(
-            "OpenTraderWorld sends Kraken Futures orders on the multi-collateral contracts (PF_, FF_) only: {symbol} is sized in USD contracts or is not a future, nothing was sent"
+            "Open FinAI sends Kraken Futures orders on the multi-collateral contracts (PF_, FF_) only: {symbol} is sized in USD contracts or is not a future, nothing was sent"
         )))
     }
 

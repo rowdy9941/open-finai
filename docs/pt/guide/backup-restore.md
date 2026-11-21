@@ -13,7 +13,7 @@ Dump simples:
 
 ```bash
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  pg_dump -U otw -d opentraderworld --no-owner > otw-backup-$(date +%F).sql
+  pg_dump -U otw -d openfinai --no-owner > otw-backup-$(date +%F).sql
 ```
 
 ### Criptografe (recomendado)
@@ -23,7 +23,7 @@ Um dump contém seus dados em texto claro. Passe-o por `gpg` (ou `age`) para que
 ```bash
 export GPG_TTY=$(tty)
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  pg_dump -U otw -d opentraderworld --no-owner \
+  pg_dump -U otw -d openfinai --no-owner \
   | gpg --symmetric --cipher-algo AES256 --pinentry-mode loopback \
   > otw-backup-$(date +%F).sql.gpg
 ```
@@ -78,11 +78,11 @@ Um dump só se restaura em um banco vazio. O core roda suas migrações a cada i
 ```bash
 docker compose -f deploy/docker-compose.yml stop core
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS opentraderworld"
+  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS openfinai"
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  psql -U otw -d postgres -c "CREATE DATABASE opentraderworld OWNER otw"
+  psql -U otw -d postgres -c "CREATE DATABASE openfinai OWNER otw"
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -q < otw-backup-YYYY-MM-DD.sql
+  psql -U otw -d openfinai -v ON_ERROR_STOP=1 -q < otw-backup-YYYY-MM-DD.sql
 docker compose -f deploy/docker-compose.yml start core
 ```
 
@@ -94,12 +94,12 @@ A partir de um backup criptografado:
 export GPG_TTY=$(tty)
 docker compose -f deploy/docker-compose.yml stop core
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS opentraderworld"
+  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS openfinai"
 docker compose -f deploy/docker-compose.yml exec -T postgres \
-  psql -U otw -d postgres -c "CREATE DATABASE opentraderworld OWNER otw"
+  psql -U otw -d postgres -c "CREATE DATABASE openfinai OWNER otw"
 gpg -d otw-backup-YYYY-MM-DD.sql.gpg \
   | docker compose -f deploy/docker-compose.yml exec -T postgres \
-    psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -q
+    psql -U otw -d openfinai -v ON_ERROR_STOP=1 -q
 docker compose -f deploy/docker-compose.yml start core
 ```
 

@@ -149,7 +149,7 @@ Socket: `wss://api-pub.bitfinex.com/ws/2`, one for both books.
 - Nonce: Bitfinex only asks that it strictly increase per key and stay below 2^53 (docs).
   It is microseconds, as Bitfinex's JavaScript example and libraries write it, from a
   process-wide counter. A key also used by another program with larger nonces is refused
-  (10114 `nonce: small`): the refusal says to give OpenTraderWorld a key of its own (the
+  (10114 `nonce: small`): the refusal says to give Open FinAI a key of its own (the
   docs' advice for several clients).
 - Clock: none to read. `SyncTime` is not declared; the nonce is a counter, not a time window.
 - Secrets: `api_key`, `api_secret`. A read-only key needs read access to the `account`,
@@ -272,7 +272,7 @@ naming cancel and replace.
 
 ### Client order id
 
-`cid`, an integer of at most 45 bits, "unique in the day (UTC+0)", not enforced. OpenTraderWorld
+`cid`, an integer of at most 45 bits, "unique in the day (UTC+0)", not enforced. Open FinAI
 mints it (`mints_client_ids`): the milliseconds of the venue clock it was made at, as the doc's
 own examples do (`cid: Date.now()`), strictly increasing across the process, stored with the leg
 before anything leaves, handed back after a restart. Its `cid_date` is its
@@ -327,7 +327,7 @@ an unknown mode. Retrieve Positions takes no symbol: a read for one instrument k
 instrument's rows (an endpoint id per instrument, `positions:<symbol>`, at most 512 held). Margin
 rows (`TYPE` 0, spot pairs) are not this book's.
 
-Leverage: OpenTraderWorld never chooses it. An order carries `lev` = the leverage the working
+Leverage: Open FinAI never chooses it. An order carries `lev` = the leverage the working
 orders on the instrument state (`META.$F33`, "Leverage (int)", Retrieve Orders by symbol, read
 before the order when none is held, held until a positions read or a flat stream frame). None
 states one, or they state different ones: no `lev`, and the venue applies its own default
@@ -353,7 +353,7 @@ Read from the body before the HTTP status: a refusal is `["error", CODE, "messag
 | notification `ERROR` or `FAILURE` on a cancel | Rejected(Final): the order is read by its id; already final is no error, still working shows the refusal |
 | notification with another status word | Unknown, alerts |
 | HTTP 5xx without the error array, a timeout, an answer not read | Unknown |
-| any other code | Unknown: "Bitfinex answered code X (msg), which OpenTraderWorld does not map", alerts |
+| any other code | Unknown: "Bitfinex answered code X (msg), which Open FinAI does not map", alerts |
 
 The read path (`errors.rs`) keeps its own mapping: there 10000, 10008, 11000 and 20060 are
 Transient; on the order path they are Unknown. 11010 (`ratelimit: error`, ccxt only, not in the
@@ -386,7 +386,7 @@ says which), positions `ps`/`pn`/`pu`/`pc` (`pc`, and a `pn`/`pu` whose status i
 whose amount is 0, read as flat), trades `te` (no fee yet) and
 `tu` (with the fee). Each book reads its own symbols. `info` 20051 and 20061 reconnect; 20060
 ("maintenance starting", "pause any activity") is held: while it is announced, a new order
-(and a position close) sent through OpenTraderWorld is refused at once, naming the
+(and a position close) sent through Open FinAI is refused at once, naming the
 maintenance; cancels still go out. Nothing is queued, held or retried. 20061 or a reconnect
 clears it. Orders are never sent over the socket: its inputs carry no request id to match
 an answer by.
@@ -394,7 +394,7 @@ an answer by.
 ### Disconnect behaviour
 
 No dead man's switch (`dms: 4` "when socket is closed, cancel all account orders": every book,
-every program): never asked for. Working orders stay working when OpenTraderWorld stops.
+every program): never asked for. Working orders stay working when Open FinAI stops.
 
 ### Dry-run
 
@@ -424,7 +424,7 @@ treated as a live one (E2D opt-in), and its `TEST` pairs are left out of the lis
   leverage; whether all working orders on one instrument always state the same `$F33`.
 - Whether Update Order without `flags` keeps or clears post-only and reduce-only (not sent).
 - `info` 20060 asks to "pause any activity" until 20061, without saying whether orders sent
-  meanwhile are refused or queued: OpenTraderWorld refuses new ones itself until 20061 or a
+  meanwhile are refused or queued: Open FinAI refuses new ones itself until 20061 or a
   reconnect; cancels are not held back.
 - The stop's trigger price source (last, mark); the status of a stop not yet triggered.
 - The unit of `MIN_ORDER_SIZE`/`MAX_ORDER_SIZE` and the contract size of a perpetual (base coin

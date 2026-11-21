@@ -60,7 +60,7 @@ Para abrir el firewall del proveedor:
 
 ### "Something on this machine is already answering on port 80 / 443"
 
-**Por qué:** tu proveedor instaló un servidor web en la máquina por ti. Ocupa el lugar que necesita OpenTraderWorld.
+**Por qué:** tu proveedor instaló un servidor web en la máquina por ti. Ocupa el lugar que necesita Open FinAI.
 
 Pega esto y luego ejecuta de nuevo la misma línea:
 
@@ -70,7 +70,7 @@ systemctl disable --now apache2 nginx caddy 2>/dev/null; true
 
 ### "This machine has … MB of memory" o "Only … MB of disk space is free"
 
-**Por qué:** la máquina es demasiado pequeña. OpenTraderWorld necesita unos **2 GB de memoria** y **8 GB de disco libre**.
+**Por qué:** la máquina es demasiado pequeña. Open FinAI necesita unos **2 GB de memoria** y **8 GB de disco libre**.
 
 1. En tu proveedor, cambia la máquina a un plan mayor.
 2. Ejecuta de nuevo la misma línea.
@@ -120,13 +120,13 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
 
 ¿Perdiste ese ordenador o esa contraseña? Usa la **consola** (a veces llamada **VNC**, **rescate** o **terminal web**) en el panel de control de tu proveedor. Funciona incluso cuando la vía normal de entrada está cerrada.
 
-### Olvidé la contraseña de OpenTraderWorld
+### Olvidé la contraseña de Open FinAI
 
 1. Inicia sesión en tu máquina.
 2. Escribe (sustituye `admin` por tu nombre de usuario si lo cambiaste):
 
    ```bash
-   docker exec -it opentraderworld-core-1 /app/otw-core reset-password admin
+   docker exec -it openfinai-core-1 /app/otw-core reset-password admin
    ```
 
 3. Inicia sesión en la app con la contraseña que imprime. La app te pide que elijas una nueva.
@@ -171,14 +171,14 @@ Puedes darle al instalador sus respuestas en la misma línea, después de `--dom
 | `--domain <name>` | La dirección que ya apunta a la máquina. |
 | `--login key` o `--login password` | Cómo inicias sesión en la máquina a partir de ahora: con la clave que ya usas, o con una contraseña. |
 | `--user <name>` | La cuenta de uso diario en la máquina. Por defecto: con la que iniciaste sesión, u `otw` si entraste como `root`. |
-| `--admin-user <name>` | Tu nombre de usuario de OpenTraderWorld. Por defecto: `admin`. |
+| `--admin-user <name>` | Tu nombre de usuario de Open FinAI. Por defecto: `admin`. |
 | `--ssh-key <key>` | Una clave pública autorizada a iniciar sesión. Repítela para más de una. Por defecto: las claves ya autorizadas. |
 | `--ssh-port <n>` | El puerto por el que se llega a la máquina. Por defecto: el que ya usa, si no `22`. |
 | `--dir <path>` | Dónde se instala. Por defecto: `/home/<user>/otw`. |
 | `--timezone <zone>` | La zona horaria de la máquina, por ejemplo `Europe/Paris`. Por defecto: se deja como está. |
 | `--swap <size>` | Tamaño del archivo de swap, por ejemplo `2G`, o `none`. Por defecto: `2G` en una máquina con menos de 4 GB de memoria. |
 | `--ref <ref>` | La versión que instalar: una etiqueta de release o una rama. Por defecto: `master`. |
-| `--repo <owner/name>` | El repositorio de GitHub desde el que instalar. Por defecto: `G-OTW/OpenTraderWorld`. |
+| `--repo <owner/name>` | El repositorio de GitHub desde el que instalar. Por defecto: `G-OTW/Open FinAI`. |
 | `--yes` | No pregunta nada y toma todos los valores por defecto. |
 
 ## ¿Sigues atascado?
@@ -191,4 +191,4 @@ Puedes darle al instalador sus respuestas en la misma línea, después de `--dom
    ```
 
 3. Escribe un archivo e imprime dónde está. El archivo no contiene ninguna contraseña.
-4. Abre un issue en [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues), cuenta qué estabas haciendo y adjunta ese archivo.
+4. Abre un issue en [GitHub](https://github.com/G-OTW/Open FinAI/issues), cuenta qué estabas haciendo y adjunta ese archivo.

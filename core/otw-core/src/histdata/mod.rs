@@ -503,7 +503,7 @@ pub(crate) fn enc(v: &str) -> String {
 pub fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(TIMEOUT)
-        .user_agent("OpenTraderWorld/histdata")
+        .user_agent("Open FinAI/histdata")
         .build()
         .map_err(|e| anyhow!("building histdata http client: {e}"))
 }

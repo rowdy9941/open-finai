@@ -62,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dashboard: the welcome card's layout step can be marked done without editing, and the card retires once every step is done.
 - Backtest: a grid backtest trades the venue's lot step and minimum size.
 - Dependencies: Tiptap, Vite, Playwright, jsdom, uuid and zip are up to date.
-- Brokers: an account's positions are no longer watched for drift, so trading outside OpenTraderWorld raises no alert and no halt; a bot still checks its own instruments.
+- Brokers: an account's positions are no longer watched for drift, so trading outside Open FinAI raises no alert and no halt; a bot still checks its own instruments.
 
 
 ### Fixed
@@ -295,7 +295,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Brokers: trading accounts are reconciled with the broker on start and on a cycle: missed fills and cancels take the broker's state, orders placed elsewhere are noted, and position drift is logged and notified.
 - Brokers: Binance spot and USDⓈ-M accounts follow the venue live, so a chart's orders and futures positions update as Binance pushes them.
 - Brokers: Binance orders are checked against every venue filter (notional, price band, market lot, open-order caps) before sending, with the nearest valid values named.
-- Brokers: Binance USDⓈ-M brackets and OCO pairs are linked again after a restart, and a dead man's switch cancels their orders if OpenTraderWorld goes away.
+- Brokers: Binance USDⓈ-M brackets and OCO pairs are linked again after a restart, and a dead man's switch cancels their orders if Open FinAI goes away.
 - Brokers: Binance order bursts over the account limit are refused with the time to retry, and a live key is checked (trading on, withdrawals off, IP restricted) and the first order dry run before anything is sent.
 - Charts: the positions tab shows Binance USDⓈ-M leverage and margin mode, and the Binance spot account tab shows USDT cash and, on live, the wallet value.
 - Brokers (IBKR): an order size under the contract's minimum or off its step is refused before sending.
@@ -513,7 +513,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tax: French crypto follows the global-portfolio formula, with the 305 EUR threshold.
 - Tax: **loss carry-forward registry** per profile, with each loss's expiry year.
 - Journal: **SL/TP signals** replay closed trades under 30 simple stops, targets and indicator exits, ranked against your real exits with curves, per-trade charts and an agent to tune them.
-- Install: `--admin-user` on the server installer sets the OpenTraderWorld login name.
+- Install: `--admin-user` on the server installer sets the Open FinAI login name.
 - Docs: **When it breaks**, the common hosting problems with what to do, and a link to the guided install on the website.
 - AI agents: **Call log** in Settings, every agent tool call of the last 30 days with its failure rate, causes and slowest endpoints.
 - AI agents: writes accept a retry key, so a write retried after a timeout is not booked twice.
@@ -648,7 +648,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dashboard: a widget body adapts to the width of its card, so a two-part block stacks in a narrow tile and splits in two columns in a wide one.
 - Dashboard: a widget is titled by what it shows, not by the module it comes from.
 - Modules: the module switcher lists modules alphabetically, dashboard first.
-- Interface: a new OpenTraderWorld logo in the rail and the browser tab, drawn for the active theme.
+- Interface: a new Open FinAI logo in the rail and the browser tab, drawn for the active theme.
 - Appearance: the default accent colour is now sage green.
 - Dashboard: the Portfolio preset is rearranged so its cards read in the order you use them.
 
@@ -1023,27 +1023,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2026-07-06
 
-[Unreleased]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.5...HEAD
-[0.1.5]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.4...v0.1.5
-[0.1.4]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.3...v0.1.4
-[0.1.3]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.2...v0.1.3
-[0.1.2]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.17...v0.1.0
-[0.0.17]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.16...v0.0.17
-[0.0.16]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.15...v0.0.16
-[0.0.15]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.14...v0.0.15
-[0.0.14]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.13...v0.0.14
-[0.0.13]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.12...v0.0.13
-[0.0.12]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.11...v0.0.12
-[0.0.11]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.10...v0.0.11
-[0.0.10]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.9...v0.0.10
-[0.0.9]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.8...v0.0.9
-[0.0.8]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.7...v0.0.8
-[0.0.7]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.6...v0.0.7
-[0.0.6]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.5...v0.0.6
-[0.0.5]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.4...v0.0.5
-[0.0.4]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.3...v0.0.4
-[0.0.3]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.2...v0.0.3
-[0.0.2]: https://github.com/G-OTW/OpenTraderWorld/compare/v0.0.1...v0.0.2
-[0.0.1]: https://github.com/G-OTW/OpenTraderWorld/releases/tag/v0.0.1
+[Unreleased]: https://github.com/G-OTW/Open FinAI/compare/v0.1.5...HEAD
+[0.1.5]: https://github.com/G-OTW/Open FinAI/compare/v0.1.4...v0.1.5
+[0.1.4]: https://github.com/G-OTW/Open FinAI/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.com/G-OTW/Open FinAI/compare/v0.1.2...v0.1.3
+[0.1.2]: https://github.com/G-OTW/Open FinAI/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/G-OTW/Open FinAI/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/G-OTW/Open FinAI/compare/v0.0.17...v0.1.0
+[0.0.17]: https://github.com/G-OTW/Open FinAI/compare/v0.0.16...v0.0.17
+[0.0.16]: https://github.com/G-OTW/Open FinAI/compare/v0.0.15...v0.0.16
+[0.0.15]: https://github.com/G-OTW/Open FinAI/compare/v0.0.14...v0.0.15
+[0.0.14]: https://github.com/G-OTW/Open FinAI/compare/v0.0.13...v0.0.14
+[0.0.13]: https://github.com/G-OTW/Open FinAI/compare/v0.0.12...v0.0.13
+[0.0.12]: https://github.com/G-OTW/Open FinAI/compare/v0.0.11...v0.0.12
+[0.0.11]: https://github.com/G-OTW/Open FinAI/compare/v0.0.10...v0.0.11
+[0.0.10]: https://github.com/G-OTW/Open FinAI/compare/v0.0.9...v0.0.10
+[0.0.9]: https://github.com/G-OTW/Open FinAI/compare/v0.0.8...v0.0.9
+[0.0.8]: https://github.com/G-OTW/Open FinAI/compare/v0.0.7...v0.0.8
+[0.0.7]: https://github.com/G-OTW/Open FinAI/compare/v0.0.6...v0.0.7
+[0.0.6]: https://github.com/G-OTW/Open FinAI/compare/v0.0.5...v0.0.6
+[0.0.5]: https://github.com/G-OTW/Open FinAI/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/G-OTW/Open FinAI/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/G-OTW/Open FinAI/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/G-OTW/Open FinAI/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/G-OTW/Open FinAI/releases/tag/v0.0.1

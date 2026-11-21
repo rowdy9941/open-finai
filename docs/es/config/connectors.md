@@ -121,7 +121,7 @@ El tercero con clave cuya clave es la de la cuenta: Capital.com no emite credenc
 
 El caso aparte: no hay URL de proveedor ni clave API. Ejecutas **IB Gateway** o **TWS** en tu propia máquina y el connector habla su protocolo de socket, así que lo que lleva es una **dirección**, no una credencial: un host y un puerto, almacenados en claro para poder diagnosticar una conexión fallida. Los datos son los que tu cuenta de IB tenga contratados.
 
-- **Ajustes**: *Gateway host* (`host.docker.internal` para un gateway en la misma máquina, ya que OpenTraderWorld se ejecuta en un contenedor) y *API port* (4001 live / 4002 paper para el Gateway, 7496 / 7497 para TWS).
+- **Ajustes**: *Gateway host* (`host.docker.internal` para un gateway en la misma máquina, ya que Open FinAI se ejecuta en un contenedor) y *API port* (4001 live / 4002 paper para el Gateway, 7496 / 7497 para TWS).
 - **En el gateway**: Global Configuration → API → Settings, marca *Enable ActiveX and Socket Clients* y comprueba que el puerto coincide. En Docker Desktop la llamada llega desde el loopback del host, así que *Allow connections from localhost only* ya la cubre; en Docker Engine desmárcalo y añade `172.28.53.10` a *Trusted IPs*, que admite direcciones sueltas y no un rango.
 - **Test connection** informa de lo que respondió, y nombra el ajuste a cambiar cuando nada responde.
 - **Tickers**: `AAPL`, `SAN:EUR` o `7203@TSEJ:JPY` para acciones, `EURUSD` para un par cash, un símbolo OCC para una opción. Un futuro se escribe con su mes, `ES.202512`, o con el símbolo local que muestra TWS, `MNQU6`. Los futuros se buscan en el gateway antes de descargar nada, así que el exchange es opcional: cuando el ticker nombra más de un listado, el error los lista y eliges.

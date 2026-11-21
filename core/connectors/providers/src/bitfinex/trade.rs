@@ -325,7 +325,7 @@ impl Bitfinex {
             (OrderType::Stop | OrderType::StopLimit, _) => {
                 return Err(ConnectorError::invalid("Bitfinex takes a stop good till cancelled or till a date only: immediate-or-cancel and fill-or-kill are limit orders there"))
             }
-            (t, tif) => return Err(ConnectorError::unsupported(format!("Bitfinex takes no {t:?} order with {tif:?} from OpenTraderWorld"))),
+            (t, tif) => return Err(ConnectorError::unsupported(format!("Bitfinex takes no {t:?} order with {tif:?} from Open FinAI"))),
         };
         Ok(match self.book() {
             Book::Spot => format!("EXCHANGE {base}"),
@@ -363,7 +363,7 @@ impl Bitfinex {
                 b.insert("price".into(), json!(dec_text(stop.ok_or_else(|| ConnectorError::invalid("a stop limit needs its trigger price"))?)));
                 b.insert("price_aux_limit".into(), json!(dec_text(limit.ok_or_else(|| ConnectorError::invalid("a stop limit needs its limit price"))?)));
             }
-            other => return Err(ConnectorError::unsupported(format!("Bitfinex takes no {other:?} order from OpenTraderWorld"))),
+            other => return Err(ConnectorError::unsupported(format!("Bitfinex takes no {other:?} order from Open FinAI"))),
         }
         let mut flags = 0;
         if o.opts.post_only {
@@ -675,7 +675,7 @@ impl TradeMapper for Bitfinex {
                     b.insert("price_aux_limit".into(), json!(dec_text(l)));
                 }
             }
-            other => return Err(ConnectorError::unsupported(format!("Bitfinex: a {other} order is not changed from OpenTraderWorld: cancel it and place a new one"))),
+            other => return Err(ConnectorError::unsupported(format!("Bitfinex: a {other} order is not changed from Open FinAI: cancel it and place a new one"))),
         }
         if self.on_derivatives() {
             // The order's own (`META.$F33` of the read just made), else the one a working order

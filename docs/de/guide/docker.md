@@ -1,6 +1,6 @@
 # Docker besorgen
 
-OpenTraderWorld wird als Satz von Docker-Containern ausgeliefert, und das ist derzeit der **einzige unterstützte Weg, es zu betreiben**. Eine native Installation (Rust-Core, PostgreSQL und Frontend direkt auf dem Host) ist möglich, wenn du weißt, was du tust, wird aber **weder empfohlen noch dokumentiert**. Docker hat bewusst Vorrang:
+Open FinAI wird als Satz von Docker-Containern ausgeliefert, und das ist derzeit der **einzige unterstützte Weg, es zu betreiben**. Eine native Installation (Rust-Core, PostgreSQL und Frontend direkt auf dem Host) ist möglich, wenn du weißt, was du tust, wird aber **weder empfohlen noch dokumentiert**. Docker hat bewusst Vorrang:
 
 - **Unaufdringlich**: Außer Docker selbst wird nichts auf deinem System installiert. App, Datenbank und Proxy laufen in Containern; deine Daten liegen in benannten Volumes. Alles zu entfernen heißt `docker compose down -v` und das Löschen des Ordners.
 - **Überall identisch**: Derselbe Stack läuft unverändert auf macOS, Linux und Windows.
@@ -35,7 +35,7 @@ Installiere **Docker Desktop** mit dem WSL-2-Backend:
 
 3. Starte Docker Desktop und lass die Standardeinstellung *Use WSL 2* aktiv.
 
-Führe die OpenTraderWorld-Befehle (das Installationsprogramm, `setup.sh`, die Sicherungen) in einer WSL-Shell aus: Es sind Bash-Skripte. Docker Desktop stellt `docker` dort für deine Standard-WSL-Distribution bereit. Docker Compose ist enthalten.
+Führe die Open FinAI-Befehle (das Installationsprogramm, `setup.sh`, die Sicherungen) in einer WSL-Shell aus: Es sind Bash-Skripte. Docker Desktop stellt `docker` dort für deine Standard-WSL-Distribution bereit. Docker Compose ist enthalten.
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 Alle drei gelingen → du bist bereit.
 
-## OpenTraderWorld bereitstellen
+## Open FinAI bereitstellen
 
 Ein Befehl, dann den Eingaben folgen:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 Die vollständige Anleitung (was die Eingaben bedeuten, Optionen, manuelle Alternative, Ergebnis prüfen) steht auf der Seite [Installation](/de/guide/install).

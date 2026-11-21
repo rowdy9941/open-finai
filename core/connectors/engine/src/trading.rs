@@ -1125,7 +1125,7 @@ impl<M: TradeMapper> Trader<M> {
             m.check_order(o).map_err(refused)?;
         }
         if orders.iter().any(|o| o.oca_group.is_some()) {
-            return Err(refused(ConnectorError::unsupported(format!("{} takes no one-cancels-other group from OpenTraderWorld", m.venue_name()))));
+            return Err(refused(ConnectorError::unsupported(format!("{} takes no one-cancels-other group from Open FinAI", m.venue_name()))));
         }
         attached_exits(m.venue_name(), orders).map_err(refused)?;
         let cids = orders.iter().map(|o| self.client_for_send(d, a, &o.client_order_id)).collect::<Result<Vec<_>, _>>().map_err(refused)?;
@@ -1570,7 +1570,7 @@ impl<M: TradeMapper> Trader<M> {
                 Mapped::Known(_) => Err(refused(e.to_connector())),
                 Mapped::Unknown(w) => Err(TradeError::Unknown {
                     keys: Vec::new(),
-                    message: format!("{}: order {venue_id} is in a state OpenTraderWorld does not know ({w}): check it at the venue", m.venue_name()),
+                    message: format!("{}: order {venue_id} is in a state Open FinAI does not know ({w}): check it at the venue", m.venue_name()),
                     alert: true,
                 }),
             },
@@ -1712,7 +1712,7 @@ impl<M: TradeMapper> Trader<M> {
             Mapped::Known(_) => Err(said(format!("{venue}: the change to {venue_id} was not made: the order, read again just now, still works unchanged ({})", e.message))),
             Mapped::Unknown(w) => Err(TradeError::Unknown {
                 keys: Vec::new(),
-                message: format!("{venue}: after the change to {venue_id}, the order is in a state OpenTraderWorld does not know ({w}): check it at the venue ({})", e.message),
+                message: format!("{venue}: after the change to {venue_id}, the order is in a state Open FinAI does not know ({w}): check it at the venue ({})", e.message),
                 alert: true,
             }),
         }
@@ -1726,7 +1726,7 @@ impl<M: TradeMapper> Trader<M> {
         let venue = m.venue_name();
         let old = cur.client_id.as_deref().and_then(|c| self.otw_key(d, a, c)).filter(|k| !k.is_empty()).ok_or_else(|| {
             refused(ConnectorError::invalid(format!(
-                "{venue} changes an order by replacing it under a new client id, and {} has none (placed outside OpenTraderWorld): cancel it and place a new one",
+                "{venue} changes an order by replacing it under a new client id, and {} has none (placed outside Open FinAI): cancel it and place a new one",
                 cur.venue_id
             )))
         })?;
@@ -1938,5 +1938,5 @@ enum LegFailure {
 }
 
 fn unmapped_read<M: TradeMapper>(m: &M, e: &ConnectorError) -> TradeError {
-    TradeError::Unknown { keys: Vec::new(), message: format!("{}: an order answer OpenTraderWorld could not read ({})", m.venue_name(), e.message), alert: true }
+    TradeError::Unknown { keys: Vec::new(), message: format!("{}: an order answer Open FinAI could not read ({})", m.venue_name(), e.message), alert: true }
 }

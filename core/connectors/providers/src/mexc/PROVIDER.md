@@ -366,7 +366,7 @@ access reopened.", F/update-log). It needs KYC (F/integration-guide) and a contr
 ### Errors
 
 Lost answers are Unknown: looked up by the client id, never sent again. A code neither table
-lists is Unknown, unmapped, and alerts ("MEXC answered code X (msg), which OpenTraderWorld does
+lists is Unknown, unmapped, and alerts ("MEXC answered code X (msg), which Open FinAI does
 not map"); a refusal reads "MEXC refused it: msg (code X)", a Permission one names the fix.
 HTTP 5xx and timeouts are Unknown ("the execution status is UNKNOWN and could have been a
 success", GH-S "HTTP Return Codes"); HTTP 429 and 418 are RateLimited with `Retry-After` in

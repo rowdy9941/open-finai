@@ -1,11 +1,11 @@
 # Agent
 
-Ein integrierter **KI-Chat-Assistent**: ein Chat-Bereich in der App, der auch auf deine OpenTraderWorld-Daten zugreifen kann. Öffne ihn über das Modul **Agent**, das Gehirn-Symbol in der oberen Leiste (neben der Suche) oder die [schwebende Schaltfläche](#the-floating-assistant) in der Ecke jeder Seite.
+Ein integrierter **KI-Chat-Assistent**: ein Chat-Bereich in der App, der auch auf deine Open FinAI-Daten zugreifen kann. Öffne ihn über das Modul **Agent**, das Gehirn-Symbol in der oberen Leiste (neben der Suche) oder die [schwebende Schaltfläche](#the-floating-assistant) in der Ecke jeder Seite.
 
 Der Assistent ist **Bring-your-own-Provider**: Nichts ist aktiviert oder herstellerseitig voreingestellt, bis du einen eigenen Anbieter und Schlüssel hinzufügst.
 
 ::: tip Zwei verschiedene „KI-Agenten“
-Diese Seite handelt vom **Chat-Assistenten, der in der App lebt** und mit einem Anbieter spricht, den *du* konfigurierst. Das ist nicht dasselbe wie die Seite [KI-Agenten (MCP)](/de/config/ai-agents), die von *externen* Agenten handelt, die sich über das integrierte MCP-Gateway **in** OpenTraderWorld verbinden. Der Chat-Assistent kann dasselbe Gateway *nutzen*, um deine Daten zu erreichen: siehe [Werkzeuge](#tools-over-your-data) unten.
+Diese Seite handelt vom **Chat-Assistenten, der in der App lebt** und mit einem Anbieter spricht, den *du* konfigurierst. Das ist nicht dasselbe wie die Seite [KI-Agenten (MCP)](/de/config/ai-agents), die von *externen* Agenten handelt, die sich über das integrierte MCP-Gateway **in** Open FinAI verbinden. Der Chat-Assistent kann dasselbe Gateway *nutzen*, um deine Daten zu erreichen: siehe [Werkzeuge](#tools-over-your-data) unten.
 :::
 
 ## Einen Anbieter hinzufügen
@@ -134,7 +134,7 @@ Jede Unterhaltung trägt **ihr eigenes** MCP-Token (das in den Einstellungen ges
 
 **Agent → Server verwalten** ist ein Vollseitenbereich zum Hinzufügen entfernter MCP-Server, damit der Assistent externe Plattformen erreichen kann:
 
-- ein **Katalog** mit dem integrierten **OpenTraderWorld**-Gateway, das auf **Einstellungen → MCP** verweist, statt hinzugefügt zu werden (der Assistent erreicht es In-Process), plus **eigene Server** per URL;
+- ein **Katalog** mit dem integrierten **Open FinAI**-Gateway, das auf **Einstellungen → MCP** verweist, statt hinzugefügt zu werden (der Assistent erreicht es In-Process), plus **eigene Server** per URL;
 - **nur Streamable HTTP**: Nichts wird je lokal ausgeführt;
 - Authentifizierungswerte sind **im Ruhezustand verschlüsselt und nur schreibbar**;
 - eine Schaltfläche **Testen** verbindet und listet die Werkzeuge des Servers;

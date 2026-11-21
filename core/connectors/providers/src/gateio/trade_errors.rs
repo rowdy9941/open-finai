@@ -159,7 +159,7 @@ pub(super) fn mapped(label: &str, msg: &str) -> VenueError {
     let msg = if msg.trim().is_empty() { label } else { msg.trim() };
     match row(label) {
         Some((_, canon, _)) => VenueError::new(*canon, Some(label.to_string()), format!("Gate.io refused it: {msg} (code {label})")),
-        None => VenueError::unmapped(Some(label.to_string()), format!("Gate.io answered code {label} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(label.to_string()), format!("Gate.io answered code {label} ({msg}), which Open FinAI does not map")),
     }
 }
 
@@ -246,7 +246,7 @@ mod tests {
         }
         let e = decode(&http_frame(1, "spot_create", 400, r#"{"label":"SOMETHING_NEW","message":"new"}"#), false).unwrap();
         assert_eq!((e.canon, e.mapped), (Unknown, false));
-        assert_eq!(e.message, "Gate.io answered code SOMETHING_NEW (new), which OpenTraderWorld does not map");
+        assert_eq!(e.message, "Gate.io answered code SOMETHING_NEW (new), which Open FinAI does not map");
         assert!(decode(&http_frame(1, "spot_create", 201, r#"{"id":"1"}"#), false).is_none());
         assert!(decode(&http_frame(1, "spot_cancel", 204, ""), false).is_none());
     }

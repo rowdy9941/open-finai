@@ -1,6 +1,6 @@
 # Get Docker
 
-OpenTraderWorld ships as a set of Docker containers, and that is currently the **only supported way to run it**. A native install (running the Rust core, PostgreSQL and the frontend directly on the host) is possible if you know what you're doing, but it is **not recommended or documented**. Docker is prioritized on purpose:
+Open FinAI ships as a set of Docker containers, and that is currently the **only supported way to run it**. A native install (running the Rust core, PostgreSQL and the frontend directly on the host) is possible if you know what you're doing, but it is **not recommended or documented**. Docker is prioritized on purpose:
 
 - **Non-intrusive**: nothing is installed on your system except Docker itself. The app, database and proxy live in containers; your data lives in named volumes. Removing everything is `docker compose down -v` plus deleting the folder.
 - **Identical everywhere**: the same stack runs unchanged on macOS, Linux and Windows.
@@ -35,7 +35,7 @@ Install **Docker Desktop** with the WSL 2 backend:
 
 3. Launch Docker Desktop and keep the default *Use WSL 2* setting.
 
-Run the OpenTraderWorld commands (the installer, `setup.sh`, the backups) from a WSL shell: they are bash scripts. Docker Desktop makes `docker` available there for your default WSL distribution. Docker Compose is included.
+Run the Open FinAI commands (the installer, `setup.sh`, the backups) from a WSL shell: they are bash scripts. Docker Desktop makes `docker` available there for your default WSL distribution. Docker Compose is included.
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 All three succeed → you're ready.
 
-## Deploy OpenTraderWorld
+## Deploy Open FinAI
 
 One command, then follow the prompts:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 The full walkthrough (what the prompts mean, options, manual alternative, verifying the result) is on the [Installation](/guide/install) page.

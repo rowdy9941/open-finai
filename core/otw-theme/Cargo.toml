@@ -4,6 +4,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld: Theming: design tokens and swappable theme packs"
+description = "Open FinAI: Theming: design tokens and swappable theme packs"
 
 [dependencies]

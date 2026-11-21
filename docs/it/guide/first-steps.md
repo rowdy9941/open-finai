@@ -1,6 +1,6 @@
 # Primi passi
 
-Hai [installato](/it/guide/install) OpenTraderWorld e hai le credenziali admin. Ecco come renderlo tuo.
+Hai [installato](/it/guide/install) Open FinAI e hai le credenziali admin. Ecco come renderlo tuo.
 
 ## Accedere
 

@@ -121,7 +121,7 @@
 
 特殊的一个：没有供应商 URL，也没有 API 密钥。你在自己的机器上运行 **IB Gateway** 或 **TWS**，connector 使用它的 socket 协议，所以它携带的是一个**地址**而不是凭据：主机和端口，以明文存储，以便在连接失败时诊断。数据取决于你的 IB 账户所订阅的内容。
 
-- **设置**：*Gateway host*（同一台机器上的 gateway 用 `host.docker.internal`，因为 OpenTraderWorld 在容器中运行）和 *API port*（Gateway 为 4001 实盘 / 4002 模拟，TWS 为 7496 / 7497）。
+- **设置**：*Gateway host*（同一台机器上的 gateway 用 `host.docker.internal`，因为 Open FinAI 在容器中运行）和 *API port*（Gateway 为 4001 实盘 / 4002 模拟，TWS 为 7496 / 7497）。
 - **在 gateway 中**：Global Configuration → API → Settings，勾选 *Enable ActiveX and Socket Clients*，并检查端口一致。在 Docker Desktop 上，调用来自主机回环，所以 *Allow connections from localhost only* 已经涵盖了它；在 Docker Engine 上，请取消勾选，并将 `172.28.53.10` 加入 *Trusted IPs*，它只接受单个地址，而不接受范围。
 - **测试连接**会报告是什么应答了，并在没有任何应答时指出要更改的设置。
 - **代码**：股票用 `AAPL`、`SAN:EUR` 或 `7203@TSEJ:JPY`，现金货币对用 `EURUSD`，期权用 OCC 代码。期货写成带月份的形式 `ES.202512`，或使用 TWS 显示的本地代码 `MNQU6`。期货在下载任何内容之前会先向 gateway 查询，所以交易所是可选的：当代码对应多个上市地时，错误信息会列出它们，由你选择。

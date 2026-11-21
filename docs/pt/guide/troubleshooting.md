@@ -33,16 +33,16 @@ Não há e-mail de redefinição nem formulário de redefinição sem autentica�
 Abra um shell na máquina que roda o OTW e gere uma senha de uso único:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
+docker exec -it openfinai-core-1 /app/otw-core reset-password USERNAME
 ```
 
 Entre com ela; o app pede uma nova imediatamente.
 
 | Caso | O que executar |
 |---|---|
-| Esqueci o nome de usuário também | `docker exec opentraderworld-core-1 /app/otw-core list-users` |
-| Escolher a senha eu mesmo | `printf '%s' 'my-new-password' \| docker exec -i opentraderworld-core-1 /app/otw-core reset-password USERNAME --stdin` |
-| Contêiner com outro nome | `docker ps`, depois use o do core no lugar de `opentraderworld-core-1`. |
+| Esqueci o nome de usuário também | `docker exec openfinai-core-1 /app/otw-core list-users` |
+| Escolher a senha eu mesmo | `printf '%s' 'my-new-password' \| docker exec -i openfinai-core-1 /app/otw-core reset-password USERNAME --stdin` |
+| Contêiner com outro nome | `docker ps`, depois use o do core no lugar de `openfinai-core-1`. |
 | Sem usar Docker | Execute o binário `otw-core` com os mesmos argumentos e `DATABASE_URL` definida. |
 
 Nunca passe uma senha como argumento de linha de comando: a linha de comando de um processo é legível no host, e é por isso que `--stdin` existe.
@@ -54,7 +54,7 @@ Notas: uma redefinição **desconecta todos os dispositivos**, e nada se perde. 
 Mesmo princípio da senha: recupere pelo shell do host.
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 O segundo fator é removido e todas as sessões são encerradas. Entre com a sua senha,
@@ -69,7 +69,7 @@ código de recuperação**. O login por senha volta a funcionar.
 Perdeu os códigos de recuperação também? No host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Remove o vínculo, ativa o login por senha e encerra todas as sessões. Perdeu a senha
@@ -107,4 +107,4 @@ Responda `y` quando o `setup.sh` perguntar se deve sobrescrever o `.env` existen
 
 ## Ainda travado?
 
-Abra uma issue no [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) com o sintoma e as linhas de log relevantes.
+Abra uma issue no [GitHub](https://github.com/G-OTW/Open FinAI/issues) com o sintoma e as linhas de log relevantes.

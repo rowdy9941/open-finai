@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: OpenTraderWorld
+  name: Open FinAI
   text: 你的交易工作区，运行在你自己的机器上。
   tagline: 一个免费、可自托管的平台，整合交易者和投资者真正会用到的工具（journal、行情数据、backtest、投资组合、新闻），数据始终属于你自己。
   actions:
@@ -10,14 +10,14 @@ hero:
       text: 快速开始
       link: /zh/guide/install
     - theme: alt
-      text: 什么是 OpenTraderWorld？
+      text: 什么是 Open FinAI？
       link: /zh/guide/introduction
     - theme: alt
       text: 在线演示
       link: https://demo.opentraderworld.com
     - theme: alt
       text: GitHub
-      link: https://github.com/G-OTW/OpenTraderWorld
+      link: https://github.com/G-OTW/Open FinAI
 
 features:
   - icon: 🔒

@@ -12,9 +12,9 @@
   import { t } from '$lib/i18n';
   import { copyLog } from '$lib/ui/copyLog.js';
 
-  // The compose project is named `opentraderworld`, so the core container is this by
+  // The compose project is named `openfinai`, so the core container is this by
   // default; the notes below cover a renamed one.
-  const CONTAINER = 'opentraderworld-core-1';
+  const CONTAINER = 'openfinai-core-1';
   const BIN = '/app/otw-core';
 
   const reset = `docker exec -it ${CONTAINER} ${BIN} reset-password USERNAME`;

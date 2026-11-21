@@ -33,16 +33,16 @@ Il n'y a ni e-mail de réinitialisation ni formulaire de réinitialisation sans 
 Ouvrez un shell sur la machine qui fait tourner OTW et affichez un mot de passe à usage unique :
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
+docker exec -it openfinai-core-1 /app/otw-core reset-password USERNAME
 ```
 
 Connectez-vous avec ; l'application vous en demande immédiatement un nouveau.
 
 | Cas | Commande à exécuter |
 |---|---|
-| Nom d'utilisateur oublié aussi | `docker exec opentraderworld-core-1 /app/otw-core list-users` |
-| Choisir soi-même le mot de passe | `printf '%s' 'my-new-password' \| docker exec -i opentraderworld-core-1 /app/otw-core reset-password USERNAME --stdin` |
-| Conteneur nommé autrement | `docker ps`, puis utilisez celui du core à la place de `opentraderworld-core-1`. |
+| Nom d'utilisateur oublié aussi | `docker exec openfinai-core-1 /app/otw-core list-users` |
+| Choisir soi-même le mot de passe | `printf '%s' 'my-new-password' \| docker exec -i openfinai-core-1 /app/otw-core reset-password USERNAME --stdin` |
+| Conteneur nommé autrement | `docker ps`, puis utilisez celui du core à la place de `openfinai-core-1`. |
 | Pas de Docker | Lancez le binaire `otw-core` avec les mêmes arguments et `DATABASE_URL` défini. |
 
 Ne passez jamais un mot de passe en argument de ligne de commande : la ligne de commande d'un processus est lisible sur l'hôte, c'est pourquoi `--stdin` existe.
@@ -54,7 +54,7 @@ Notes : une réinitialisation **déconnecte tous les appareils**, et rien n'est 
 Même principe que pour le mot de passe : récupérez l'accès depuis le shell de l'hôte.
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 Le second facteur est retiré et toutes les sessions sont déconnectées. Connectez-vous avec votre mot de passe,
@@ -69,7 +69,7 @@ code de récupération**. La connexion par mot de passe est réactivée.
 Codes de récupération perdus aussi, sur l'hôte :
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Cela supprime le lien, réactive la connexion par mot de passe et déconnecte toutes les sessions. Mot de passe perdu
@@ -107,4 +107,4 @@ Répondez `y` quand `setup.sh` demande s'il faut écraser le `.env` existant.
 
 ## Toujours bloqué ?
 
-Ouvrez un ticket sur [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) avec le symptôme et les lignes de log pertinentes.
+Ouvrez un ticket sur [GitHub](https://github.com/G-OTW/Open FinAI/issues) avec le symptôme et les lignes de log pertinentes.

@@ -1,6 +1,6 @@
 # Vue d'ensemble des modules
 
-OpenTraderWorld est un ensemble de **modules**, des blocs de fonctionnalités que vous activez individuellement dans **Paramètres → Modules**. Tout est livré avec l'application ; installer un module le fait apparaître dans le sélecteur de modules (en haut à gauche) et sur le dashboard. Détachez un module pour le masquer de nouveau (ses données sont conservées sauf si vous les supprimez aussi).
+Open FinAI est un ensemble de **modules**, des blocs de fonctionnalités que vous activez individuellement dans **Paramètres → Modules**. Tout est livré avec l'application ; installer un module le fait apparaître dans le sélecteur de modules (en haut à gauche) et sur le dashboard. Détachez un module pour le masquer de nouveau (ses données sont conservées sauf si vous les supprimez aussi).
 
 Le [dashboard, la recherche et les notifications](/fr/modules/dashboard) se trouvent au-dessus de tous les modules et sont toujours là.
 

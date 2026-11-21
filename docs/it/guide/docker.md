@@ -1,6 +1,6 @@
 # Installare Docker
 
-OpenTraderWorld è distribuito come un insieme di container Docker, e attualmente è l'**unico modo supportato per eseguirlo**. Un'installazione nativa (eseguire direttamente sull'host il core Rust, PostgreSQL e il frontend) è possibile se sai cosa fai, ma **non è consigliata né documentata**. Docker è privilegiato di proposito:
+Open FinAI è distribuito come un insieme di container Docker, e attualmente è l'**unico modo supportato per eseguirlo**. Un'installazione nativa (eseguire direttamente sull'host il core Rust, PostgreSQL e il frontend) è possibile se sai cosa fai, ma **non è consigliata né documentata**. Docker è privilegiato di proposito:
 
 - **Non invasivo**: sul sistema non viene installato nulla tranne Docker stesso. App, database e proxy vivono nei container; i tuoi dati vivono in volumi con nome. Rimuovere tutto significa `docker compose down -v` più eliminare la cartella.
 - **Identico ovunque**: lo stesso stack gira senza modifiche su macOS, Linux e Windows.
@@ -35,7 +35,7 @@ Installa **Docker Desktop** con il backend WSL 2:
 
 3. Avvia Docker Desktop e lascia l'impostazione predefinita *Use WSL 2*.
 
-Esegui i comandi di OpenTraderWorld (l'installer, `setup.sh`, i backup) da una shell WSL: sono script bash. Docker Desktop rende `docker` disponibile lì per la tua distribuzione WSL predefinita. Docker Compose è incluso.
+Esegui i comandi di Open FinAI (l'installer, `setup.sh`, i backup) da una shell WSL: sono script bash. Docker Desktop rende `docker` disponibile lì per la tua distribuzione WSL predefinita. Docker Compose è incluso.
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 Tutti e tre riescono → sei pronto.
 
-## Distribuire OpenTraderWorld
+## Distribuire Open FinAI
 
 Un solo comando, poi segui le richieste:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 La procedura completa (cosa significano le richieste, opzioni, alternativa manuale, verifica del risultato) è nella pagina [Installazione](/it/guide/install).

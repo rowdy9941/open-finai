@@ -1,6 +1,6 @@
 # Rete e accesso remoto
 
-OpenTraderWorld controlla **chi può raggiungere l'app** tramite quattro modalità di rete. Dopo l'installazione è **solo localhost**: nulla sulla tua rete può connettersi finché non cambi questa impostazione.
+Open FinAI controlla **chi può raggiungere l'app** tramite quattro modalità di rete. Dopo l'installazione è **solo localhost**: nulla sulla tua rete può connettersi finché non cambi questa impostazione.
 
 Il modo supportato per cambiare modalità è nell'app: **Impostazioni → Rete**. Salvando viene mostrato il comando di riavvio esatto da eseguire sull'host (l'app non può riavviare i propri container); lo stack è brevemente offline mentre i container vengono ricreati.
 
@@ -110,5 +110,5 @@ Modificare il file cambia ciò su cui Caddy resta in ascolto. Una volta salvata 
 
 ```bash
 docker compose --env-file .env --env-file network.env exec -T postgres \
-  psql -U otw -d opentraderworld -c "DELETE FROM app_settings WHERE key = 'net_mode'"
+  psql -U otw -d openfinai -c "DELETE FROM app_settings WHERE key = 'net_mode'"
 ```

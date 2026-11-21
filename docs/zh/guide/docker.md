@@ -1,6 +1,6 @@
 # 获取 Docker
 
-OpenTraderWorld 以一组 Docker 容器的形式发布，这也是目前**唯一受支持的运行方式**。如果你清楚自己在做什么，也可以原生安装（直接在主机上运行 Rust core、PostgreSQL 和前端），但**不推荐，也没有文档**。优先使用 Docker 是有意为之：
+Open FinAI 以一组 Docker 容器的形式发布，这也是目前**唯一受支持的运行方式**。如果你清楚自己在做什么，也可以原生安装（直接在主机上运行 Rust core、PostgreSQL 和前端），但**不推荐，也没有文档**。优先使用 Docker 是有意为之：
 
 - **不侵入系统**：除 Docker 本身外，系统上不会安装任何东西。应用、数据库和代理都在容器中，你的数据保存在命名卷里。清除一切只需 `docker compose down -v`，再删除文件夹。
 - **处处一致**：同一套堆栈在 macOS、Linux 和 Windows 上原样运行。
@@ -35,7 +35,7 @@ OpenTraderWorld 以一组 Docker 容器的形式发布，这也是目前**唯一
 
 3. 启动 Docker Desktop，并保持默认的 *Use WSL 2* 设置。
 
-OpenTraderWorld 的命令（安装程序、`setup.sh`、备份）需要在 WSL shell 中运行：它们是 bash 脚本。Docker Desktop 会让 `docker` 在你的默认 WSL 发行版中可用。已包含 Docker Compose。
+Open FinAI 的命令（安装程序、`setup.sh`、备份）需要在 WSL shell 中运行：它们是 bash 脚本。Docker Desktop 会让 `docker` 在你的默认 WSL 发行版中可用。已包含 Docker Compose。
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 三条命令都成功 → 准备就绪。
 
-## 部署 OpenTraderWorld
+## 部署 Open FinAI
 
 一条命令，然后按提示操作：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 完整的流程说明（提示的含义、选项、手动替代方式、结果验证）见[安装](/zh/guide/install)页面。

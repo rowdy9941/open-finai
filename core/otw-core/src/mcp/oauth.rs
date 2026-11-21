@@ -167,7 +167,7 @@ async fn protected_resource(State(state): State<AppState>, headers: HeaderMap) -
         "authorization_servers": [origin],
         "bearer_methods_supported": ["header"],
         "scopes_supported": ["mcp"],
-        "resource_name": "OpenTraderWorld",
+        "resource_name": "Open FinAI",
     }))
     .into_response()
 }

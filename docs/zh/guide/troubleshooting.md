@@ -33,16 +33,16 @@ docker compose --env-file .env --env-file network.env up -d
 在运行 OTW 的机器上打开 shell，并打印一次性密码：
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
+docker exec -it openfinai-core-1 /app/otw-core reset-password USERNAME
 ```
 
 用它登录；应用会立即要求你设置新密码。
 
 | 情况 | 运行什么 |
 |---|---|
-| 连用户名也忘了 | `docker exec opentraderworld-core-1 /app/otw-core list-users` |
-| 自己选择密码 | `printf '%s' 'my-new-password' \| docker exec -i opentraderworld-core-1 /app/otw-core reset-password USERNAME --stdin` |
-| 容器名称不同 | 运行 `docker ps`，然后用 core 容器的名称替换 `opentraderworld-core-1`。 |
+| 连用户名也忘了 | `docker exec openfinai-core-1 /app/otw-core list-users` |
+| 自己选择密码 | `printf '%s' 'my-new-password' \| docker exec -i openfinai-core-1 /app/otw-core reset-password USERNAME --stdin` |
+| 容器名称不同 | 运行 `docker ps`，然后用 core 容器的名称替换 `openfinai-core-1`。 |
 | 没有运行 Docker | 以相同参数运行 `otw-core` 二进制文件，并设置 `DATABASE_URL`。 |
 
 切勿把密码作为命令行参数传入：进程的命令行在主机上是可读的，这正是存在 `--stdin` 的原因。
@@ -54,7 +54,7 @@ docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
 原则与密码相同：在主机 shell 中恢复。
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 第二重验证因素会被移除，所有会话都会退出登录。用密码登录，
@@ -68,7 +68,7 @@ docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
 恢复码也丢了，在主机上执行：
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 这会移除关联、开启密码登录并让所有会话退出登录。密码也丢了：
@@ -106,4 +106,4 @@ docker compose --env-file .env --env-file network.env down -v
 
 ## 仍然解决不了？
 
-在 [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) 上提交 issue，附上现象和相关日志行。
+在 [GitHub](https://github.com/G-OTW/Open FinAI/issues) 上提交 issue，附上现象和相关日志行。

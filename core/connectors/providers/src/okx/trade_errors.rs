@@ -581,7 +581,7 @@ pub(super) fn of(code: &str, sub: &str, msg: &str) -> VenueError {
     match row(code) {
         Some((_, Unknown, _)) => VenueError::new(Unknown, Some(shown.clone()), format!("OKX did not say whether it went through: {msg} (code {shown})")),
         Some((_, canon, _)) => VenueError::new(*canon, Some(shown.clone()), format!("OKX refused it: {msg} (code {shown})")),
-        None => VenueError::unmapped(Some(shown.clone()), format!("OKX answered code {shown} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(shown.clone()), format!("OKX answered code {shown} ({msg}), which Open FinAI does not map")),
     }
 }
 

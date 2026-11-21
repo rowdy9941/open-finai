@@ -1,11 +1,11 @@
 # Agent
 
-内置的 **AI 聊天助手**：应用内的一个聊天窗格，也可以操作你的 OpenTraderWorld 数据。可从 **Agent** 模块、顶栏中的大脑快捷方式（在搜索旁边），或位于每个页面角落的[浮动按钮](#the-floating-assistant)打开。
+内置的 **AI 聊天助手**：应用内的一个聊天窗格，也可以操作你的 Open FinAI 数据。可从 **Agent** 模块、顶栏中的大脑快捷方式（在搜索旁边），或位于每个页面角落的[浮动按钮](#the-floating-assistant)打开。
 
 助手是**自带服务商**的：在你添加自己的服务商和密钥之前，没有任何东西被启用，也没有任何供应商默认值。
 
 ::: tip 两种不同的“AI agent”
-本页讲的是**应用内的聊天助手**，它与*你*配置的服务商对话。这与 [AI agents (MCP)](/zh/config/ai-agents) 页面不同，后者讲的是*外部* agent 通过内置的 MCP gateway **接入** OpenTraderWorld。聊天助手可以*使用*同一个 gateway 来访问你的数据：参见下面的[数据工具](#tools-over-your-data)。
+本页讲的是**应用内的聊天助手**，它与*你*配置的服务商对话。这与 [AI agents (MCP)](/zh/config/ai-agents) 页面不同，后者讲的是*外部* agent 通过内置的 MCP gateway **接入** Open FinAI。聊天助手可以*使用*同一个 gateway 来访问你的数据：参见下面的[数据工具](#tools-over-your-data)。
 :::
 
 ## 添加服务商
@@ -134,7 +134,7 @@ persona 和技能管理被有意**排除在 MCP 目录之外**：任何 agent、
 
 **Agent → 管理服务器**是一个整页分区，用于添加远程 MCP 服务器，让助手可以访问外部平台：
 
-- 一个**目录**，其中是内置的 **OpenTraderWorld** gateway，它链接到**设置 → MCP**，而不是作为服务器添加（助手在进程内访问它），外加按 URL 添加的**自定义服务器**；
+- 一个**目录**，其中是内置的 **Open FinAI** gateway，它链接到**设置 → MCP**，而不是作为服务器添加（助手在进程内访问它），外加按 URL 添加的**自定义服务器**；
 - **仅限 Streamable-HTTP**：绝不会在本地执行任何东西；
 - 认证值**静态加密且只写**；
 - **测试**按钮会连接并列出服务器的工具；

@@ -424,7 +424,7 @@ pub fn agent_catalog_for(perms: &Value, args: &Value) -> (String, String, bool) 
     // sends the user off to edit permissions that are not the problem.
     if perms.as_object().is_none_or(|m| m.is_empty()) {
         let text = "No tools are attached to this conversation — it is chat-only, so no \
-                OpenTraderWorld data is reachable from here. Tell the user plainly; they \
+                Open FinAI data is reachable from here. Tell the user plainly; they \
                 attach a tool set from the tool selector of this conversation."
             .to_string();
         return (text, "(none)".to_string(), true);
@@ -562,8 +562,8 @@ fn rpc_error_status(
 
 fn server_info() -> Value {
     json!({
-        "name": "opentraderworld",
-        "title": "OpenTraderWorld",
+        "name": "openfinai",
+        "title": "Open FinAI",
         "version": env!("CARGO_PKG_VERSION"),
     })
 }
@@ -616,7 +616,7 @@ fn discover() -> Value {
     })
 }
 
-const INSTRUCTIONS: &str = "Gateway to the OpenTraderWorld REST API. Call otw_catalog with no \
+const INSTRUCTIONS: &str = "Gateway to the Open FinAI REST API. Call otw_catalog with no \
             argument to see the modules this token can access, then otw_catalog with a \"module\" \
             to list that module's endpoints. Use otw_read for GET, otw_compute for the endpoints \
             the catalog marks as compute (they answer a question and store nothing), and \
@@ -1260,7 +1260,7 @@ fn access_label(perms: &Value, module: &str) -> &'static str {
 
 fn no_access_message() -> String {
     "No accessible endpoints. This token has no permission on the requested module(s); \
-     permissions are managed in OpenTraderWorld Settings → MCP."
+     permissions are managed in Open FinAI Settings → MCP."
         .to_string()
 }
 
@@ -2353,7 +2353,7 @@ mod tests {
         let (_, body) = error_of(rpc_result(json!(1), tools_list(&json!({ "journal": "r" }))));
         let r = &body["result"];
         assert_eq!(r["resultType"], json!("complete"));
-        assert_eq!(r["_meta"][META_SERVER_INFO]["name"], json!("opentraderworld"));
+        assert_eq!(r["_meta"][META_SERVER_INFO]["name"], json!("openfinai"));
         assert_eq!(r["cacheScope"], json!("private"));
         assert!(r["ttlMs"].as_u64().is_some());
 

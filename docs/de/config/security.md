@@ -49,7 +49,7 @@ Es gibt keinen Backup-Code und keine Wiederherstellungs-Mail, aus demselben Grun
 Zurücksetzen des Passworts gibt. Stelle den Zugang über die Shell der Maschine wieder her:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 Der zweite Faktor und sein Geheimnis werden entfernt und jede Sitzung abgemeldet. Melde dich mit

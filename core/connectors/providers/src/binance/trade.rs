@@ -1365,7 +1365,7 @@ pub fn check_rights(m: &Market, k: &KeyRights) -> Result<(), ConnectorError> {
     let fix = match m.kind {
         Kind::Spot if !k.enable_spot_and_margin_trading => Some("trading is off on it: tick \"Enable Spot & Margin Trading\""),
         Kind::UsdM if !k.enable_futures => Some("futures trading is off on it: tick \"Enable Futures\""),
-        _ if k.enable_withdrawals => Some("it can withdraw: untick \"Enable Withdrawals\", OpenTraderWorld never needs it"),
+        _ if k.enable_withdrawals => Some("it can withdraw: untick \"Enable Withdrawals\", Open FinAI never needs it"),
         _ if !k.ip_restrict => Some("it takes calls from any IP: restrict it to this server's IP (\"Restrict access to trusted IPs only\")"),
         _ => None,
     };

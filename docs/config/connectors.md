@@ -121,7 +121,7 @@ The third keyed one whose key is the account's: Capital.com issues no market-dat
 
 The odd one out: there is no vendor URL and no API key. You run **IB Gateway** or **TWS** on your own machine and the connector speaks its socket protocol, so what it carries is an **address**, not a credential: a host and a port, stored in the clear so a failed connection can be diagnosed. The data is whatever your IB account is subscribed to.
 
-- **Settings**: *Gateway host* (`host.docker.internal` for a gateway on the same machine, since OpenTraderWorld runs in a container) and *API port* (4001 live / 4002 paper for the Gateway, 7496 / 7497 for TWS).
+- **Settings**: *Gateway host* (`host.docker.internal` for a gateway on the same machine, since Open FinAI runs in a container) and *API port* (4001 live / 4002 paper for the Gateway, 7496 / 7497 for TWS).
 - **In the gateway**: Global Configuration → API → Settings, tick *Enable ActiveX and Socket Clients*, and check the port matches. On Docker Desktop the call arrives from the host loopback, so *Allow connections from localhost only* already covers it; on Docker Engine untick it and add `172.28.53.10` to *Trusted IPs*, which takes single addresses and not a range.
 - **Test connection** reports what answered, and names the setting to change when nothing does.
 - **Tickers**: `AAPL`, `SAN:EUR` or `7203@TSEJ:JPY` for shares, `EURUSD` for a cash pair, an OCC symbol for an option. A future is written with its month, `ES.202512`, or with the local symbol TWS shows, `MNQU6`. Futures are looked up against the gateway before anything is downloaded, so the exchange is optional: when the ticker names more than one listing, the error lists them and you pick.

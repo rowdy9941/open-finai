@@ -314,7 +314,7 @@ pub(super) fn mapped(spot: bool, code: &str, msg: &str) -> VenueError {
         Some((_, Unknown, _)) => VenueError::new(Unknown, Some(code.to_string()), format!("MEXC did not say whether it went through: {msg} (code {code})")),
         Some((_, Permission, _)) => VenueError::new(Permission, Some(code.to_string()), format!("MEXC refused it: {msg} (code {code}).{}", fix(spot, code))),
         Some((_, canon, _)) => VenueError::new(*canon, Some(code.to_string()), format!("MEXC refused it: {msg} (code {code})")),
-        None => VenueError::unmapped(Some(code.to_string()), format!("MEXC answered code {code} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(code.to_string()), format!("MEXC answered code {code} ({msg}), which Open FinAI does not map")),
     }
 }
 
@@ -405,7 +405,7 @@ pub(super) fn decode(spot: bool, frame: &RawFrame) -> Option<VenueError> {
         match (env.success, code) {
             (Some(false), Some(c)) if c == PLACED => return None,
             (Some(false), Some(c)) => mapped(false, &c, &msg),
-            (Some(false), None) => VenueError::unmapped(None, format!("MEXC refused it with no code ({msg}), which OpenTraderWorld does not map")),
+            (Some(false), None) => VenueError::unmapped(None, format!("MEXC refused it with no code ({msg}), which Open FinAI does not map")),
             // A single cancel answers a row per id: the row's refusal is the call's.
             _ if ok && *endpoint_id == super::trade::FUT_CANCEL => {
                 let rows: Vec<CancelItem> = serde_json::from_value(env.data).unwrap_or_default();

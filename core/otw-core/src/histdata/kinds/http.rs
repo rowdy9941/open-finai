@@ -1054,7 +1054,7 @@ impl HttpSource {
         let pin = check_host(&url, spec.allow_private_hosts).await?;
         let mut builder = reqwest::Client::builder()
             .timeout(TIMEOUT)
-            .user_agent("OpenTraderWorld/histdata")
+            .user_agent("Open FinAI/histdata")
             .redirect(reqwest::redirect::Policy::none());
         if let Some((host, addr)) = pin {
             builder = builder.resolve(&host, addr);

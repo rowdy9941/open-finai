@@ -4,6 +4,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld: Internationalization: key-based language packs"
+description = "Open FinAI: Internationalization: key-based language packs"
 
 [dependencies]

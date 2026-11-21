@@ -8,7 +8,7 @@
 //! only to an account carrying the `trading` grant (checked in `brokers_api`), and only for a
 //! broker that implements them: every other one refuses by default. Today that is the IB
 //! Gateway broker, whose socket can trade once the user unticks Read Only API, and the
-//! [`paper`] broker, which OpenTraderWorld runs itself on the chart's live price.
+//! [`paper`] broker, which Open FinAI runs itself on the chart's live price.
 //!
 //! Each broker declares a [`BrokerCapability`] (which credentials it needs, whether its
 //! execution history takes an arbitrary window, whether it must be asked one instrument at
@@ -252,7 +252,7 @@ impl std::fmt::Display for OrderUnknown {
 
 impl std::error::Error for OrderUnknown {}
 
-/// A leg OpenTraderWorld sent and still follows, as stored (`broker_orders`): what a broker
+/// A leg Open FinAI sent and still follows, as stored (`broker_orders`): what a broker
 /// needs to take back up what it linked itself after a restart ([`Broker::resume`]).
 #[derive(Debug, Clone, Serialize)]
 pub struct StoredLeg {
@@ -571,7 +571,7 @@ pub struct OrderTicket {
 }
 
 /// The grid an instrument's sizes and prices sit on, as the broker states it: what a size or a
-/// price OpenTraderWorld works out itself (a trade on alert, sized from an amount and priced
+/// price Open FinAI works out itself (a trade on alert, sized from an amount and priced
 /// from the price that fired) is snapped to before it leaves. A field the broker does not
 /// state stays `None`, and the venue then checks alone.
 #[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
@@ -766,19 +766,19 @@ pub trait Broker: Send + Sync {
     /// broker has accepted it. A leg refused after others went out cancels those, so a
     /// ticket is never left half placed.
     async fn place(&self, _settings: &HashMap<String, String>, _ticket: &OrderTicket) -> Result<Vec<Placed>> {
-        Err(anyhow!("{} does not take orders from OpenTraderWorld", self.capability().label))
+        Err(anyhow!("{} does not take orders from Open FinAI", self.capability().label))
     }
 
     /// Change a working order in place (prices, quantity, time in force). `None` leaves a field
     /// as it is. A broker that can only make the change as a new order (a Binance USDⓈ-M stop)
     /// answers it: its client id and broker id, which replace the old order's.
     async fn modify(&self, _settings: &HashMap<String, String>, _id: &str, _change: &otw_connector_model::OrderAmend) -> Result<Option<Placed>> {
-        Err(anyhow!("{} does not take orders from OpenTraderWorld", self.capability().label))
+        Err(anyhow!("{} does not take orders from Open FinAI", self.capability().label))
     }
 
     /// Cancel a working order (and, at the broker, the exits attached to it).
     async fn cancel(&self, _settings: &HashMap<String, String>, _id: &str) -> Result<()> {
-        Err(anyhow!("{} does not take orders from OpenTraderWorld", self.capability().label))
+        Err(anyhow!("{} does not take orders from Open FinAI", self.capability().label))
     }
 
     /// How this account spells the instrument a chart shows (`ticker`, `asset_type` in the
@@ -813,13 +813,13 @@ pub trait Broker: Send + Sync {
     /// Close a position at the market: the other side, for what is held. `native_id` and
     /// `account` are the ones the position was reported with; `key` is the caller's order id.
     async fn close_position(&self, _settings: &HashMap<String, String>, _native_id: &str, _account: &str, _key: &str) -> Result<Placed> {
-        Err(anyhow!("{} does not take orders from OpenTraderWorld", self.capability().label))
+        Err(anyhow!("{} does not take orders from Open FinAI", self.capability().label))
     }
 
     /// The kill switch: cancel every working order of the account. Answers how many were
     /// working.
     async fn cancel_all(&self, _settings: &HashMap<String, String>) -> Result<usize> {
-        Err(anyhow!("{} does not take orders from OpenTraderWorld", self.capability().label))
+        Err(anyhow!("{} does not take orders from Open FinAI", self.capability().label))
     }
 
     /// What the broker says of the order sent under client id `key` on the chart's instrument
@@ -977,7 +977,7 @@ pub(crate) fn serve_from(url: &str) {
 pub fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(std::time::Duration::from_secs(45))
-        .user_agent("OpenTraderWorld/brokers")
+        .user_agent("Open FinAI/brokers")
         .build()
         .map_err(|e| anyhow!("building broker http client: {e}"))
 }

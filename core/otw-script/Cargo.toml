@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld: Pine v5/v6 compatible indicator script engine"
+description = "Open FinAI: Pine v5/v6 compatible indicator script engine"
 
 [dependencies]
 libm = "0.2"

@@ -88,7 +88,7 @@
   margin-top: var(--space-4);
 }
 
-/* Phone: long words ("OpenTraderWorld" at large text sizes) break instead of widening the card. */
+/* Phone: long words ("Open FinAI" at large text sizes) break instead of widening the card. */
 @media (max-width: 480px) {
   .auth-card h1,
   .auth-card .primary {

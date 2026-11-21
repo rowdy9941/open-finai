@@ -49,7 +49,7 @@ There is no backup code and no recovery email, for the same reason there is no p
 reset form. Recover from the machine's shell:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 The second factor and its secret are removed and every session is signed out. Sign in with

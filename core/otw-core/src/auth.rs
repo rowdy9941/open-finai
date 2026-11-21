@@ -235,7 +235,7 @@ pub mod totp {
 
     /// The `otpauth://` URI the enrolment QR code encodes.
     pub fn uri(secret_b32: &str, account: &str) -> String {
-        let issuer = "OpenTraderWorld";
+        let issuer = "Open FinAI";
         let label = urlencode(&format!("{issuer}:{account}"));
         format!(
             "otpauth://totp/{label}?secret={secret_b32}&issuer={issuer}\
@@ -354,9 +354,9 @@ pub mod totp {
         #[test]
         fn uri_carries_the_secret_and_the_issuer() {
             let uri = uri("ABCDEFGH", "alice");
-            assert!(uri.starts_with("otpauth://totp/OpenTraderWorld%3Aalice?"));
+            assert!(uri.starts_with("otpauth://totp/Open FinAI%3Aalice?"));
             assert!(uri.contains("secret=ABCDEFGH"));
-            assert!(uri.contains("issuer=OpenTraderWorld"));
+            assert!(uri.contains("issuer=Open FinAI"));
         }
     }
 }
@@ -456,7 +456,7 @@ mod tests {
             "Letmein!!!!!!",
             "qwertyuiop12",
             "Tr4d1ng2024!",
-            "opentraderworld",
+            "openfinai",
         ] {
             assert!(
                 check_password(candidate, "alice").is_err(),

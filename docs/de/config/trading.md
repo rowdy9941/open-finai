@@ -18,7 +18,7 @@ Ein Broker-Konto kann mehr als Ihr Buch lesen: Mit eingeschaltetem **Trading** s
 - **Deribit** (Futures und Perpetuals: lineare USDC-Kontrakte und inverse BTC- und ETH-Kontrakte), auf Echtgeldkonten und auf test.deribit.com. Eingestuft **E2D**, mit derselben Bestätigung für ein Echtgeldkonto.
 - **Paper trading**, ein simuliertes Konto, das die App selbst führt. Siehe [Papierhandel](/de/config/paper-trading).
 
-Jeder andere Broker antwortet, dass er keine Orders von OpenTraderWorld annimmt, und bleibt [nur lesend](/de/config/brokers).
+Jeder andere Broker antwortet, dass er keine Orders von Open FinAI annimmt, und bleibt [nur lesend](/de/config/brokers).
 
 ::: danger Experimentell
 Der Handel aus dem Chart ist **experimentell**: Er funktioniert mit Interactive Brokers, Binance, Binance USDⓈ-M Futures, Bybit, Bybit EU, OKX, Bitget, Gate.io, KuCoin, KuCoin Futures, Kraken, Kraken Futures, Coinbase, MEXC, Bitfinex und Deribit sowie mit dem Papierhandel. Interactive Brokers und die beiden Binance-Konten sind ausgiebig getestet, gegen simulierte Handelsplätze und die Testumgebungen der Broker. Die anderen sind nach der Dokumentation des jeweiligen Brokers gebaut und wurden noch nicht an einem echten Konto ausprobiert. Fehler sind bei allen möglich. Prüfen Sie jede Order beim Broker, beginnen Sie klein und handeln Sie auf eigenes Risiko.
@@ -397,7 +397,7 @@ Jedes Platzieren, Ändern, Stornieren, Alles-Stornieren und Schließen wird in e
 
 In **Einstellungen → Broker** zeigt jedes Trading-Konto seine **Order-Kennzahlen** (Aufrufe, platziert, abgelehnt, Latenz p50 / p99, letzte Order) und einen Button **Alle Orders stornieren**. Anders als der [Notschalter](#halts) gilt er nur für dieses eine Konto und hält nichts an:
 
-- er fragt nach Bestätigung und storniert dann **jede aktive Order** des Kontos beim Broker, außerhalb von OpenTraderWorld platzierte Orders eingeschlossen. Bei Interactive Brokers sind das alle Orders der Konten des Gateways, einschließlich von Hand in der TWS platzierter Orders;
+- er fragt nach Bestätigung und storniert dann **jede aktive Order** des Kontos beim Broker, außerhalb von Open FinAI platzierte Orders eingeschlossen. Bei Interactive Brokers sind das alle Orders der Konten des Gateways, einschließlich von Hand in der TWS platzierter Orders;
 - er meldet, wie viele storniert wurden. Bei Interactive Brokers wartet er zuvor bis zu 10 Sekunden, bis keine mehr aktiv ist;
 - er funktioniert bei ausgeschaltetem Trading und geschlossener Sperre.
 

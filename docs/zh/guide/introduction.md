@@ -1,10 +1,10 @@
-# 什么是 OpenTraderWorld？
+# 什么是 Open FinAI？
 
 > 项目网站：**[opentraderworld.com](https://opentraderworld.com)**：模块导览、
 > [在线演示](https://demo.opentraderworld.com)、[社区指南](https://opentraderworld.com/docs)
 > 和[路线图投票](https://opentraderworld.com/suggestions)。
 
-OpenTraderWorld 是一个面向交易者和投资者的**自托管 Web 平台**。你只需用 Docker 在自己的电脑或服务器上安装一次，在浏览器中打开，就能获得一个由模块组成的私有工作区：Trading Journal、带图表和backtest的历史行情数据、投资组合与净资产跟踪、新闻聚合器、笔记、检查清单等。
+Open FinAI 是一个面向交易者和投资者的**自托管 Web 平台**。你只需用 Docker 在自己的电脑或服务器上安装一次，在浏览器中打开，就能获得一个由模块组成的私有工作区：Trading Journal、带图表和backtest的历史行情数据、投资组合与净资产跟踪、新闻聚合器、笔记、检查清单等。
 
 **对所有人免费，无论个人还是商业用途。源码可见（FSL-1.1-MIT）。** 唯一不允许的是转售，或将其作为付费服务提供。指导原则：*先盈利，再花钱。*
 
@@ -46,7 +46,7 @@ Docker 目前是**唯一受支持的部署方式**：它让安装不侵入系统
 
 ## 后续步骤
 
-1. [安装 OpenTraderWorld](/zh/guide/install)：使用 Docker 约需 5 分钟。
+1. [安装 Open FinAI](/zh/guide/install)：使用 Docker 约需 5 分钟。
 2. [迈出第一步](/zh/guide/first-steps)：登录、选择默认设置、安装模块。
 3. [配置网络访问](/zh/config/network)：如果你想从其他设备访问。
 

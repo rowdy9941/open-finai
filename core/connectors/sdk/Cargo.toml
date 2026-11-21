@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld connector framework: the adapter contract, transports, signers and parsers"
+description = "Open FinAI connector framework: the adapter contract, transports, signers and parsers"
 
 [dependencies]
 otw-connector-model = { path = "../model" }

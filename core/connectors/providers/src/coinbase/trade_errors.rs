@@ -395,7 +395,7 @@ pub(super) fn of(code: &str, message: &str) -> VenueError {
     match row(code) {
         Some((_, Unknown, w)) => VenueError::new(Unknown, Some(code.to_string()), format!("Coinbase answered {code} ({}): whether it acted is not known", words(w))),
         Some((_, canon, w)) => VenueError::new(*canon, Some(code.to_string()), format!("Coinbase refused it: {} (code {code})", words(w))),
-        None => VenueError::unmapped(Some(code.to_string()), format!("Coinbase answered code {code} ({}), which OpenTraderWorld does not map", message.trim())),
+        None => VenueError::unmapped(Some(code.to_string()), format!("Coinbase answered code {code} ({}), which Open FinAI does not map", message.trim())),
     }
 }
 
@@ -488,7 +488,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
     if *endpoint_id != CANCEL_BATCH {
         if let Some(rows) = v.get("results").and_then(Value::as_array) {
             if *endpoint_id == CANCEL && rows.is_empty() {
-                return Some(VenueError::unmapped(None, "Coinbase answered the cancel with no result row, which OpenTraderWorld does not read as done"));
+                return Some(VenueError::unmapped(None, "Coinbase answered the cancel with no result row, which Open FinAI does not read as done"));
             }
             return rows.iter().find_map(cancel_row);
         }

@@ -32,7 +32,7 @@ Promemoria, singoli o ricorrenti (con data di inizio, data di fine o numero mass
 
 ## Webhooks {#webhooks}
 
-Dai a qualsiasi servizio esterno un URL privato per **inviare alert con POST a OpenTraderWorld**: piattaforme di grafici e alert, notifiche dei broker, monitor di uptime, script, qualsiasi cosa possa lanciare una richiesta HTTP. Il payload viene ricevuto e instradato in un modulo.
+Dai a qualsiasi servizio esterno un URL privato per **inviare alert con POST a Open FinAI**: piattaforme di grafici e alert, notifiche dei broker, monitor di uptime, script, qualsiasi cosa possa lanciare una richiesta HTTP. Il payload viene ricevuto e instradato in un modulo.
 
 - **URL privato, nessun header**: ogni endpoint porta un **token a 256 bit nel percorso dell'URL** (`/api/hooks/<token>`), perché molti mittenti di alert non possono impostare un header `Authorization`. I token sono salvati con **hash** e mostrati **una sola volta** alla creazione; le ricerche fallite vengono rallentate.
 - **Payload tolleranti**: invia testo semplice o JSON; il parser accetta nomi di campo approssimativi, quindi la maggior parte dei mittenti funziona senza formattazione speciale.

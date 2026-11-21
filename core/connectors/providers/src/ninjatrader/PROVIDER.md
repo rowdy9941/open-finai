@@ -39,7 +39,7 @@ fee, no version, a contract nobody could identify) rather than failing the read,
 ## Auth
 
 `username`, `password` and the API key pair `cid` (a number) and `sec` are exchanged for a
-bearer token (`appId` OpenTraderWorld, `appVersion` the build's version). The token is kept
+bearer token (`appId` Open FinAI, `appVersion` the build's version). The token is kept
 until the answer's `expirationTime` (ninety minutes when absent) per login and environment
 (hash of the credentials), shared by every call, and dropped on a 401. A 200 with no token
 is a refusal (`errorText`: terms to accept, a captcha). There is no read-only key: the same

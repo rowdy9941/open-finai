@@ -206,7 +206,7 @@ pub(super) fn decode(book: Book, frame: &RawFrame) -> Option<VenueError> {
             let msg = env.as_ref().and_then(|e| e.msg.clone()).unwrap_or_default();
             let mut e = match table(book).iter().find(|(c, _, _)| *c == code) {
                 Some((_, canon, _)) => VenueError::new(*canon, Some(code.to_string()), format!("{label} refused it: {msg} (code {code})")),
-                None => VenueError::unmapped(Some(code.to_string()), format!("{label} answered code {code} ({msg}), which OpenTraderWorld does not map")),
+                None => VenueError::unmapped(Some(code.to_string()), format!("{label} answered code {code} ({msg}), which Open FinAI does not map")),
             };
             let lower = msg.to_ascii_lowercase();
             match code {
@@ -269,7 +269,7 @@ mod tests {
             }
             let e = decode(book, &http_frame(1, "spot_place", 200, r#"{"code":"999999","msg":"new"}"#)).unwrap();
             assert_eq!((e.canon, e.mapped), (Unknown, false));
-            assert!(e.message.contains("answered code 999999 (new), which OpenTraderWorld does not map"), "{}", e.message);
+            assert!(e.message.contains("answered code 999999 (new), which Open FinAI does not map"), "{}", e.message);
             assert!(decode(book, &http_frame(1, "spot_place", 200, r#"{"code":"200000","data":{}}"#)).is_none());
         }
     }

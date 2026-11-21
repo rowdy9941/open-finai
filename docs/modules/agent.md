@@ -1,11 +1,11 @@
 # Agent
 
-A built-in **AI chat assistant**: a chat pane inside the app that can also act on your OpenTraderWorld data. Open it from the **Agent** module, the brain shortcut in the top bar (next to the search), or the [floating button](#the-floating-assistant) sitting in the corner of every page.
+A built-in **AI chat assistant**: a chat pane inside the app that can also act on your Open FinAI data. Open it from the **Agent** module, the brain shortcut in the top bar (next to the search), or the [floating button](#the-floating-assistant) sitting in the corner of every page.
 
 The assistant is **bring-your-own-provider**: nothing is enabled or vendor-defaulted until you add a provider and key of your own.
 
 ::: tip Two different "AI agents"
-This page is the **chat assistant that lives in the app** and talks to a provider *you* configure. That is not the same as the [AI agents (MCP)](/config/ai-agents) page, which is about *external* agents connecting **into** OpenTraderWorld through the built-in MCP gateway. The chat assistant can *use* that same gateway to reach your data: see [Tools](#tools-over-your-data) below.
+This page is the **chat assistant that lives in the app** and talks to a provider *you* configure. That is not the same as the [AI agents (MCP)](/config/ai-agents) page, which is about *external* agents connecting **into** Open FinAI through the built-in MCP gateway. The chat assistant can *use* that same gateway to reach your data: see [Tools](#tools-over-your-data) below.
 :::
 
 ## Add a provider
@@ -134,7 +134,7 @@ Each conversation carries **its own** MCP token (the token you set in settings i
 
 **Agent → Manage servers** is a full-page section for adding remote MCP servers so the assistant can reach outside platforms:
 
-- a **catalog** holding the built-in **OpenTraderWorld** gateway, which links to **Settings → MCP** instead of being added (the assistant reaches it in-process), plus **custom servers** by URL;
+- a **catalog** holding the built-in **Open FinAI** gateway, which links to **Settings → MCP** instead of being added (the assistant reaches it in-process), plus **custom servers** by URL;
 - **Streamable-HTTP only**: nothing ever executes locally;
 - auth values are **encrypted at rest and write-only**;
 - a **Test** button connects and lists the server's tools;

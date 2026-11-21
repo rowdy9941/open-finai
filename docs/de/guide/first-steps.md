@@ -1,6 +1,6 @@
 # Erste Schritte nach der Installation
 
-Du hast OpenTraderWorld [installiert](/de/guide/install) und deine Admin-Zugangsdaten. So machst du es zu deinem.
+Du hast Open FinAI [installiert](/de/guide/install) und deine Admin-Zugangsdaten. So machst du es zu deinem.
 
 ## Anmelden
 

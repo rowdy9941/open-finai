@@ -1,4 +1,4 @@
-# OpenTraderWorld reverse proxy.
+# Open FinAI reverse proxy.
 #
 # Serves the static SvelteKit frontend and proxies the API/WS to otw-core (spec §6).
 # {$OTW_DOMAIN} is Caddy's site address, from network.env (rewritten by Settings → Network).

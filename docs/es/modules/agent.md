@@ -1,11 +1,11 @@
 # Agent
 
-Un **asistente de chat con IA** integrado: un panel de chat dentro de la app que también puede actuar sobre tus datos de OpenTraderWorld. Ábrelo desde el módulo **Agent**, el atajo del cerebro de la barra superior (junto a la búsqueda) o el [botón flotante](#the-floating-assistant) situado en la esquina de cada página.
+Un **asistente de chat con IA** integrado: un panel de chat dentro de la app que también puede actuar sobre tus datos de Open FinAI. Ábrelo desde el módulo **Agent**, el atajo del cerebro de la barra superior (junto a la búsqueda) o el [botón flotante](#the-floating-assistant) situado en la esquina de cada página.
 
 El asistente es **bring-your-own-provider**: nada está activado ni viene preconfigurado por un proveedor hasta que añadas un proveedor y una clave propios.
 
 ::: tip Dos "AI agents" distintos
-Esta página trata del **asistente de chat que vive en la app** y habla con un proveedor que *tú* configuras. No es lo mismo que la página de [AI agents (MCP)](/es/config/ai-agents), que trata de agents *externos* que se conectan **a** OpenTraderWorld mediante la pasarela MCP integrada. El asistente de chat puede *usar* esa misma pasarela para acceder a tus datos: consulta [Herramientas sobre tus datos](#tools-over-your-data) más abajo.
+Esta página trata del **asistente de chat que vive en la app** y habla con un proveedor que *tú* configuras. No es lo mismo que la página de [AI agents (MCP)](/es/config/ai-agents), que trata de agents *externos* que se conectan **a** Open FinAI mediante la pasarela MCP integrada. El asistente de chat puede *usar* esa misma pasarela para acceder a tus datos: consulta [Herramientas sobre tus datos](#tools-over-your-data) más abajo.
 :::
 
 ## Añadir un proveedor
@@ -134,7 +134,7 @@ Cada conversación lleva **su propio** token MCP (el token que defines en ajuste
 
 **Agent → Gestionar servidores** es una sección a página completa para añadir servidores MCP remotos y que el asistente pueda llegar a plataformas externas:
 
-- un **catálogo** con la pasarela integrada de **OpenTraderWorld**, que enlaza a **Ajustes → MCP** en lugar de añadirse (el asistente la alcanza en proceso), más **servidores personalizados** por URL;
+- un **catálogo** con la pasarela integrada de **Open FinAI**, que enlaza a **Ajustes → MCP** en lugar de añadirse (el asistente la alcanza en proceso), más **servidores personalizados** por URL;
 - **solo Streamable-HTTP**: nada se ejecuta nunca en local;
 - los valores de autenticación están **cifrados en reposo y son de solo escritura**;
 - un botón **Probar** conecta y lista las herramientas del servidor;

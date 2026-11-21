@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld connector framework: planner and shared stages (candles, validation, rate limits)"
+description = "Open FinAI connector framework: planner and shared stages (candles, validation, rate limits)"
 
 [dependencies]
 otw-connector-model = { path = "../model" }

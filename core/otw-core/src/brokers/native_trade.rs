@@ -132,7 +132,7 @@ impl<M: TradeMapper + Clone, R: Broker> NativeTradingBroker<M, R> {
     /// lists it. Two books listing it with nothing to choose between them is refused.
     async fn book_for(&self, s: &HashMap<String, String>, ticker: &str) -> Result<&TradeBook<M>> {
         if let Some(hint) = s.get(super::INSTRUMENT_BOOK).map(|v| v.trim()).filter(|v| !v.is_empty()) {
-            return self.named(hint).ok_or_else(|| anyhow!("{} takes no orders on its {hint} book from OpenTraderWorld", self.label()));
+            return self.named(hint).ok_or_else(|| anyhow!("{} takes no orders on its {hint} book from Open FinAI", self.label()));
         }
         let mut listing = Vec::new();
         for b in &self.books {
@@ -549,14 +549,14 @@ impl<M: TradeMapper + Clone, R: Broker> Broker for NativeTradingBroker<M, R> {
             // An attached exit is followed through its entry, under the id it was placed with.
             if let Some(x) = b.trader.exit_of(&a, key) {
                 let Some(o) = b.trader.exit_status(&d, &a, &x).await.map_err(|e| self.fail(b, s, e))? else { return Ok(Lookup::NotFound) };
-                let status = o.status.known().copied().ok_or_else(|| anyhow!("{}: the exit {key} is in a state OpenTraderWorld does not know", self.label()))?;
+                let status = o.status.known().copied().ok_or_else(|| anyhow!("{}: the exit {key} is in a state Open FinAI does not know", self.label()))?;
                 let fills_as = (!o.venue_id.starts_with("tpsl:")).then(|| o.venue_id.clone());
                 return Ok(Lookup::Found { id: format!("{}:{}:{}", b.name, x.symbol, x.id()), status, filled_qty: o.filled_qty, fills_as });
             }
             let Some(o) = b.trader.lookup(&d, &a, &symbol, key).await.map_err(|e| self.fail(b, s, e))? else { continue };
             return match o.status {
                 Mapped::Known(status) => Ok(Lookup::Found { id: format!("{}:{}:{}", b.name, b.trader.followed_name(&d, &a, &symbol), o.venue_id), status, filled_qty: o.filled_qty, fills_as: Some(o.venue_id) }),
-                Mapped::Unknown(w) => Err(anyhow::Error::new(UnmappedAnswer(format!("{}: order {key} is in a state OpenTraderWorld does not know ({w})", self.label())))),
+                Mapped::Unknown(w) => Err(anyhow::Error::new(UnmappedAnswer(format!("{}: order {key} is in a state Open FinAI does not know ({w})", self.label())))),
             };
         }
         Ok(Lookup::NotFound)

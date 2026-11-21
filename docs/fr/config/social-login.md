@@ -111,7 +111,7 @@ mot de passe pendant les cinq minutes suivantes.
 Sur l'hôte :
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Cela supprime le lien, réactive la connexion par mot de passe et déconnecte toutes les sessions. Si le mot de passe est
@@ -128,7 +128,7 @@ sur une base contenant une migration qu'elle ne connaît pas, supprimez-la donc 
 
    ```bash
    docker compose --env-file .env --env-file network.env exec -T postgres \
-     psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -c "
+     psql -U otw -d openfinai -v ON_ERROR_STOP=1 -c "
        BEGIN;
        DROP TABLE IF EXISTS recovery_codes;
        DROP TABLE IF EXISTS social_login;

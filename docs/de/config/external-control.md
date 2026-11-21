@@ -1,6 +1,6 @@
 # Externe Steuerung (Chat)
 
-Steuere OpenTraderWorld über **Telegram, Slack oder Discord**. Eine Nachricht, die du an deinen Bot sendest, wird zu einem Lauf einer deiner [Agent-Personas](/de/modules/agent), im Chat beantwortet, mit genau dem Zugriff, den das gewählte Token erlaubt.
+Steuere Open FinAI über **Telegram, Slack oder Discord**. Eine Nachricht, die du an deinen Bot sendest, wird zu einem Lauf einer deiner [Agent-Personas](/de/modules/agent), im Chat beantwortet, mit genau dem Zugriff, den das gewählte Token erlaubt.
 
 **Standardmäßig ist es aus**, und es bringt kein eigenes Berechtigungssystem mit: Die Obergrenze ist ein [MCP-Token](/de/config/ai-agents), dasselbe, das auch der In-App-Assistent nutzt.
 

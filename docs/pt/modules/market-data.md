@@ -127,7 +127,7 @@ Uma fonte HTTP personalizada entra ao vivo por polling, como os provedores REST:
 
 ### Fonte push {#custom-push}
 
-Uma fonte que o OpenTraderWorld não consegue buscar (requisições assinadas, OAuth, paginação por cursor, protobuf, vários símbolos por resposta) é alimentada por um script seu: **Adicionar connector**, escolha **Custom push source**, depois crie um webhook em [Webhooks](/pt/modules/productivity#webhooks) com o alvo **Historical data** ligado a ela. O script faz POST de JSON na URL do webhook, em qualquer linguagem.
+Uma fonte que o Open FinAI não consegue buscar (requisições assinadas, OAuth, paginação por cursor, protobuf, vários símbolos por resposta) é alimentada por um script seu: **Adicionar connector**, escolha **Custom push source**, depois crie um webhook em [Webhooks](/pt/modules/productivity#webhooks) com o alvo **Historical data** ligado a ela. O script faz POST de JSON na URL do webhook, em qualquer linguagem.
 
 | Campo | O que diz |
 |---|---|
@@ -745,7 +745,7 @@ Uma execução são dezenas de requisições ao provedor, cadenciadas por ele. A
 
 ## Opções {#options}
 
-*Leia a cadeia de opções de um subjacente, monte uma estratégia, veja o que ela pode render e o que ela imobiliza.* Apenas para análise: o OpenTraderWorld não envia ordens de opções e as recusa em todas as contas. Uma posição de opção aberta ainda pode ser fechada pelo livro da corretora.
+*Leia a cadeia de opções de um subjacente, monte uma estratégia, veja o que ela pode render e o que ela imobiliza.* Apenas para análise: o Open FinAI não envia ordens de opções e as recusa em todas as contas. Uma posição de opção aberta ainda pode ser fechada pelo livro da corretora.
 
 ### Fontes
 

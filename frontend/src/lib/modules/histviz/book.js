@@ -12,7 +12,7 @@ export const MODULE = 'histviz';
 /** Grant that lets orders go to an account (see `$lib/brokers/api.js`). */
 const TRADING = 'trading';
 
-/** The broker OpenTraderWorld runs itself: it fills on the chart's own live price. */
+/** The broker Open FinAI runs itself: it fills on the chart's own live price. */
 export const PAPER = 'paper';
 
 /** Whether a broker serves the instrument a chart shows: the chart's data comes from that

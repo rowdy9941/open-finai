@@ -290,7 +290,7 @@ Refusals travel inside HTTP 200 bodies, by call: a place `success: false` with
 preview `errs[]`, a cancel `results[]` row with `success: false` and its `failure_reason`, an
 edit `success: false` with `errors[]`. `success` decides, never the reason field (FAQ). The
 user sees `Coinbase refused it: <message> (code <reason>)`. A reason the table does not list is
-unknown and alerts: `Coinbase answered code <reason> (<message>), which OpenTraderWorld does not
+unknown and alerts: `Coinbase answered code <reason> (<message>), which Open FinAI does not
 map`.
 
 Outside a 200, the gRPC gateway's body (`{error, code, message, details}`, OpenAPI `default`

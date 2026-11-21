@@ -1,6 +1,6 @@
 # Security Policy
 
-We take the security of OpenTraderWorld seriously. Because it is self-hosted and
+We take the security of Open FinAI seriously. Because it is self-hosted and
 handles your personal financial data, we appreciate reports that help keep it safe.
 
 ## Reporting a vulnerability
@@ -23,7 +23,7 @@ once a fix is released (unless you prefer to remain anonymous).
 
 ## Scope
 
-OpenTraderWorld is self-hosted and localhost-only by default. Reports are most
+Open FinAI is self-hosted and localhost-only by default. Reports are most
 valuable when they concern:
 
 - Authentication/authorization bypass (session, MCP tokens, module permissions)
@@ -36,5 +36,5 @@ systems you do not own.
 
 ## Supported versions
 
-OpenTraderWorld is pre-1.0 and moving quickly. Security fixes are applied to the
+Open FinAI is pre-1.0 and moving quickly. Security fixes are applied to the
 latest release; please upgrade before reporting.

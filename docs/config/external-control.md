@@ -1,6 +1,6 @@
 # External control (chat)
 
-Drive OpenTraderWorld from **Telegram, Slack or Discord**. A message you send to your bot becomes a run of one of your [agent personas](/modules/agent), answered in the chat, with exactly the access the token you picked allows.
+Drive Open FinAI from **Telegram, Slack or Discord**. A message you send to your bot becomes a run of one of your [agent personas](/modules/agent), answered in the chat, with exactly the access the token you picked allows.
 
 **It is off by default**, and it adds no permission system of its own: the ceiling is an [MCP token](/config/ai-agents), the same one the in-app assistant uses.
 

@@ -663,7 +663,7 @@ pub(crate) async fn one_dataset(
 
     let connector = crate::histdata::connector_for(provider)?;
     let client = reqwest::Client::builder()
-        .user_agent("Mozilla/5.0 (compatible; OpenTraderWorld demo seed)")
+        .user_agent("Mozilla/5.0 (compatible; Open FinAI demo seed)")
         .timeout(std::time::Duration::from_secs(60))
         .build()?;
     let secrets = std::collections::HashMap::new();
@@ -1529,7 +1529,7 @@ const STATEMENTS: &[&str] = &[
              'https://openrouter.ai/api/v1', '', 'openai/gpt-oss-20b:free', TRUE)",
     "INSERT INTO agent_agents (id, name, system_prompt, is_default)
      SELECT gen_random_uuid(), 'Assistant',
-            'You are the OpenTraderWorld demo assistant. Be concise. You can read the sandbox''s data through your tools.',
+            'You are the Open FinAI demo assistant. Be concise. You can read the sandbox''s data through your tools.',
             TRUE
      WHERE NOT EXISTS (SELECT 1 FROM agent_agents WHERE is_default)",
     "UPDATE agent_agents

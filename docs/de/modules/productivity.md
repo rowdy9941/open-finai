@@ -32,7 +32,7 @@ Erinnerungen, einmalig oder wiederkehrend (mit Startdatum, Enddatum oder maximal
 
 ## Webhooks {#webhooks}
 
-Gib jedem externen Dienst eine private URL, um **Alarme per POST in OpenTraderWorld zu senden**: Charting- und Alarmplattformen, Broker-Benachrichtigungen, Uptime-Monitore, Skripte, alles, was eine HTTP-Anfrage auslösen kann. Die Nutzlast wird empfangen und in ein Modul geleitet.
+Gib jedem externen Dienst eine private URL, um **Alarme per POST in Open FinAI zu senden**: Charting- und Alarmplattformen, Broker-Benachrichtigungen, Uptime-Monitore, Skripte, alles, was eine HTTP-Anfrage auslösen kann. Die Nutzlast wird empfangen und in ein Modul geleitet.
 
 - **Private URL, keine Header**: Jeder Endpunkt trägt ein **256-Bit-Token im URL-Pfad** (`/api/hooks/<token>`), weil viele Alarm-Sender keinen `Authorization`-Header setzen können. Tokens werden **gehasht** gespeichert und bei der Erstellung **einmal** angezeigt; fehlgeschlagene Abfragen werden gedrosselt.
 - **Großzügige Nutzlasten**: Sende Klartext oder JSON; der Parser akzeptiert lockere Feldnamen, sodass die meisten Sender ohne besondere Formatierung funktionieren.

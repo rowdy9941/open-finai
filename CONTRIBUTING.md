@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for your interest in OpenTraderWorld!
+Thanks for your interest in Open FinAI!
 
 ## Not accepting code contributions yet
 
-OpenTraderWorld is early and evolving fast, so we are **not accepting pull
+Open FinAI is early and evolving fast, so we are **not accepting pull
 requests at this time**. The architecture and conventions are still settling, and
 we want to avoid asking contributors to chase a moving target.
 
@@ -15,9 +15,9 @@ the repository for updates.
 
 Even without code, you can make a real difference:
 
-- 🐛 **Report bugs** — open an [issue](https://github.com/G-OTW/OpenTraderWorld/issues)
+- 🐛 **Report bugs** — open an [issue](https://github.com/G-OTW/Open FinAI/issues)
   with clear steps to reproduce, your version/commit, and your deployment setup.
-- 💡 **Suggest features** — tell us what would make OpenTraderWorld more useful for 
+- 💡 **Suggest features** — tell us what would make Open FinAI more useful for 
   your trading or investing workflow [here](https://opentraderworld.com/suggestions)
 - 📖 **Improve the docs** — spotted something unclear or wrong? Let us know via an issue.
 - ⭐ **Spread the word** — star the repo and share it with fellow traders.

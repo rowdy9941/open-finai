@@ -168,9 +168,9 @@ fn tradable<'a>(venue: &str, symbol: &'a str) -> Result<Name<'a>, ConnectorError
     let n = Name::of(symbol);
     match n.kind {
         Kind::Perp | Kind::Future => Ok(n),
-        Kind::Option => Err(ConnectorError::unsupported(format!("{venue} options orders are not sent from OpenTraderWorld ({symbol}): futures and perpetuals only"))),
-        Kind::Spot => Err(ConnectorError::unsupported(format!("{venue} spot orders are not sent from OpenTraderWorld ({symbol}): futures and perpetuals only"))),
-        Kind::Combo => Err(ConnectorError::unsupported(format!("{venue} combos are not traded from OpenTraderWorld ({symbol}): futures and perpetuals only"))),
+        Kind::Option => Err(ConnectorError::unsupported(format!("{venue} options orders are not sent from Open FinAI ({symbol}): futures and perpetuals only"))),
+        Kind::Spot => Err(ConnectorError::unsupported(format!("{venue} spot orders are not sent from Open FinAI ({symbol}): futures and perpetuals only"))),
+        Kind::Combo => Err(ConnectorError::unsupported(format!("{venue} combos are not traded from Open FinAI ({symbol}): futures and perpetuals only"))),
     }
 }
 
@@ -675,7 +675,7 @@ impl TradeMapper for Deribit {
         let v = self.venue_name();
         let sym = o.instrument.native.as_str();
         let n = tradable(v, sym)?;
-        let kind = type_word(o.order_type).ok_or_else(|| ConnectorError::unsupported(format!("{v} takes no {:?} order from OpenTraderWorld", o.order_type)))?;
+        let kind = type_word(o.order_type).ok_or_else(|| ConnectorError::unsupported(format!("{v} takes no {:?} order from Open FinAI", o.order_type)))?;
         let amount = if n.inverse() {
             // Sized in USD: the trader's amount, rounded down to the step, never a coin size.
             p.quote_amount.ok_or_else(|| ConnectorError::invalid(format!("{v} sizes {sym} in USD, and the order was not sized in it: nothing was sent")))?

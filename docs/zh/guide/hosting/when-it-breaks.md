@@ -60,7 +60,7 @@
 
 ### “Something on this machine is already answering on port 80 / 443”
 
-**原因：**你的服务商替你在机器上安装了 Web 服务器，占用了 OpenTraderWorld 需要的位置。
+**原因：**你的服务商替你在机器上安装了 Web 服务器，占用了 Open FinAI 需要的位置。
 
 粘贴下面的命令，然后再运行一次同样的那一行命令：
 
@@ -70,7 +70,7 @@ systemctl disable --now apache2 nginx caddy 2>/dev/null; true
 
 ### “This machine has … MB of memory” 或 “Only … MB of disk space is free”
 
-**原因：**机器配置太小。OpenTraderWorld 需要大约 **2 GB 内存**和 **8 GB 可用磁盘**。
+**原因：**机器配置太小。Open FinAI 需要大约 **2 GB 内存**和 **8 GB 可用磁盘**。
 
 1. 在服务商处把机器升级到更大的套餐。
 2. 再运行一次同样的那一行命令。
@@ -120,13 +120,13 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
 
 丢了那台电脑或那个密码？请使用服务商控制面板中的**控制台**（有时叫 **VNC**、**救援**或 **Web 终端**）。即使正常的登录途径被关闭，它也能用。
 
-### 我忘记了 OpenTraderWorld 的密码
+### 我忘记了 Open FinAI 的密码
 
 1. 登录你的机器。
 2. 输入（如果你改过登录名，请把 `admin` 替换为你的登录名）：
 
    ```bash
-   docker exec -it opentraderworld-core-1 /app/otw-core reset-password admin
+   docker exec -it openfinai-core-1 /app/otw-core reset-password admin
    ```
 
 3. 用它打印出的密码登录应用。应用会要求你选择新密码。
@@ -171,14 +171,14 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
 | `--domain <name>` | 已经指向这台机器的地址。 |
 | `--login key` 或 `--login password` | 今后如何登录这台机器：用你已在使用的密钥，或用密码。 |
 | `--user <name>` | 机器上的日常账号。默认：你登录时用的账号；如果你以 `root` 登录，则为 `otw`。 |
-| `--admin-user <name>` | 你的 OpenTraderWorld 登录名。默认：`admin`。 |
+| `--admin-user <name>` | 你的 Open FinAI 登录名。默认：`admin`。 |
 | `--ssh-key <key>` | 允许登录的公钥。要添加多个就重复该选项。默认：已受信任的密钥。 |
 | `--ssh-port <n>` | 访问这台机器所用的端口。默认：它已在使用的端口，否则为 `22`。 |
 | `--dir <path>` | 安装位置。默认：`/home/<user>/otw`。 |
 | `--timezone <zone>` | 机器的时区，例如 `Europe/Paris`。默认：保持不变。 |
 | `--swap <size>` | 交换文件大小，例如 `2G`，或 `none`。默认：内存少于 4 GB 的机器使用 `2G`。 |
 | `--ref <ref>` | 要安装的版本：一个 release tag 或一个分支。默认：`master`。 |
-| `--repo <owner/name>` | 从哪个 GitHub 仓库安装。默认：`G-OTW/OpenTraderWorld`。 |
+| `--repo <owner/name>` | 从哪个 GitHub 仓库安装。默认：`G-OTW/Open FinAI`。 |
 | `--yes` | 什么都不问，全部采用默认值。 |
 
 ## 仍然解决不了？
@@ -191,4 +191,4 @@ curl -fsSL https://get.opentraderworld.com/configure_install.sh | sudo bash -s -
    ```
 
 3. 它会写出一个文件并打印其位置。该文件不含任何密码。
-4. 在 [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) 上提交 issue，说明你当时在做什么，并附上该文件。
+4. 在 [GitHub](https://github.com/G-OTW/Open FinAI/issues) 上提交 issue，说明你当时在做什么，并附上该文件。

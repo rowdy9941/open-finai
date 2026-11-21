@@ -1,4 +1,4 @@
--- Paper broker: a broker account run by OpenTraderWorld itself. Orders rest here and fill on
+-- Paper broker: a broker account run by Open FinAI itself. Orders rest here and fill on
 -- the live price of the chart they were placed from; nothing leaves the app.
 --
 -- The account's settings (currency, commissions, slippage, leverage, shorts) are its

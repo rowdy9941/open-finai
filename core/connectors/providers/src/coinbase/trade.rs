@@ -69,7 +69,7 @@ pub(super) fn proof_token_refused(what: &str) -> ConnectorError {
     ConnectorError::new(
         ErrorKind::Permission,
         format!(
-            "Coinbase withholds the {what} until a proof token is given (EU strong customer authentication, proof_token_required), which OpenTraderWorld does not send: the list is not read as empty. Check them at Coinbase."
+            "Coinbase withholds the {what} until a proof token is given (EU strong customer authentication, proof_token_required), which Open FinAI does not send: the list is not read as empty. Check them at Coinbase."
         ),
     )
 }
@@ -458,7 +458,7 @@ impl Coinbase {
     fn fill_row(r: FillRow) -> Result<VenueFill, ConnectorError> {
         if !r.trade_type.is_empty() && r.trade_type != "FILL" {
             return Err(ConnectorError::decode(format!(
-                "Coinbase listed an adjusted fill ({} {} of order {}), which OpenTraderWorld does not read: check the order at Coinbase",
+                "Coinbase listed an adjusted fill ({} {} of order {}), which Open FinAI does not read: check the order at Coinbase",
                 r.trade_type, r.entry_id, r.order_id
             )));
         }
@@ -575,7 +575,7 @@ impl TradeMapper for Coinbase {
 
     fn cancel_ids(&self, _settings: &Settings, orders: &[VenueOrder], corr: CorrId) -> Result<HttpRequest, ConnectorError> {
         if orders.is_empty() || orders.len() > CANCEL_BATCH_MAX {
-            return Err(ConnectorError::invalid(format!("OpenTraderWorld cancels 1 to {CANCEL_BATCH_MAX} Coinbase orders per batch ({} given)", orders.len())));
+            return Err(ConnectorError::invalid(format!("Open FinAI cancels 1 to {CANCEL_BATCH_MAX} Coinbase orders per batch ({} given)", orders.len())));
         }
         let ids = orders.iter().map(|o| path_id(&o.venue_id).map(str::to_string)).collect::<Result<Vec<_>, _>>()?;
         Self::post(CANCEL_BATCH, "/orders/batch_cancel", &json!({ "order_ids": ids }), corr)
@@ -725,7 +725,7 @@ impl TradeMapper for Coinbase {
                 let adjusted = !r.trade_type.is_empty() && r.trade_type != "FILL";
                 if adjusted {
                     tracing::error!(
-                        "Coinbase listed an adjusted fill ({} {} of order {}), which OpenTraderWorld does not read: it is left out, check the order at Coinbase",
+                        "Coinbase listed an adjusted fill ({} {} of order {}), which Open FinAI does not read: it is left out, check the order at Coinbase",
                         r.trade_type,
                         r.entry_id,
                         r.order_id

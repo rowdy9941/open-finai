@@ -1,6 +1,6 @@
 # Obtenha o Docker
 
-O OpenTraderWorld é distribuído como um conjunto de contêineres Docker, e essa é atualmente a **única forma suportada de executá-lo**. Uma instalação nativa (rodando o core em Rust, o PostgreSQL e o frontend diretamente no host) é possível se você sabe o que está fazendo, mas **não é recomendada nem documentada**. O Docker é priorizado de propósito:
+O Open FinAI é distribuído como um conjunto de contêineres Docker, e essa é atualmente a **única forma suportada de executá-lo**. Uma instalação nativa (rodando o core em Rust, o PostgreSQL e o frontend diretamente no host) é possível se você sabe o que está fazendo, mas **não é recomendada nem documentada**. O Docker é priorizado de propósito:
 
 - **Não intrusivo**: nada é instalado no seu sistema além do próprio Docker. O app, o banco e o proxy vivem em contêineres; seus dados vivem em volumes nomeados. Remover tudo é `docker compose down -v` mais apagar a pasta.
 - **Idêntico em todo lugar**: a mesma stack roda sem alterações no macOS, Linux e Windows.
@@ -35,7 +35,7 @@ Instale o **Docker Desktop** com o backend WSL 2:
 
 3. Abra o Docker Desktop e mantenha a configuração padrão *Use WSL 2*.
 
-Execute os comandos do OpenTraderWorld (o instalador, `setup.sh`, os backups) a partir de um shell WSL: são scripts bash. O Docker Desktop torna o `docker` disponível ali para a sua distribuição WSL padrão. O Docker Compose está incluído.
+Execute os comandos do Open FinAI (o instalador, `setup.sh`, os backups) a partir de um shell WSL: são scripts bash. O Docker Desktop torna o `docker` disponível ali para a sua distribuição WSL padrão. O Docker Compose está incluído.
 
 ## Linux
 
@@ -60,12 +60,12 @@ docker run --rm hello-world
 
 Os três funcionam → você está pronto.
 
-## Implantar o OpenTraderWorld
+## Implantar o Open FinAI
 
 Um comando, depois siga as perguntas:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
 O passo a passo completo (o que significam as perguntas, opções, alternativa manual, verificação do resultado) está na página de [Instalação](/pt/guide/install).

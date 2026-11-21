@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: OpenTraderWorld
+  name: Open FinAI
   text: Il tuo spazio di trading, sul tuo computer.
   tagline: Una piattaforma gratuita e self-hosted che riunisce gli strumenti che trader e investitori usano davvero (journal, dati di mercato, backtest, portafogli, notizie), con i tuoi dati che restano tuoi.
   actions:
@@ -10,14 +10,14 @@ hero:
       text: Inizia
       link: /it/guide/install
     - theme: alt
-      text: Cos'è OpenTraderWorld?
+      text: Cos'è Open FinAI?
       link: /it/guide/introduction
     - theme: alt
       text: Demo live
       link: https://demo.opentraderworld.com
     - theme: alt
       text: GitHub
-      link: https://github.com/G-OTW/OpenTraderWorld
+      link: https://github.com/G-OTW/Open FinAI
 
 features:
   - icon: 🔒

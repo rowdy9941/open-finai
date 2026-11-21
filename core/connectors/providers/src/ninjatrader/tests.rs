@@ -40,7 +40,7 @@ impl Respond for Venue {
         let p = req.url.path().to_string();
         if p == "/auth/accesstokenrequest" {
             let body: serde_json::Value = serde_json::from_slice(&req.body).unwrap();
-            assert_eq!((body["cid"].as_i64(), body["appId"].as_str()), (Some(7), Some("OpenTraderWorld")));
+            assert_eq!((body["cid"].as_i64(), body["appId"].as_str()), (Some(7), Some("Open FinAI")));
             if body["password"] != "pw" {
                 return ResponseTemplate::new(401).set_body_string(r#"{"errorText":"Incorrect username or password"}"#);
             }

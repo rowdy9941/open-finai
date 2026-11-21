@@ -1,6 +1,6 @@
 # Réseau et accès à distance
 
-OpenTraderWorld contrôle **qui peut joindre l'application** grâce à quatre modes réseau. Après l'installation, il est **en localhost uniquement** : rien sur votre réseau ne peut s'y connecter tant que vous ne changez pas cela.
+Open FinAI contrôle **qui peut joindre l'application** grâce à quatre modes réseau. Après l'installation, il est **en localhost uniquement** : rien sur votre réseau ne peut s'y connecter tant que vous ne changez pas cela.
 
 La méthode prise en charge pour changer de mode est dans l'application : **Paramètres → Réseau**. L'enregistrement affiche la commande de redémarrage exacte à exécuter sur l'hôte (l'application ne peut pas redémarrer ses propres conteneurs) ; la pile est brièvement hors ligne pendant la recréation des conteneurs.
 
@@ -110,5 +110,5 @@ Modifier le fichier change ce sur quoi Caddy écoute. Mais une fois qu'un mode a
 
 ```bash
 docker compose --env-file .env --env-file network.env exec -T postgres \
-  psql -U otw -d opentraderworld -c "DELETE FROM app_settings WHERE key = 'net_mode'"
+  psql -U otw -d openfinai -c "DELETE FROM app_settings WHERE key = 'net_mode'"
 ```

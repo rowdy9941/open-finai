@@ -4,6 +4,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld: Job queue over Redis"
+description = "Open FinAI: Job queue over Redis"
 
 [dependencies]

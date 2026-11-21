@@ -134,7 +134,7 @@ pub(super) fn of(raw: &str, all: &str) -> VenueError {
             }
             e
         }
-        None => VenueError::unmapped(Some(raw.to_string()), format!("Kraken answered code {raw} ({all}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(raw.to_string()), format!("Kraken answered code {raw} ({all}), which Open FinAI does not map")),
     }
 }
 

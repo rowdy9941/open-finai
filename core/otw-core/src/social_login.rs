@@ -526,7 +526,7 @@ async fn github_identity(http: &Client, access_token: &str) -> anyhow::Result<Id
         .get("https://api.github.com/user")
         .bearer_auth(access_token)
         .header(reqwest::header::ACCEPT, "application/vnd.github+json")
-        .header(reqwest::header::USER_AGENT, "OpenTraderWorld")
+        .header(reqwest::header::USER_AGENT, "Open FinAI")
         .timeout(HTTP_TIMEOUT)
         .send()
         .await

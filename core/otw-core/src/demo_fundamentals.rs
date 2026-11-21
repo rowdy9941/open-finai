@@ -1165,7 +1165,7 @@ fn call(co: &Co, m: &Model, fy: i32, k: i32) -> Vec<Segment> {
     let turns: Vec<(&str, &str, &str, String)> = vec![
         ("Operator", "operator", "prepared", format!(
             "Good afternoon, and welcome to the {} fiscal Q{k} {fy} earnings conference call. Today's call is being recorded. \
-             This is an illustrative transcript written for the OpenTraderWorld demo.", co.name)),
+             This is an illustrative transcript written for the Open FinAI demo.", co.name)),
         (ceo, "exec", "prepared", format!(
             "Thank you, and good afternoon, everyone. We delivered revenue of ${rev:.1} billion this quarter, up {growth:.0}% \
              from a year ago. {top} led the quarter, and {second} reached a new record. Customer demand stayed healthy \

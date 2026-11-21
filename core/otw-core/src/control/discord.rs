@@ -73,7 +73,7 @@ impl Gateway {
             "d": {
                 "token": self.token,
                 "intents": INTENTS,
-                "properties": { "os": "linux", "browser": "opentraderworld", "device": "opentraderworld" },
+                "properties": { "os": "linux", "browser": "openfinai", "device": "openfinai" },
             }
         });
         ws.send(Message::Text(identify.to_string().into())).await?;

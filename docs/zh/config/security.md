@@ -46,7 +46,7 @@ OTW 只有一个账户，没有密码重置邮件。保护它的是密码（或�
 重置表单相同。请在机器的 shell 中恢复：
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 第二重验证因素及其密钥会被移除，所有会话都会退出登录。用你的密码登录，

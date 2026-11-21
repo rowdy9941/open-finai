@@ -127,7 +127,7 @@ Eine benutzerdefinierte HTTP-Quelle geht per Polling live, wie die REST-Anbieter
 
 ### Push-Quelle {#custom-push}
 
-Eine Quelle, die OpenTraderWorld nicht abrufen kann (signierte Anfragen, OAuth, Cursor-Paging, Protobuf, mehrere Symbole pro Antwort), wird stattdessen von deinem eigenen Skript gespeist: **Konnektor hinzufügen**, **Custom push source** wählen, dann in [Webhooks](/de/modules/productivity#webhooks) einen Webhook mit dem Ziel **Historical data** anlegen, das daran gebunden ist. Das Skript POSTet JSON an die Webhook-URL, in jeder Sprache.
+Eine Quelle, die Open FinAI nicht abrufen kann (signierte Anfragen, OAuth, Cursor-Paging, Protobuf, mehrere Symbole pro Antwort), wird stattdessen von deinem eigenen Skript gespeist: **Konnektor hinzufügen**, **Custom push source** wählen, dann in [Webhooks](/de/modules/productivity#webhooks) einen Webhook mit dem Ziel **Historical data** anlegen, das daran gebunden ist. Das Skript POSTet JSON an die Webhook-URL, in jeder Sprache.
 
 | Feld | Was es sagt |
 |---|---|
@@ -727,7 +727,7 @@ Ein Lauf sind Dutzende Anbieteranfragen, vom Anbieter getaktet. Die Seite zeigt 
 
 ## Optionen {#options}
 
-*Die Optionskette eines Basiswerts lesen, eine Strategie aufbauen, sehen, was sie einbringen kann und was sie bindet.* Nur zur Analyse: OpenTraderWorld sendet keine Optionsorders und lehnt sie auf jedem Konto ab. Eine offene Optionsposition kann weiterhin über das Broker-Buch geschlossen werden.
+*Die Optionskette eines Basiswerts lesen, eine Strategie aufbauen, sehen, was sie einbringen kann und was sie bindet.* Nur zur Analyse: Open FinAI sendet keine Optionsorders und lehnt sie auf jedem Konto ab. Eine offene Optionsposition kann weiterhin über das Broker-Buch geschlossen werden.
 
 ### Quellen
 

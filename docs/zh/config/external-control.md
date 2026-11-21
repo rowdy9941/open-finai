@@ -1,6 +1,6 @@
 # 外部控制（聊天）
 
-通过 **Telegram、Slack 或 Discord** 操控 OpenTraderWorld。你发给 bot 的消息会变成你的某个 [agent persona](/zh/modules/agent) 的一次运行，并在聊天中回答，访问范围恰好是你所选 token 允许的范围。
+通过 **Telegram、Slack 或 Discord** 操控 Open FinAI。你发给 bot 的消息会变成你的某个 [agent persona](/zh/modules/agent) 的一次运行，并在聊天中回答，访问范围恰好是你所选 token 允许的范围。
 
 **默认关闭**，并且不增加它自己的权限系统：上限是一个 [MCP token](/zh/config/ai-agents)，与应用内助手使用的是同一个。
 

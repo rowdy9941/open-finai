@@ -111,7 +111,7 @@ nächsten fünf Minuten nicht nach dem Passwort.
 Auf dem Host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Entfernt die Verknüpfung, schaltet die Passwort-Anmeldung ein und meldet jede Sitzung ab. Ist auch das Passwort
@@ -128,7 +128,7 @@ Datenbank eine ihr unbekannte Migration enthält, entferne sie also zuerst:
 
    ```bash
    docker compose --env-file .env --env-file network.env exec -T postgres \
-     psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -c "
+     psql -U otw -d openfinai -v ON_ERROR_STOP=1 -c "
        BEGIN;
        DROP TABLE IF EXISTS recovery_codes;
        DROP TABLE IF EXISTS social_login;

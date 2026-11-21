@@ -476,7 +476,7 @@ impl Kucoin {
             TimeInForce::Gtc => Ok("GTC"),
             TimeInForce::Ioc => Ok("IOC"),
             TimeInForce::Fok => Ok("FOK"),
-            other => Err(ConnectorError::unsupported(format!("{} takes no {:?} time in force from OpenTraderWorld", self.label(), other.kind()))),
+            other => Err(ConnectorError::unsupported(format!("{} takes no {:?} time in force from Open FinAI", self.label(), other.kind()))),
         }
     }
 
@@ -508,7 +508,7 @@ impl Kucoin {
                     b.insert("postOnly".into(), json!(true));
                 }
             }
-            other => return Err(ConnectorError::unsupported(format!("{} takes no {other:?} order from OpenTraderWorld", self.label()))),
+            other => return Err(ConnectorError::unsupported(format!("{} takes no {other:?} order from Open FinAI", self.label()))),
         }
         Ok(Value::Object(b))
     }
@@ -531,7 +531,7 @@ impl Kucoin {
             OrderType::Limit => ("limit", false),
             OrderType::Stop => ("market", true),
             OrderType::StopLimit => ("limit", true),
-            other => return Err(ConnectorError::unsupported(format!("{} takes no {other:?} order from OpenTraderWorld", self.label()))),
+            other => return Err(ConnectorError::unsupported(format!("{} takes no {other:?} order from Open FinAI", self.label()))),
         };
         b.insert("type".into(), json!(kind));
         b.insert("qty".into(), json!(dec_text(o.qty.value())));

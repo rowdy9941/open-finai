@@ -161,7 +161,7 @@ pub async fn download(url: &str) -> Result<Vec<u8>> {
     })?;
     let mut builder = reqwest::Client::builder()
         .timeout(DOWNLOAD_TIMEOUT)
-        .user_agent("OpenTraderWorld/histdata")
+        .user_agent("Open FinAI/histdata")
         .redirect(reqwest::redirect::Policy::none());
     if let Some((host, addr)) = pin {
         builder = builder.resolve(&host, addr);

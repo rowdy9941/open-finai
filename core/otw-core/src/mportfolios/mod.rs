@@ -16,7 +16,7 @@ use anyhow::{Context, Result};
 use otw_store::mportfolios::{HoldingInput, PortfolioInput};
 
 const BASE: &str = "https://www.dataroma.com/m";
-const UA: &str = "Mozilla/5.0 (compatible; OpenTraderWorld/1.0; +https://github.com/G-OTW/OpenTraderWorld)";
+const UA: &str = "Mozilla/5.0 (compatible; Open FinAI/1.0; +https://github.com/G-OTW/Open FinAI)";
 
 /// Shared HTTP client with a real user agent (Dataroma 403s the default reqwest UA).
 pub fn client() -> Result<reqwest::Client> {

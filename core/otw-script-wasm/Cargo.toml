@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld: browser build of the script engine (wasm-bindgen wrapper)"
+description = "Open FinAI: browser build of the script engine (wasm-bindgen wrapper)"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

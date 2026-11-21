@@ -104,7 +104,7 @@ fn user_agent(settings: &HashMap<String, String>) -> Result<String> {
              in the connector's Contact setting"
         ));
     }
-    Ok(format!("OpenTraderWorld {contact}"))
+    Ok(format!("Open FinAI {contact}"))
 }
 
 /// Wait until at least [`MIN_GAP`] has passed since the previous EDGAR request.

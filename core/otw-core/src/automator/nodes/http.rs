@@ -1,4 +1,4 @@
-//! `http`: call something outside OpenTraderWorld.
+//! `http`: call something outside Open FinAI.
 //!
 //! The whole point of the block is that the user decides what to call, so the guard here is
 //! not a URL allowlist but a network one, and it is opt-out per node rather than global:

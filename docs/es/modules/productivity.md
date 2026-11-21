@@ -32,7 +32,7 @@ Recordatorios, puntuales o recurrentes (con fecha de inicio, fecha de fin o núm
 
 ## Webhooks {#webhooks}
 
-Da a cualquier servicio externo una URL privada para **hacer POST de alertas en OpenTraderWorld**: plataformas de gráficos y alertas, notificaciones de brokers, monitores de disponibilidad, scripts, cualquier cosa que pueda lanzar una petición HTTP. El payload se recibe y se enruta a un módulo.
+Da a cualquier servicio externo una URL privada para **hacer POST de alertas en Open FinAI**: plataformas de gráficos y alertas, notificaciones de brokers, monitores de disponibilidad, scripts, cualquier cosa que pueda lanzar una petición HTTP. El payload se recibe y se enruta a un módulo.
 
 - **URL privada, sin cabeceras**: cada endpoint lleva un **token de 256 bits en la ruta de la URL** (`/api/hooks/<token>`), porque muchos emisores de alertas no pueden poner una cabecera `Authorization`. Los tokens se almacenan **con hash** y se muestran **una vez** al crearlos; las búsquedas fallidas se limitan.
 - **Payloads liberales**: envía texto plano o JSON; el parser acepta nombres de campo laxos, así que la mayoría de emisores funcionan sin formato especial.

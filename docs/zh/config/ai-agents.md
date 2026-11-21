@@ -1,11 +1,11 @@
 # AI 代理（MCP）
 
-OpenTraderWorld 内置了一个 **MCP 服务器**，让 AI agent（任何兼容 [MCP](https://modelcontextprotocol.io) 的客户端）可以通过受控的 gateway 读取和更新你的模块。agent 可以替你记录 journal 交易、总结你的新闻源、添加待办、查询你的 backtest 结果，等等。
+Open FinAI 内置了一个 **MCP 服务器**，让 AI agent（任何兼容 [MCP](https://modelcontextprotocol.io) 的客户端）可以通过受控的 gateway 读取和更新你的模块。agent 可以替你记录 journal 交易、总结你的新闻源、添加待办、查询你的 backtest 结果，等等。
 
 **默认关闭。**在你启用之前，不会有任何东西监听 agent。
 
 ::: tip 想找的是应用内的聊天助手？
-本页讲的是**外部** agent *接入* OpenTraderWorld。如果你想要的是应用内置的聊天助手（自带服务商），请参阅 [Agent 模块](/zh/modules/agent)：它可以*使用*同一个 gateway 来访问你的数据。
+本页讲的是**外部** agent *接入* Open FinAI。如果你想要的是应用内置的聊天助手（自带服务商），请参阅 [Agent 模块](/zh/modules/agent)：它可以*使用*同一个 gateway 来访问你的数据。
 :::
 
 ## 安全模型 {#security-model}
@@ -57,7 +57,7 @@ Authorization: Bearer <TOKEN>
 ```json
 {
   "mcpServers": {
-    "opentraderworld": {
+    "openfinai": {
       "type": "http",
       "url": "http://localhost:5454/api/mcp",
       "headers": { "Authorization": "Bearer <TOKEN>" }

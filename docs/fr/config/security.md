@@ -49,7 +49,7 @@ Il n'y a ni code de secours ni e-mail de récupération, pour la même raison qu
 du mot de passe. Récupérez l'accès depuis le shell de la machine :
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 Le second facteur et son secret sont supprimés et toutes les sessions sont déconnectées. Connectez-vous avec

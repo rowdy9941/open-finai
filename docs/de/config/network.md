@@ -1,6 +1,6 @@
 # Netzwerk & Fernzugriff
 
-OpenTraderWorld steuert über vier Netzwerkmodi, **wer die App erreichen kann**. Nach der Installation ist sie **nur über localhost** erreichbar: Nichts in deinem Netzwerk kann sich verbinden, bis du das änderst.
+Open FinAI steuert über vier Netzwerkmodi, **wer die App erreichen kann**. Nach der Installation ist sie **nur über localhost** erreichbar: Nichts in deinem Netzwerk kann sich verbinden, bis du das änderst.
 
 Der unterstützte Weg, den Modus zu wechseln, ist in der App: **Einstellungen → Netzwerk**. Beim Speichern wird der genaue Neustart-Befehl angezeigt, der auf dem Host auszuführen ist (die App kann ihre eigenen Container nicht neu starten); der Stack ist kurz offline, während die Container neu erstellt werden.
 
@@ -110,5 +110,5 @@ Das Bearbeiten der Datei ändert, worauf Caddy lauscht. Sobald aber ein Modus un
 
 ```bash
 docker compose --env-file .env --env-file network.env exec -T postgres \
-  psql -U otw -d opentraderworld -c "DELETE FROM app_settings WHERE key = 'net_mode'"
+  psql -U otw -d openfinai -c "DELETE FROM app_settings WHERE key = 'net_mode'"
 ```

@@ -1,6 +1,6 @@
 # Primeiros passos
 
-Você [instalou](/pt/guide/install) o OpenTraderWorld e tem suas credenciais de administrador. Veja como deixá-lo do seu jeito.
+Você [instalou](/pt/guide/install) o Open FinAI e tem suas credenciais de administrador. Veja como deixá-lo do seu jeito.
 
 ## Entrar
 

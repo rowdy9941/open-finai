@@ -1,4 +1,4 @@
-//! The paper broker: a broker account run by OpenTraderWorld instead of a venue.
+//! The paper broker: a broker account run by Open FinAI instead of a venue.
 //!
 //! It is connected like any broker (Settings, Brokers, or the chart's broker button) and
 //! answers the same calls, so the chart, the order ticket, the positions and orders tabs, the
@@ -155,8 +155,8 @@ pub(crate) static PAPER: BrokerCapability = BrokerCapability {
     label: "Paper trading",
     website: "",
     docs_url: "",
-    rate_limit: "Runs inside OpenTraderWorld: no venue, no limit.",
-    key_note: "No key and no venue: orders fill inside OpenTraderWorld on the live price of \
+    rate_limit: "Runs inside Open FinAI: no venue, no limit.",
+    key_note: "No key and no venue: orders fill inside Open FinAI on the live price of \
                the chart they are placed from. No real money is involved.",
     required_secrets: &[],
     config_fields: FIELDS,

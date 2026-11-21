@@ -623,7 +623,7 @@ impl Okx {
         if r.ct_type != "linear" {
             // An inverse contract's `ctVal` is in USD: its size is not a coin amount. Listed with
             // its size (its orders and positions are read), never sent an order.
-            v.status = TradingStatus::Closed(format!("{} contract, sized in USD: not taken by OpenTraderWorld", if r.ct_type.is_empty() { "unknown" } else { &r.ct_type }));
+            v.status = TradingStatus::Closed(format!("{} contract, sized in USD: not taken by Open FinAI", if r.ct_type.is_empty() { "unknown" } else { &r.ct_type }));
         }
         v
     }

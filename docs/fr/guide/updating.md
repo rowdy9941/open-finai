@@ -1,6 +1,6 @@
 # Mise à jour
 
-OpenTraderWorld vous signale quand une nouvelle version est disponible dans **Paramètres → Mettre à jour l'app** (il interroge GitHub). L'application **ne peut pas se mettre à jour elle-même, par conception** (elle tourne sans accès au shell ni à Docker, pour limiter la surface d'attaque) : les mises à jour sont donc quelques commandes sur l'hôte.
+Open FinAI vous signale quand une nouvelle version est disponible dans **Paramètres → Mettre à jour l'app** (il interroge GitHub). L'application **ne peut pas se mettre à jour elle-même, par conception** (elle tourne sans accès au shell ni à Docker, pour limiter la surface d'attaque) : les mises à jour sont donc quelques commandes sur l'hôte.
 
 ## Avant de mettre à jour
 
@@ -39,7 +39,7 @@ fixées dans `deploy/` : elle ne passe jamais à une nouvelle version. Remplacez
 puis mettez à jour :
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/deploy/otw -o /tmp/otw
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/deploy/otw -o /tmp/otw
 sudo install -m 755 /tmp/otw /usr/local/bin/otw
 otw update
 ```
@@ -50,9 +50,9 @@ Rien n'est construit et il n'y a pas de dépôt git, donc actualisez `deploy/` d
 (c'est là que les nouveaux tags d'images sont fixés), puis récupérez les images et redémarrez :
 
 ```bash
-cd /path/to/opentraderworld
+cd /path/to/openfinai
 TMP=$(mktemp -d)
-curl -fsSL https://codeload.github.com/G-OTW/OpenTraderWorld/tar.gz/master | tar -xz -C "$TMP"
+curl -fsSL https://codeload.github.com/G-OTW/Open FinAI/tar.gz/master | tar -xz -C "$TMP"
 cp -R "$TMP"/*/deploy/. deploy/
 rm -rf "$TMP"
 docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.images.yml \
@@ -73,7 +73,7 @@ sont perdues, gardez-les dans un patch si besoin.
 Actualisez le dépôt, puis reconstruisez :
 
 ```bash
-cd /path/to/OpenTraderWorld
+cd /path/to/Open FinAI
 git fetch origin
 git reset --hard origin/master
 docker compose -f deploy/docker-compose.yml \

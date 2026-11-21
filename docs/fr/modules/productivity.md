@@ -32,7 +32,7 @@ Des rappels, ponctuels ou récurrents (avec date de début, date de fin ou nombr
 
 ## Webhooks {#webhooks}
 
-Donnez à n'importe quel service externe une URL privée pour **POSTer des alertes dans OpenTraderWorld** : plateformes de graphiques et d'alertes, notifications de broker, moniteurs de disponibilité, scripts, tout ce qui peut émettre une requête HTTP. La charge est reçue et routée vers un module.
+Donnez à n'importe quel service externe une URL privée pour **POSTer des alertes dans Open FinAI** : plateformes de graphiques et d'alertes, notifications de broker, moniteurs de disponibilité, scripts, tout ce qui peut émettre une requête HTTP. La charge est reçue et routée vers un module.
 
 - **URL privée, sans en-têtes** : chaque point d'entrée porte un **token de 256 bits dans le chemin de l'URL** (`/api/hooks/<token>`), car beaucoup d'émetteurs d'alertes ne peuvent pas définir d'en-tête `Authorization`. Les tokens sont stockés **hachés** et affichés **une seule fois** à la création ; les recherches échouées sont limitées.
 - **Charges tolérantes** : envoyez du texte brut ou du JSON ; l'analyseur accepte des noms de champs souples, donc la plupart des émetteurs fonctionnent sans mise en forme spéciale.

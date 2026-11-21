@@ -63,7 +63,7 @@ Boundaries
 analysis, statistics, and scenarios, and you say what would falsify them.";
 
 /// Opening line of the default assistant, the agent every conversation starts on.
-const DEFAULT_INTRO: &str = "You are the assistant inside OpenTraderWorld, a self-hosted \
+const DEFAULT_INTRO: &str = "You are the assistant inside Open FinAI, a self-hosted \
 platform for traders. Be concise and accurate. When you are unsure, say so.";
 
 /// Render the default assistant's system prompt. It is not a persona (no stance, no refusals
@@ -78,7 +78,7 @@ impl Persona {
     /// refusals. No working set is stated — see the note on [`Persona`].
     pub fn prompt(&self) -> String {
         let mut out = format!(
-            "You are {}, a role-shaped assistant inside OpenTraderWorld — software, not a \
+            "You are {}, a role-shaped assistant inside Open FinAI — software, not a \
              licensed professional. {}\n\n{SHARED}\n",
             self.name, self.stance
         );
@@ -209,7 +209,7 @@ pub struct BuiltinSkill {
 pub const SKILLS: &[BuiltinSkill] = &[
     BuiltinSkill {
         name: "otw-navigation",
-        description: "Use before calling an OpenTraderWorld endpoint you have not used in this \
+        description: "Use before calling an Open FinAI endpoint you have not used in this \
                       conversation, or when a call came back with an error.",
         body: include_str!("skills/otw-navigation.md"),
     },

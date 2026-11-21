@@ -345,7 +345,7 @@ pub fn decode(p: Pending, corr: CorrId, body: &[u8], s: &mut Session, ctx: &MapC
                 // It is left out, said, and the other fills are kept.
                 if !f.trade_type.is_empty() && f.trade_type != "FILL" {
                     tracing::error!(
-                        "Coinbase listed an adjusted fill ({} {} of order {}), which OpenTraderWorld does not read: it is left out of the import, check that order at Coinbase",
+                        "Coinbase listed an adjusted fill ({} {} of order {}), which Open FinAI does not read: it is left out of the import, check that order at Coinbase",
                         f.trade_type,
                         f.entry_id,
                         f.order_id

@@ -127,7 +127,7 @@ A custom HTTP source goes live by polling, like the REST providers: see [Polled 
 
 ### Push source {#custom-push}
 
-A source OpenTraderWorld cannot fetch (signed requests, OAuth, cursor paging, protobuf, several symbols per answer) is fed by your own script instead: **Add connector**, pick **Custom push source**, then create a webhook in [Webhooks](/modules/productivity#webhooks) with the target **Historical data** bound to it. The script POSTs JSON to the webhook URL, in any language.
+A source Open FinAI cannot fetch (signed requests, OAuth, cursor paging, protobuf, several symbols per answer) is fed by your own script instead: **Add connector**, pick **Custom push source**, then create a webhook in [Webhooks](/modules/productivity#webhooks) with the target **Historical data** bound to it. The script POSTs JSON to the webhook URL, in any language.
 
 | Field | What it says |
 |---|---|
@@ -763,7 +763,7 @@ A run is dozens of provider requests, paced by the provider. The page shows the 
 
 ## Options {#options}
 
-*Read an underlying's option chain, build a strategy, see what it can make and what it ties up.* For analysis only: OpenTraderWorld sends no option orders, and refuses them on every account. An open option position can still be closed from the broker book.
+*Read an underlying's option chain, build a strategy, see what it can make and what it ties up.* For analysis only: Open FinAI sends no option orders, and refuses them on every account. An open option position can still be closed from the broker book.
 
 ### Sources
 

@@ -84,14 +84,14 @@
 
   const plain =
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    "  pg_dump -U otw -d opentraderworld --no-owner > otw-backup-$(date +%F).sql";
+    "  pg_dump -U otw -d openfinai --no-owner > otw-backup-$(date +%F).sql";
 
   // GPG_TTY + loopback: inside a pipeline gpg's stdin is the dump, so without them the
   // passphrase prompt fails with "Inappropriate ioctl for device".
   const encrypted =
     'export GPG_TTY=$(tty)\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  pg_dump -U otw -d opentraderworld --no-owner \\\n' +
+    '  pg_dump -U otw -d openfinai --no-owner \\\n' +
     '  | gpg --symmetric --cipher-algo AES256 --pinentry-mode loopback \\\n' +
     '  > otw-backup-$(date +%F).sql.gpg';
 
@@ -102,23 +102,23 @@
   const restorePlain =
     'docker compose -f deploy/docker-compose.yml stop core\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS opentraderworld"\n' +
+    '  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS openfinai"\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  psql -U otw -d postgres -c "CREATE DATABASE opentraderworld OWNER otw"\n' +
+    '  psql -U otw -d postgres -c "CREATE DATABASE openfinai OWNER otw"\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -q < otw-backup-YYYY-MM-DD.sql\n' +
+    '  psql -U otw -d openfinai -v ON_ERROR_STOP=1 -q < otw-backup-YYYY-MM-DD.sql\n' +
     'docker compose -f deploy/docker-compose.yml start core';
 
   const restoreEncrypted =
     'export GPG_TTY=$(tty)\n' +
     'docker compose -f deploy/docker-compose.yml stop core\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS opentraderworld"\n' +
+    '  psql -U otw -d postgres -c "DROP DATABASE IF EXISTS openfinai"\n' +
     'docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '  psql -U otw -d postgres -c "CREATE DATABASE opentraderworld OWNER otw"\n' +
+    '  psql -U otw -d postgres -c "CREATE DATABASE openfinai OWNER otw"\n' +
     'gpg -d otw-backup-YYYY-MM-DD.sql.gpg \\\n' +
     '  | docker compose -f deploy/docker-compose.yml exec -T postgres \\\n' +
-    '    psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -q\n' +
+    '    psql -U otw -d openfinai -v ON_ERROR_STOP=1 -q\n' +
     'docker compose -f deploy/docker-compose.yml start core';
 
   // ── Partial ────────────────────────────────────────────────────────────────

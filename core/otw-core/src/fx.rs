@@ -27,7 +27,7 @@ pub struct FetchedRates {
 fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(TIMEOUT)
-        .user_agent("OpenTraderWorld/journal-fx")
+        .user_agent("Open FinAI/journal-fx")
         .build()
         .context("building fx http client")
 }

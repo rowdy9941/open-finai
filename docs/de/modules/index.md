@@ -1,6 +1,6 @@
 # Modulübersicht
 
-OpenTraderWorld besteht aus **Modulen**, Funktionspaketen, die du einzeln unter **Einstellungen → Module** einschaltest. Alles wird mit der App ausgeliefert; ein Modul zu installieren lässt es im Modulwechsler (oben links) und im Dashboard erscheinen. Trenne ein Modul, um es wieder auszublenden (seine Daten bleiben erhalten, es sei denn, du löschst sie auch).
+Open FinAI besteht aus **Modulen**, Funktionspaketen, die du einzeln unter **Einstellungen → Module** einschaltest. Alles wird mit der App ausgeliefert; ein Modul zu installieren lässt es im Modulwechsler (oben links) und im Dashboard erscheinen. Trenne ein Modul, um es wieder auszublenden (seine Daten bleiben erhalten, es sei denn, du löschst sie auch).
 
 [Dashboard, Suche und Benachrichtigungen](/de/modules/dashboard) liegen über allen und sind immer da.
 

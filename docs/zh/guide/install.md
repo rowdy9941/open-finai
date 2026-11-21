@@ -1,9 +1,9 @@
 # 安装
 
-在你自己的机器或服务器上自托管 OpenTraderWorld。大约需要 5 分钟。
+在你自己的机器或服务器上自托管 Open FinAI。大约需要 5 分钟。
 
 ::: info 仅支持容器化（目前）
-OpenTraderWorld 以 Docker Compose 堆栈运行，这是唯一受支持的部署方式。原生安装可行但不推荐：Docker 让安装不侵入系统（一切都在容器和卷中），并且能快速重建。原因以及各操作系统的安装步骤见[获取 Docker](/zh/guide/docker)。
+Open FinAI 以 Docker Compose 堆栈运行，这是唯一受支持的部署方式。原生安装可行但不推荐：Docker 让安装不侵入系统（一切都在容器和卷中），并且能快速重建。原因以及各操作系统的安装步骤见[获取 Docker](/zh/guide/docker)。
 :::
 
 ## 要求
@@ -22,32 +22,32 @@ docker compose version
 ## 一条命令安装（推荐）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
-安装程序会检查 Docker 是否就绪，将部署文件（仅 `deploy/` 目录，不含源代码和工具链）下载到 `./opentraderworld`，然后交给下面的引导式设置，它会从 Docker Hub **拉取预构建镜像**。
+安装程序会检查 Docker 是否就绪，将部署文件（仅 `deploy/` 目录，不含源代码和工具链）下载到 `./openfinai`，然后交给下面的引导式设置，它会从 Docker Hub **拉取预构建镜像**。
 
 选项写在 `bash -s --` 之后：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash -s -- --dir ~/otw
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash -s -- --dir ~/otw
 ```
 
 | 选项 | 默认值 | 说明 |
 |---|---|---|
-| `--dir <path>` | `./opentraderworld` | 安装目录。目录非空或已有安装时拒绝执行。 |
+| `--dir <path>` | `./openfinai` | 安装目录。目录非空或已有安装时拒绝执行。 |
 | `--ref <ref>` | `master` | 要安装的分支或标签。 |
 | `--build` | 关闭 | 克隆完整源码并在本地构建镜像，而不是拉取（需要 `git` 和工具链）。 |
 | `--yes` | 关闭 | 传给 `setup.sh`：没有可用于提问的终端时，全部采用默认值。 |
 | `--wipe-volumes` | 关闭 | 传给 `setup.sh`：不经询问就删除上次安装的卷。**这会删除那次安装的数据。** |
 
-`OTW_DIR` 和 `OTW_REF` 设置与 `--dir` 和 `--ref` 相同的值（选项优先于对应变量），`OTW_REPO` 设置 GitHub 仓库（默认 `G-OTW/OpenTraderWorld`）。
+`OTW_DIR` 和 `OTW_REF` 设置与 `--dir` 和 `--ref` 相同的值（选项优先于对应变量），`OTW_REPO` 设置 GitHub 仓库（默认 `G-OTW/Open FinAI`）。
 
 ## 通过 git 克隆（替代方式）
 
 ```bash
-git clone https://github.com/G-OTW/OpenTraderWorld.git
-cd OpenTraderWorld/deploy
+git clone https://github.com/G-OTW/Open FinAI.git
+cd Open FinAI/deploy
 ./setup.sh
 ```
 
@@ -99,7 +99,7 @@ cd OpenTraderWorld/deploy
 curl -fsSL https://get.opentraderworld.com/configure_install.sh | bash -s -- --domain app.example.com
 ```
 
-它会检查机器和域名，加固机器（日常账户、仅限密钥的远程访问、防火墙、自动安全更新、Docker），以公网模式安装 OpenTraderWorld，等待 HTTPS 证书，并设置每晚备份。凡是没有告诉它的内容，它都会逐个提问。
+它会检查机器和域名，加固机器（日常账户、仅限密钥的远程访问、防火墙、自动安全更新、Docker），以公网模式安装 Open FinAI，等待 HTTPS 证书，并设置每晚备份。凡是没有告诉它的内容，它都会逐个提问。
 
 如果它中途停止，再次运行同一行命令即可：它会从停止的地方继续。之后，`otw` 命令负责管理这台机器。常见问题、[安装程序选项](/zh/guide/hosting/when-it-breaks#installer-options)和 [otw 命令](/zh/guide/hosting/when-it-breaks#otw-command)参见[出问题时](/zh/guide/hosting/when-it-breaks)。
 
@@ -115,7 +115,7 @@ cp .env.example .env
 编辑 `.env`，至少设置：
 
 - `POSTGRES_PASSWORD`：高强度密码
-- `DATABASE_URL`：必须包含相同的密码，例如 `postgres://otw:YOUR_PASSWORD@postgres:5432/opentraderworld`
+- `DATABASE_URL`：必须包含相同的密码，例如 `postgres://otw:YOUR_PASSWORD@postgres:5432/openfinai`
 - `OTW_SECRET_KEY`：另一长串随机字符串，用于加密已存储凭据的密钥。请保持不变：之后更改会让这些凭据无法读取。
 
 Compose 还需要 `setup.sh` 本会写入的两个网络文件。对于端口 5454 上的 localhost 模式：
@@ -168,7 +168,7 @@ docker compose --env-file .env --env-file network.env up --build -d
 
 如果你使用了 `./setup.sh` 并让它启动了堆栈，则**管理员已存在**，请跳过此步。
 
-否则，在浏览器中打开应用（默认 `http://localhost:5454`）。首次访问时，OpenTraderWorld 会检测到尚无管理员，并显示**设置向导**：选择用户名和密码，提交后进入dashboard。密码至少需要 12 个字符，由重复字符或连续序列组成、包含用户名或出现在已知泄露列表中的密码都会被拒绝。密码使用 argon2 哈希存储。
+否则，在浏览器中打开应用（默认 `http://localhost:5454`）。首次访问时，Open FinAI 会检测到尚无管理员，并显示**设置向导**：选择用户名和密码，提交后进入dashboard。密码至少需要 12 个字符，由重复字符或连续序列组成、包含用户名或出现在已知泄露列表中的密码都会被拒绝。密码使用 argon2 哈希存储。
 
 在 HTTPS 模式（局域网 HTTPS、公网）下，向导还会要求输入**设置令牌**，这样仅仅发现地址的人无法抢先认领账号。core 会在启动时把它打印到日志中：`docker compose logs core`。
 

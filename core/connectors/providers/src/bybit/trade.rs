@@ -326,7 +326,7 @@ impl Bybit {
             // Bybit EU: its spot book, through the same v5 spot calls on its own host.
             Category::Spot => Ok(()),
             Category::Linear if !self.eu => Ok(()),
-            _ => Err(ConnectorError::unsupported(format!("{} takes no orders from OpenTraderWorld", self.caps.label))),
+            _ => Err(ConnectorError::unsupported(format!("{} takes no orders from Open FinAI", self.caps.label))),
         }
     }
 

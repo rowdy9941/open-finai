@@ -1,6 +1,6 @@
 # Automator
 
-*运行你自己应用的 workflow。*workflow 是一系列步骤：调用你的 OpenTraderWorld API 的某个端点、调用它之外的任意 URL、向你的 AI 服务商提一个问题、重塑答案、通知你自己。可以手动运行、按计划运行，或由入站 webhook 触发。
+*运行你自己应用的 workflow。*workflow 是一系列步骤：调用你的 Open FinAI API 的某个端点、调用它之外的任意 URL、向你的 AI 服务商提一个问题、重塑答案、通知你自己。可以手动运行、按计划运行，或由入站 webhook 触发。
 
 典型用途：周一盘前简报，读取本周的经济事件和你的自选清单，并推送一条 Telegram 消息；每晚把 journal 导出到外部服务；把价格 webhook 分发为一条通知；由助手根据你自己的数字撰写每周摘要。
 

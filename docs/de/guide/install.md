@@ -1,9 +1,9 @@
 # Installation
 
-Hoste OpenTraderWorld selbst, auf deinem eigenen Rechner oder Server. Dauert etwa 5 Minuten.
+Hoste Open FinAI selbst, auf deinem eigenen Rechner oder Server. Dauert etwa 5 Minuten.
 
 ::: info Nur containerisiert (vorerst)
-OpenTraderWorld läuft als Docker-Compose-Stack, dem einzigen unterstützten Deployment. Eine native Installation ist möglich, wird aber nicht empfohlen: Docker hält die Installation unaufdringlich (alles liegt in Containern und Volumes) und schnell neu aufgebaut. Warum, und die Installationsschritte je Betriebssystem, siehe [Docker besorgen](/de/guide/docker).
+Open FinAI läuft als Docker-Compose-Stack, dem einzigen unterstützten Deployment. Eine native Installation ist möglich, wird aber nicht empfohlen: Docker hält die Installation unaufdringlich (alles liegt in Containern und Volumes) und schnell neu aufgebaut. Warum, und die Installationsschritte je Betriebssystem, siehe [Docker besorgen](/de/guide/docker).
 :::
 
 ## Voraussetzungen
@@ -22,32 +22,32 @@ docker compose version
 ## Installation mit einem Befehl (empfohlen)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash
 ```
 
-Das Installationsprogramm prüft, ob Docker bereit ist, lädt die Deploy-Dateien (nur das Verzeichnis `deploy/`, kein Quellcode, keine Toolchain) nach `./opentraderworld` und übergibt dann an die geführte Einrichtung unten, die die **vorgefertigten Images** von Docker Hub zieht.
+Das Installationsprogramm prüft, ob Docker bereit ist, lädt die Deploy-Dateien (nur das Verzeichnis `deploy/`, kein Quellcode, keine Toolchain) nach `./openfinai` und übergibt dann an die geführte Einrichtung unten, die die **vorgefertigten Images** von Docker Hub zieht.
 
 Optionen kommen nach `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/G-OTW/OpenTraderWorld/master/install.sh | bash -s -- --dir ~/otw
+curl -fsSL https://raw.githubusercontent.com/G-OTW/Open FinAI/master/install.sh | bash -s -- --dir ~/otw
 ```
 
 | Option | Standard | Hinweise |
 |---|---|---|
-| `--dir <path>` | `./opentraderworld` | Installationsverzeichnis. Lehnt ein nicht leeres Verzeichnis oder eine bestehende Installation ab. |
+| `--dir <path>` | `./openfinai` | Installationsverzeichnis. Lehnt ein nicht leeres Verzeichnis oder eine bestehende Installation ab. |
 | `--ref <ref>` | `master` | Zu installierender Branch oder Tag. |
 | `--build` | aus | Den vollständigen Quellcode klonen und die Images lokal bauen, statt sie zu ziehen (braucht `git` und die Toolchain). |
 | `--yes` | aus | Wird an `setup.sh` weitergegeben: jede Vorgabe übernehmen, wenn kein Terminal zum Fragen da ist. |
 | `--wipe-volumes` | aus | Wird an `setup.sh` weitergegeben: die Volumes einer früheren Installation ohne Rückfrage entfernen. **Das löscht die Daten dieser Installation.** |
 
-`OTW_DIR` und `OTW_REF` setzen dieselben Werte wie `--dir` und `--ref` (eine Option hat Vorrang vor ihrer Variablen), und `OTW_REPO` das GitHub-Repository (Standard `G-OTW/OpenTraderWorld`).
+`OTW_DIR` und `OTW_REF` setzen dieselben Werte wie `--dir` und `--ref` (eine Option hat Vorrang vor ihrer Variablen), und `OTW_REPO` das GitHub-Repository (Standard `G-OTW/Open FinAI`).
 
 ## Aus einem Git-Klon (Alternative)
 
 ```bash
-git clone https://github.com/G-OTW/OpenTraderWorld.git
-cd OpenTraderWorld/deploy
+git clone https://github.com/G-OTW/Open FinAI.git
+cd Open FinAI/deploy
 ./setup.sh
 ```
 
@@ -99,7 +99,7 @@ Für eine frische Debian-13- oder Ubuntu-24.04-Maschine, die du mietest, unter e
 curl -fsSL https://get.opentraderworld.com/configure_install.sh | bash -s -- --domain app.example.com
 ```
 
-Es prüft die Maschine und die Domain, härtet die Maschine (Alltagskonto, Fernzugriff nur per Schlüssel, Firewall, automatische Sicherheitsupdates, Docker), installiert OpenTraderWorld im öffentlichen Modus, wartet auf das HTTPS-Zertifikat und richtet eine nächtliche Sicherung ein. Was ihm nicht mitgeteilt wurde, fragt es ab, eine Frage nach der anderen.
+Es prüft die Maschine und die Domain, härtet die Maschine (Alltagskonto, Fernzugriff nur per Schlüssel, Firewall, automatische Sicherheitsupdates, Docker), installiert Open FinAI im öffentlichen Modus, wartet auf das HTTPS-Zertifikat und richtet eine nächtliche Sicherung ein. Was ihm nicht mitgeteilt wurde, fragt es ab, eine Frage nach der anderen.
 
 Bricht es ab, führe dieselbe Zeile erneut aus: Es macht dort weiter, wo es aufgehört hat. Danach steuert der Befehl `otw` die Maschine. Siehe [Wenn etwas ausfällt](/de/guide/hosting/when-it-breaks) für die häufigen Probleme, die [Optionen des Installationsprogramms](/de/guide/hosting/when-it-breaks#installer-options) und den [Befehl otw](/de/guide/hosting/when-it-breaks#otw-command).
 
@@ -115,7 +115,7 @@ cp .env.example .env
 Bearbeite `.env` und setze mindestens:
 
 - `POSTGRES_PASSWORD`: ein starkes Passwort
-- `DATABASE_URL`: muss dasselbe Passwort enthalten, z. B. `postgres://otw:YOUR_PASSWORD@postgres:5432/opentraderworld`
+- `DATABASE_URL`: muss dasselbe Passwort enthalten, z. B. `postgres://otw:YOUR_PASSWORD@postgres:5432/openfinai`
 - `OTW_SECRET_KEY`: eine weitere lange Zufallszeichenfolge, der Schlüssel, der gespeicherte Zugangsdaten verschlüsselt. Halte ihn stabil: Wird er später geändert, sind sie unlesbar.
 
 Compose braucht außerdem die beiden Netzwerkdateien, die `setup.sh` geschrieben hätte. Für den localhost-Modus auf Port 5454:
@@ -168,7 +168,7 @@ Diese Zeilen von `deploy/.env` sind optional, bei jeder Installation. Lass eine 
 
 Wenn du `./setup.sh` genutzt und den Stack davon starten lassen hast, **existiert dein Admin bereits**, du kannst also weiterspringen.
 
-Öffne andernfalls die App im Browser (standardmäßig `http://localhost:5454`). Beim ersten Besuch erkennt OpenTraderWorld, dass es noch keinen Admin gibt, und zeigt den **Einrichtungsassistenten**: Wähle Benutzername und Passwort, sende ab, und du landest im Dashboard. Das Passwort braucht mindestens 12 Zeichen; ein wiederholtes Zeichen, eine abgezählte Folge, eines, das den Benutzernamen enthält, oder eines aus einer bekannten Leak-Liste wird abgelehnt. Passwörter werden mit argon2 gehasht gespeichert.
+Öffne andernfalls die App im Browser (standardmäßig `http://localhost:5454`). Beim ersten Besuch erkennt Open FinAI, dass es noch keinen Admin gibt, und zeigt den **Einrichtungsassistenten**: Wähle Benutzername und Passwort, sende ab, und du landest im Dashboard. Das Passwort braucht mindestens 12 Zeichen; ein wiederholtes Zeichen, eine abgezählte Folge, eines, das den Benutzernamen enthält, oder eines aus einer bekannten Leak-Liste wird abgelehnt. Passwörter werden mit argon2 gehasht gespeichert.
 
 In den HTTPS-Modi (LAN + HTTPS, öffentlich) fragt der Assistent zusätzlich nach einem **Setup-Token**, damit niemand, der nur die Adresse findet, das Konto zuerst beanspruchen kann. Der Core gibt es beim Start in seinem Log aus: `docker compose logs core`.
 

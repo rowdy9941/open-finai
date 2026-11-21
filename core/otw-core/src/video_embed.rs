@@ -175,7 +175,7 @@ fn client() -> &'static reqwest::Client {
         reqwest::Client::builder()
             .timeout(FETCH_TIMEOUT)
             .redirect(reqwest::redirect::Policy::none())
-            .user_agent("OpenTraderWorld")
+            .user_agent("Open FinAI")
             .build()
             .unwrap_or_default()
     })

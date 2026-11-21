@@ -1,6 +1,6 @@
 # Paper trading
 
-Un **compte de paper trading** est un broker géré par OpenTraderWorld lui-même. Les ordres qu'on lui envoie s'exécutent sur le prix en direct du graphique d'où ils partent, contre votre propre trésorerie simulée, avec les commissions, le slippage et le levier que vous fixez. Pas de clé, pas de place de marché, pas d'argent réel.
+Un **compte de paper trading** est un broker géré par Open FinAI lui-même. Les ordres qu'on lui envoie s'exécutent sur le prix en direct du graphique d'où ils partent, contre votre propre trésorerie simulée, avec les commissions, le slippage et le levier que vous fixez. Pas de clé, pas de place de marché, pas d'argent réel.
 
 Il se trade depuis le graphique exactement comme un vrai broker : même ticket, même barre rapide, mêmes lignes d'ordres et de positions, mêmes onglets de panneau et même journal d'audit. Tout cela est décrit dans [Trader depuis le graphique](/fr/config/trading) ; cette page couvre ce qui est propre au paper.
 

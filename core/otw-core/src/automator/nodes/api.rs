@@ -1,4 +1,4 @@
-//! `api`: call OpenTraderWorld's own API from a workflow.
+//! `api`: call Open FinAI's own API from a workflow.
 //!
 //! Reuses the MCP security model wholesale rather than inventing a second one:
 //! the endpoint must be in `mcp::catalog` (so settings, network, secrets, wipe, files,

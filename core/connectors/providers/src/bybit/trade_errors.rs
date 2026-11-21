@@ -267,7 +267,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
             let code_s = code.to_string();
             let mut e = match row(&code_s) {
                 Some((_, canon, _)) => VenueError::new(*canon, Some(code_s.clone()), format!("Bybit refused it: {msg} (code {code})")),
-                None => VenueError::unmapped(Some(code_s.clone()), format!("Bybit answered code {code} ({msg}), which OpenTraderWorld does not map")),
+                None => VenueError::unmapped(Some(code_s.clone()), format!("Bybit answered code {code} ({msg}), which Open FinAI does not map")),
             };
             if e.canon == RateLimited {
                 e.retry_after_ms = http::retry_after_ms(frame);

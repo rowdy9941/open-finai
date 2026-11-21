@@ -1,12 +1,12 @@
 # Commande vocale
 
-Pilotez OpenTraderWorld à la voix, ou dictez dans n'importe quel champ de texte. **Push-to-talk uniquement** : le microphone s'ouvre quand vous appuyez et se ferme quand vous relâchez. Rien n'écoute entre les deux.
+Pilotez Open FinAI à la voix, ou dictez dans n'importe quel champ de texte. **Push-to-talk uniquement** : le microphone s'ouvre quand vous appuyez et se ferme quand vous relâchez. Rien n'écoute entre les deux.
 
 **C'est désactivé par défaut.** Activez-le dans **Paramètres → Voix → Parole et raccourci**.
 
 ## Le microphone exige HTTPS ou localhost {#https}
 
-Les navigateurs ne donnent à une page web le microphone (et leur reconnaissance vocale intégrée) que sur une **origine sécurisée** : une page servie en **HTTPS**, ou ouverte sur **localhost**. C'est une règle des navigateurs, pas d'OpenTraderWorld, et aucun réglage de l'application ne peut la lever.
+Les navigateurs ne donnent à une page web le microphone (et leur reconnaissance vocale intégrée) que sur une **origine sécurisée** : une page servie en **HTTPS**, ou ouverte sur **localhost**. C'est une règle des navigateurs, pas d'Open FinAI, et aucun réglage de l'application ne peut la lever.
 
 | Comment vous ouvrez OTW | La voix fonctionne ? |
 |---|---|
@@ -49,7 +49,7 @@ Le service Whisper fourni est optionnel et n'est pas démarré par un simple `up
 
 ```bash
 docker compose -f deploy/docker-compose.yml --env-file deploy/.env --env-file deploy/network.env --profile voice up -d whisper
-docker logs -f opentraderworld-whisper-1
+docker logs -f openfinai-whisper-1
 ```
 
 Attendez `Uvicorn running on http://0.0.0.0:8000`, puis `Ctrl+C`. Le port n'est joignable que par OTW à l'intérieur de Docker, pas depuis votre navigateur, et c'est voulu.
@@ -57,13 +57,13 @@ Attendez `Uvicorn running on http://0.0.0.0:8000`, puis `Ctrl+C`. Le port n'est 
 **2. Téléchargez le modèle** (environ 500 Mo, quelques minutes) :
 
 ```bash
-docker exec opentraderworld-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen(urllib.request.Request('http://localhost:8000/v1/models/Systran/faster-whisper-small',method='POST'),timeout=1800).read())"
+docker exec openfinai-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen(urllib.request.Request('http://localhost:8000/v1/models/Systran/faster-whisper-small',method='POST'),timeout=1800).read())"
 ```
 
 **3. Vérifiez qu'il est installé** : la réponse doit lister `Systran/faster-whisper-small`.
 
 ```bash
-docker exec opentraderworld-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen('http://localhost:8000/v1/models').read())"
+docker exec openfinai-whisper-1 python -c "import urllib.request;print(urllib.request.urlopen('http://localhost:8000/v1/models').read())"
 ```
 
 **4. Branchez-le dans OTW.** Ouvrez l'application sur `http://localhost:5454` (ou en HTTPS, voir [ci-dessus](#https)), puis **Paramètres → Voix → Parole et raccourci** :

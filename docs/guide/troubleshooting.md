@@ -33,16 +33,16 @@ There is no reset email and no unauthenticated reset form: OTW runs on your own 
 Open a shell on the machine running OTW and print a one-time password:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core reset-password USERNAME
+docker exec -it openfinai-core-1 /app/otw-core reset-password USERNAME
 ```
 
 Sign in with it; the app asks for a new one straight away.
 
 | Case | What to run |
 |---|---|
-| Forgot the username too | `docker exec opentraderworld-core-1 /app/otw-core list-users` |
-| Choose the password yourself | `printf '%s' 'my-new-password' \| docker exec -i opentraderworld-core-1 /app/otw-core reset-password USERNAME --stdin` |
-| Container named differently | `docker ps`, then use the core one in place of `opentraderworld-core-1`. |
+| Forgot the username too | `docker exec openfinai-core-1 /app/otw-core list-users` |
+| Choose the password yourself | `printf '%s' 'my-new-password' \| docker exec -i openfinai-core-1 /app/otw-core reset-password USERNAME --stdin` |
+| Container named differently | `docker ps`, then use the core one in place of `openfinai-core-1`. |
 | Not running Docker | Run the `otw-core` binary with the same arguments and `DATABASE_URL` set. |
 
 Never pass a password as a command-line argument: a process's command line is readable on the host, which is why `--stdin` exists.
@@ -54,7 +54,7 @@ Notes: a reset **signs out every device**, and nothing is lost. The vault and th
 Same principle as the password: recover from the host shell.
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 The second factor is removed and every session is signed out. Sign in with your password,
@@ -69,7 +69,7 @@ recovery code**. Password sign-in turns back on.
 Recovery codes lost too, on the host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Removes the link, turns password sign-in on and signs out every session. Password lost as
@@ -107,4 +107,4 @@ Answer `y` when `setup.sh` asks to overwrite the existing `.env`.
 
 ## Still stuck?
 
-Open an issue on [GitHub](https://github.com/G-OTW/OpenTraderWorld/issues) with the symptom and the relevant log lines.
+Open an issue on [GitHub](https://github.com/G-OTW/Open FinAI/issues) with the symptom and the relevant log lines.

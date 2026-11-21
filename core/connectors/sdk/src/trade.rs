@@ -1362,7 +1362,7 @@ pub trait TradeMapper: Mapper {
     /// The venue's client id for an order the trader mints at `stamp_ms` (epoch milliseconds,
     /// the venue's clock, strictly increasing across the process's mints).
     fn mint_client_id(&self, _stamp_ms: i64) -> Result<String, ConnectorError> {
-        Err(ConnectorError::unsupported(format!("{} spells its client ids from OpenTraderWorld's", self.venue_name())))
+        Err(ConnectorError::unsupported(format!("{} spells its client ids from Open FinAI's", self.venue_name())))
     }
 
     /// [`TradeMapper::query_by_client_id`] knowing when the order was made and the clock now

@@ -127,7 +127,7 @@ Un origen custom HTTP pasa a vivo por sondeo, como los proveedores REST: consult
 
 ### Origen push {#custom-push}
 
-Una fuente que OpenTraderWorld no puede obtener (peticiones firmadas, OAuth, paginación por cursor, protobuf, varios símbolos por respuesta) se alimenta en su lugar con tu propio script: **Añadir connector**, elige **Custom push source**, y luego crea un webhook en [Webhooks](/es/modules/productivity#webhooks) con el destino **Datos históricos** vinculado a él. El script hace POST de JSON a la URL del webhook, en cualquier lenguaje.
+Una fuente que Open FinAI no puede obtener (peticiones firmadas, OAuth, paginación por cursor, protobuf, varios símbolos por respuesta) se alimenta en su lugar con tu propio script: **Añadir connector**, elige **Custom push source**, y luego crea un webhook en [Webhooks](/es/modules/productivity#webhooks) con el destino **Datos históricos** vinculado a él. El script hace POST de JSON a la URL del webhook, en cualquier lenguaje.
 
 | Campo | Qué dice |
 |---|---|
@@ -752,7 +752,7 @@ Una ejecución son decenas de peticiones al proveedor, marcadas por el ritmo del
 
 ## Opciones {#options}
 
-*Lea la cadena de opciones de un subyacente, construya una estrategia y vea lo que puede ganar y lo que inmoviliza.* Solo para análisis: OpenTraderWorld no envía órdenes de opciones y las rechaza en todas las cuentas. Una posición abierta en opciones aún puede cerrarse desde el libro del bróker.
+*Lea la cadena de opciones de un subyacente, construya una estrategia y vea lo que puede ganar y lo que inmoviliza.* Solo para análisis: Open FinAI no envía órdenes de opciones y las rechaza en todas las cuentas. Una posición abierta en opciones aún puede cerrarse desde el libro del bróker.
 
 ### Fuentes
 

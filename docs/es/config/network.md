@@ -1,6 +1,6 @@
 # Red y acceso remoto
 
-OpenTraderWorld controla **quién puede acceder a la app** mediante cuatro modos de red. Tras la instalación es **solo localhost**: nada de tu red puede conectarse hasta que lo cambies.
+Open FinAI controla **quién puede acceder a la app** mediante cuatro modos de red. Tras la instalación es **solo localhost**: nada de tu red puede conectarse hasta que lo cambies.
 
 La forma admitida de cambiar de modo es desde la app: **Ajustes → Red**. Al guardar se muestra el comando de reinicio exacto que debes ejecutar en el host (la app no puede reiniciar sus propios contenedores); la pila queda brevemente fuera de línea mientras se recrean los contenedores.
 
@@ -110,5 +110,5 @@ Editar el archivo cambia aquello en lo que escucha Caddy. Pero una vez guardado 
 
 ```bash
 docker compose --env-file .env --env-file network.env exec -T postgres \
-  psql -U otw -d opentraderworld -c "DELETE FROM app_settings WHERE key = 'net_mode'"
+  psql -U otw -d openfinai -c "DELETE FROM app_settings WHERE key = 'net_mode'"
 ```

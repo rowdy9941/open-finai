@@ -119,10 +119,10 @@ pub fn hint(p: &Pending, e: ConnectorError) -> ConnectorError {
     let lower = e.message.to_ascii_lowercase();
     let fix = match (e.kind, code) {
         (ErrorKind::Auth, "10114") => {
-            "Bitfinex refused the nonce: another program signed with this key using larger nonces. Give OpenTraderWorld a key of its own."
+            "Bitfinex refused the nonce: another program signed with this key using larger nonces. Give Open FinAI a key of its own."
         }
         (ErrorKind::Auth, _) if lower.contains("nonce") => {
-            "Bitfinex refused the nonce: another program signed with this key using larger nonces. Give OpenTraderWorld a key of its own."
+            "Bitfinex refused the nonce: another program signed with this key using larger nonces. Give Open FinAI a key of its own."
         }
         (ErrorKind::Auth, _) => "Check the key and its secret, and that the key was confirmed from Bitfinex's email.",
         (ErrorKind::Permission, _) => match p {

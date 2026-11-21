@@ -1,6 +1,6 @@
 # Paper trading
 
-Un **conto di paper trading** è un broker gestito da OpenTraderWorld stesso. Gli ordini che riceve vengono eseguiti al prezzo in tempo reale del grafico da cui partono, contro la sua liquidità simulata, con le commissioni, lo slippage e la leva che imposta lei. Nessuna chiave, nessun mercato, nessun denaro reale.
+Un **conto di paper trading** è un broker gestito da Open FinAI stesso. Gli ordini che riceve vengono eseguiti al prezzo in tempo reale del grafico da cui partono, contro la sua liquidità simulata, con le commissioni, lo slippage e la leva che imposta lei. Nessuna chiave, nessun mercato, nessun denaro reale.
 
 Si opera dal grafico esattamente come con un broker reale: lo stesso ticket, la stessa barra rapida, le stesse linee di ordini e posizioni, schede del pannello e registro di audit. Sono descritti in [Fare trading dal grafico](/it/config/trading); questa pagina tratta ciò che è proprio della simulazione.
 

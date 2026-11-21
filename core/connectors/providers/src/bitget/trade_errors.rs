@@ -372,7 +372,7 @@ pub(super) fn mapped(code: &str, msg: &str) -> VenueError {
     match row(code) {
         Some((_, Unknown, _)) => VenueError::new(Unknown, Some(code.to_string()), format!("Bitget answered: {msg} (code {code}), so the order may have gone through")),
         Some((_, canon, _)) => VenueError::new(*canon, Some(code.to_string()), format!("Bitget refused it: {msg} (code {code})")),
-        None => VenueError::unmapped(Some(code.to_string()), format!("Bitget answered code {code} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(code.to_string()), format!("Bitget answered code {code} ({msg}), which Open FinAI does not map")),
     }
 }
 
@@ -382,7 +382,7 @@ pub(super) fn failure_row(r: &Value) -> VenueError {
     let msg = text(&r["errorMsg"]);
     match r.get("errorCode").map(text).filter(|c| !c.is_empty()) {
         Some(code) => mapped(&code, &msg),
-        None => VenueError::unmapped(None, format!("Bitget answered {msg:?} for the order, which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(None, format!("Bitget answered {msg:?} for the order, which Open FinAI does not map")),
     }
 }
 
@@ -406,7 +406,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
                 let result = env.as_ref().and_then(|e| e.data.as_ref()).and_then(|d| d.get("result")).map(text).unwrap_or_default();
                 // Anything but `success` is no cancel: not mapped, looked up by its id.
                 return (!result.eq_ignore_ascii_case("success")).then(|| {
-                    VenueError::unmapped(None, format!("Bitget answered {result:?} to the plan order cancel, which OpenTraderWorld does not map"))
+                    VenueError::unmapped(None, format!("Bitget answered {result:?} to the plan order cancel, which Open FinAI does not map"))
                 });
             }
             return None;
@@ -454,7 +454,7 @@ mod tests {
         }
         let e = decode(&http_frame(1, "spot_place", 400, r#"{"code":"99999","msg":"new"}"#)).unwrap();
         assert_eq!((e.canon, e.mapped), (Unknown, false));
-        assert!(e.message.contains("which OpenTraderWorld does not map"), "{}", e.message);
+        assert!(e.message.contains("which Open FinAI does not map"), "{}", e.message);
         assert!(decode(&http_frame(1, "spot_place", 200, r#"{"code":"00000","msg":"success","data":{"orderId":"1"}}"#)).is_none());
     }
 

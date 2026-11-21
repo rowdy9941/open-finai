@@ -111,7 +111,7 @@ password for the next five minutes.
 On the host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Removes the link, turns password sign-in on and signs out every session. If the password is
@@ -128,7 +128,7 @@ to start on a database with a migration it does not know, so remove it first:
 
    ```bash
    docker compose --env-file .env --env-file network.env exec -T postgres \
-     psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -c "
+     psql -U otw -d openfinai -v ON_ERROR_STOP=1 -c "
        BEGIN;
        DROP TABLE IF EXISTS recovery_codes;
        DROP TABLE IF EXISTS social_login;

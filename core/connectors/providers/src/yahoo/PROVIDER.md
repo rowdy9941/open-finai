@@ -22,7 +22,7 @@ legacy connector.
 ## Auth
 
 None. A user agent is required (a request without one is answered 429); OTW's HTTP client
-sends `OpenTraderWorld/histdata`.
+sends `Open FinAI/histdata`.
 
 ## Rate limits
 

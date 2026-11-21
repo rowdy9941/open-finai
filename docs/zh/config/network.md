@@ -1,6 +1,6 @@
 # 网络与远程访问
 
-OpenTraderWorld 通过四种网络模式控制**谁可以访问应用**。安装后它**仅限 localhost 访问**：在你更改之前，网络上的任何设备都无法连接。
+Open FinAI 通过四种网络模式控制**谁可以访问应用**。安装后它**仅限 localhost 访问**：在你更改之前，网络上的任何设备都无法连接。
 
 受支持的切换模式的方式是在应用内操作：**设置 → 网络**。保存后会显示需要在主机上运行的确切重启命令（应用无法重启自己的容器）；容器重新创建期间堆栈会短暂离线。
 
@@ -104,5 +104,5 @@ docker compose --env-file .env --env-file network.env up -d
 
 ```bash
 docker compose --env-file .env --env-file network.env exec -T postgres \
-  psql -U otw -d opentraderworld -c "DELETE FROM app_settings WHERE key = 'net_mode'"
+  psql -U otw -d openfinai -c "DELETE FROM app_settings WHERE key = 'net_mode'"
 ```

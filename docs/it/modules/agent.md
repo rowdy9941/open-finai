@@ -1,11 +1,11 @@
 # Agent
 
-Un **assistente chat IA** integrato: un pannello chat dentro l'app che può anche agire sui tuoi dati OpenTraderWorld. Aprilo dal modulo **Agent**, dalla scorciatoia con il cervello nella barra in alto (accanto alla ricerca), o dal [pulsante flottante](#the-floating-assistant) nell'angolo di ogni pagina.
+Un **assistente chat IA** integrato: un pannello chat dentro l'app che può anche agire sui tuoi dati Open FinAI. Aprilo dal modulo **Agent**, dalla scorciatoia con il cervello nella barra in alto (accanto alla ricerca), o dal [pulsante flottante](#the-floating-assistant) nell'angolo di ogni pagina.
 
 L'assistente è **bring-your-own-provider**: nulla è abilitato né preimpostato da un vendor finché non aggiungi un provider e una chiave tua.
 
 ::: tip Due "agent IA" diversi
-Questa pagina riguarda l'**assistente chat che vive nell'app** e parla con un provider che configuri *tu*. Non è la stessa cosa della pagina [Agent IA (MCP)](/it/config/ai-agents), che riguarda gli agent *esterni* che si collegano **a** OpenTraderWorld tramite il gateway MCP integrato. L'assistente chat può *usare* quello stesso gateway per raggiungere i tuoi dati: vedi [Strumenti sui tuoi dati](#tools-over-your-data) più sotto.
+Questa pagina riguarda l'**assistente chat che vive nell'app** e parla con un provider che configuri *tu*. Non è la stessa cosa della pagina [Agent IA (MCP)](/it/config/ai-agents), che riguarda gli agent *esterni* che si collegano **a** Open FinAI tramite il gateway MCP integrato. L'assistente chat può *usare* quello stesso gateway per raggiungere i tuoi dati: vedi [Strumenti sui tuoi dati](#tools-over-your-data) più sotto.
 :::
 
 ## Aggiungi un provider
@@ -134,7 +134,7 @@ Ogni conversazione porta **il proprio** token MCP (il token che imposti nelle im
 
 **Agent → Gestisci server** è una sezione a pagina intera per aggiungere server MCP remoti così l'assistente può raggiungere piattaforme esterne:
 
-- un **catalogo** con il gateway integrato di **OpenTraderWorld**, che rimanda a **Impostazioni → MCP** invece di essere aggiunto (l'assistente lo raggiunge in-process), più **server personalizzati** per URL;
+- un **catalogo** con il gateway integrato di **Open FinAI**, che rimanda a **Impostazioni → MCP** invece di essere aggiunto (l'assistente lo raggiunge in-process), più **server personalizzati** per URL;
 - **solo Streamable-HTTP**: nulla viene mai eseguito in locale;
 - i valori di autenticazione sono **cifrati a riposo e in sola scrittura**;
 - un pulsante **Test** si connette ed elenca gli strumenti del server;

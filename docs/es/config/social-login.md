@@ -111,7 +111,7 @@ contraseña durante los cinco minutos siguientes.
 En el host:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-social USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-social USERNAME
 ```
 
 Elimina el vínculo, activa el sign-in con contraseña y cierra todas las sesiones. Si también perdiste
@@ -128,7 +128,7 @@ arrancar sobre una base de datos con una migración que no conoce, así que elim
 
    ```bash
    docker compose --env-file .env --env-file network.env exec -T postgres \
-     psql -U otw -d opentraderworld -v ON_ERROR_STOP=1 -c "
+     psql -U otw -d openfinai -v ON_ERROR_STOP=1 -c "
        BEGIN;
        DROP TABLE IF EXISTS recovery_codes;
        DROP TABLE IF EXISTS social_login;

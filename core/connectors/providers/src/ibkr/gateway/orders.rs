@@ -69,7 +69,7 @@ pub enum PlaceError {
 }
 
 /// How the answer to an order call names an IB code the adapter does not map yet.
-pub const UNMAPPED: &str = "a code OpenTraderWorld does not map yet";
+pub const UNMAPPED: &str = "a code Open FinAI does not map yet";
 
 impl From<ConnectorError> for PlaceError {
     fn from(e: ConnectorError) -> Self {
@@ -682,7 +682,7 @@ pub fn settle(key: &str, open: &[Listed], done: &[Listed], execs: &[Execution]) 
     };
     let status = match status_of(&hit.status) {
         Mapped::Known(st) => st,
-        Mapped::Unknown(raw) => return Err(ConnectorError::new(ErrorKind::Unknown, format!("Interactive Brokers lists order {key} as {raw:?}, a state OpenTraderWorld does not read"))),
+        Mapped::Unknown(raw) => return Err(ConnectorError::new(ErrorKind::Unknown, format!("Interactive Brokers lists order {key} as {raw:?}, a state Open FinAI does not read"))),
     };
     // What IB counts and what the fills add up to: the larger, a filled quantity never shrinks.
     let filled = hit.filled.filter(|f| f.is_finite() && *f > 0.0 && *f < 1e300).map(super::mapper::dec).transpose()?.unwrap_or(Decimal::ZERO).max(fills);

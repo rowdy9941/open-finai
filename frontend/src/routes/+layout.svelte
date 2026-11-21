@@ -605,7 +605,7 @@
   <div class="intro-backdrop" role="presentation">
     <div class="intro" role="alertdialog" aria-modal="true" aria-labelledby="demo-intro-title">
       <header class="intro-head">
-        <h3 id="demo-intro-title">Welcome to the OpenTraderWorld demo</h3>
+        <h3 id="demo-intro-title">Welcome to the Open FinAI demo</h3>
       </header>
       <div class="intro-body">
         <p>
@@ -619,7 +619,7 @@
           <li>Settings, connectors and imports are read-only here.</li>
         </ul>
         <p class="intro-note">
-          Self-host OpenTraderWorld to run it at full speed with your own models and data.
+          Self-host Open FinAI to run it at full speed with your own models and data.
         </p>
       </div>
       <footer class="intro-foot">
@@ -652,11 +652,11 @@
     <!-- Compact, grouped navigation mirrors the approved shell without inventing routes. -->
     {#if railOpen}
       <aside class="sidebar">
-        <a class="brand" href="/" aria-label="OpenTraderWorld">
+        <a class="brand" href="/" aria-label="Open FinAI">
           <!-- Both marks ship; CSS below reveals the one that reads on the active theme. -->
           <img class="brand-mark on-light" src="/logo-dark.svg" alt="" aria-hidden="true" />
           <img class="brand-mark on-dark" src="/logo-light.svg" alt="" aria-hidden="true" />
-          <span class="brand-copy"><strong>OTW</strong><small>OpenTraderWorld</small></span>
+          <span class="brand-copy"><strong>OTW</strong><small>Open FinAI</small></span>
         </a>
 
         {@render railLinks(false)}

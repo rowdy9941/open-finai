@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "OpenTraderWorld core service: orchestrator + HTTP/WS API"
+description = "Open FinAI core service: orchestrator + HTTP/WS API"
 
 [dependencies]
 tokio.workspace = true

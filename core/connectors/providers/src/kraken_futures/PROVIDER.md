@@ -261,7 +261,7 @@ venue id, right after the answer. Ended, the change is refused naming the state 
 still working unchanged, the change is refused with Kraken's word; working with the values
 asked, the change went through; not found, it stays unknown and is read again before it is
 changed or cancelled. A word not listed is unknown and alerts:
-"Kraken Futures answered code X (msg), which OpenTraderWorld does not map". A refusal reads
+"Kraken Futures answered code X (msg), which Open FinAI does not map". A refusal reads
 "Kraken Futures refused it: words (code X)".
 
 | Code | Canonical | Meaning | Action |

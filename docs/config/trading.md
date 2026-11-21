@@ -18,7 +18,7 @@ A broker account can do more than read your book: with **trading** switched on, 
 - **Deribit** (futures and perpetuals: linear USDC contracts and inverse BTC and ETH contracts), on live accounts and on test.deribit.com. Rated **E2D**, with the same acknowledgement for a live account.
 - **Paper trading**, a simulated account run by the app itself. See [Paper trading](/config/paper-trading).
 
-Every other broker answers that it does not take orders from OpenTraderWorld, and stays [read only](/config/brokers).
+Every other broker answers that it does not take orders from Open FinAI, and stays [read only](/config/brokers).
 
 ::: danger Experimental
 Trading from the chart is **experimental**: it works with Interactive Brokers, Binance, Binance USDⓈ-M Futures, Bybit, Bybit EU, OKX, Bitget, Gate.io, KuCoin, KuCoin Futures, Kraken, Kraken Futures, Coinbase, MEXC, Bitfinex and Deribit, and with paper trading. Interactive Brokers and the two Binance accounts are heavily tested, against simulated venues and the brokers' own test environments. The others are built from each broker's documentation and have not been tried on a real account yet. Bugs can remain with any of them. Check every order at your broker, start small, and trade at your own risk.
@@ -397,7 +397,7 @@ Every place, change, cancel, cancel-all and close is written to an **append-only
 
 In **Settings → Brokers**, each trading account shows its **order metrics** (calls, placed, refused, latency p50 / p99, last order) and a **Cancel all orders** button. Unlike the [kill switch](#halts), it covers that one account and halts nothing:
 
-- it asks for confirmation, then cancels **every working order** of the account at the broker, orders placed outside OpenTraderWorld included. At Interactive Brokers that is every order of the Gateway's accounts, including orders placed by hand in TWS;
+- it asks for confirmation, then cancels **every working order** of the account at the broker, orders placed outside Open FinAI included. At Interactive Brokers that is every order of the Gateway's accounts, including orders placed by hand in TWS;
 - it reports how many were cancelled. At Interactive Brokers it first waits up to 10 seconds for none to be left working;
 - it works with trading off and with the lock closed.
 

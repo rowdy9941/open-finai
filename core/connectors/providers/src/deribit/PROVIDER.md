@@ -379,7 +379,7 @@ Only the complete table of ERR ("Complete RPC Error Codes Reference") is used; i
 Error Codes" table contradicts it (10001, 10002, 10004, 11000 to 11009, 13009 with other
 words), so 11000 to 11009 stay unmapped. `10050 lock_time_exceeded` is from OM. A refusal
 says "Deribit refused it: <message> (code <code>)"; a code not listed says "Deribit answered
-code X (message), which OpenTraderWorld does not map" and is unknown. `-32602 Invalid params`
+code X (message), which Open FinAI does not map" and is unknown. `-32602 Invalid params`
 naming `instrument_name` is the venue not listing the instrument: Rejected(not found). A
 timeout, a closed connection, a 5xx without a refusal and an unreadable body are Unknown. The
 read path (`errors.rs`) maps 10001, 10040, 11094, 13028 and 13888 as transient; here they are

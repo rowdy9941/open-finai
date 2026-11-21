@@ -1,6 +1,6 @@
 # Controle externo (chat)
 
-Controle o OpenTraderWorld pelo **Telegram, Slack ou Discord**. Uma mensagem que você envia ao seu bot vira uma execução de uma das suas [personas de agent](/pt/modules/agent), respondida no chat, com exatamente o acesso que o token escolhido permite.
+Controle o Open FinAI pelo **Telegram, Slack ou Discord**. Uma mensagem que você envia ao seu bot vira uma execução de uma das suas [personas de agent](/pt/modules/agent), respondida no chat, com exatamente o acesso que o token escolhido permite.
 
 **Vem desligado por padrão**, e não adiciona nenhum sistema de permissões próprio: o teto é um [token MCP](/pt/config/ai-agents), o mesmo que o assistente do app usa.
 

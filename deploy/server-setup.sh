@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# OpenTraderWorld — server setup, for a machine you already rent under a domain
+# Open FinAI — server setup, for a machine you already rent under a domain
 # name you already own.
 #
 #   curl -fsSL https://get.opentraderworld.com/configure_install.sh | bash -s -- --domain app.example.com
@@ -33,12 +33,12 @@
 #   --login key         Sign in from now on with the key you already use
 #   --login password    Sign in from now on with a password (asked if missing)
 #   --user <name>       Day-to-day account                     (default: the one in use, else otw)
-#   --admin-user <name> OpenTraderWorld login name             (default admin)
+#   --admin-user <name> Open FinAI login name             (default admin)
 #   --ssh-key <key>     Public key to authorise, repeatable     (default: the ones already trusted)
 #   --ssh-port <n>      Port the machine already listens on     (default: from sshd, else 22)
 #   --dir <path>        Install directory                       (default /home/<user>/otw)
 #   --ref <ref>         Product tag or branch to install        (default master)
-#   --repo <slug>       GitHub repo slug                        (default G-OTW/OpenTraderWorld)
+#   --repo <slug>       GitHub repo slug                        (default G-OTW/Open FinAI)
 #   --timezone <tz>     Machine timezone, e.g. Europe/Paris     (default: leave as is)
 #   --swap <size>       Swap file size, e.g. 2G, or "none"      (default: 2G under 4 GB of RAM)
 #   --yes               Never ask anything; take every default
@@ -59,7 +59,7 @@ set -euo pipefail
 ORIG_ARGS=("$@")
 
 VERSION="1"
-REPO="${OTW_REPO:-G-OTW/OpenTraderWorld}"
+REPO="${OTW_REPO:-G-OTW/Open FinAI}"
 REF="${OTW_REF:-master}"
 STATE_DIR="/var/lib/otw"
 STATE_FILE="$STATE_DIR/install-state"
@@ -68,7 +68,7 @@ ALL_PHASES=(check harden install cert backup)
 
 DOMAIN=""
 OTW_USER=""
-# The OpenTraderWorld login, unrelated to the Linux account in OTW_USER.
+# The Open FinAI login, unrelated to the Linux account in OTW_USER.
 ADMIN_USER=""
 DIR=""
 SSH_PORT=""
@@ -244,7 +244,7 @@ if [[ -r "$CONF_FILE" ]]; then
   SSH_PORT="${SSH_PORT:-$saved_ssh_port}"
   LOGIN_MODE="${LOGIN_MODE:-$saved_login}"
   [[ "$REF" == "master" && -n "$saved_ref" ]] && REF="$saved_ref"
-  [[ "$REPO" == "G-OTW/OpenTraderWorld" && -n "$saved_repo" ]] && REPO="$saved_repo"
+  [[ "$REPO" == "G-OTW/Open FinAI" && -n "$saved_repo" ]] && REPO="$saved_repo"
 fi
 
 # Keep the account already in use; make one called otw only when the machine was
@@ -289,8 +289,8 @@ domain_ok() {
 # ─────────────────────────────────────────────────────────────────────────────
 # The two questions, asked only when the line did not already answer them
 # ─────────────────────────────────────────────────────────────────────────────
-bold "OpenTraderWorld"
-info "This puts OpenTraderWorld online on this machine, at your own address."
+bold "Open FinAI"
+info "This puts Open FinAI online on this machine, at your own address."
 echo
 
 DOMAIN="$(clean_domain "$DOMAIN")"
@@ -337,7 +337,7 @@ if [[ ! "$OTW_USER" =~ ^[a-z_][a-z0-9_-]{0,31}$ ]]; then
 fi
 # Ends up unquoted in deploy/.env, so only characters that need no quoting there.
 if [[ ! "$ADMIN_USER" =~ ^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$ ]]; then
-  die "\"$ADMIN_USER\" cannot be used as an OpenTraderWorld login name." \
+  die "\"$ADMIN_USER\" cannot be used as an Open FinAI login name." \
       "Use letters, digits, ., - and _, starting with a letter or a digit."
 fi
 
@@ -428,7 +428,7 @@ phase_check() {
 
   case "$ARCH" in
     x86_64|amd64|aarch64|arm64) : ;;
-    *) die "OpenTraderWorld does not have images for $ARCH processors." \
+    *) die "Open FinAI does not have images for $ARCH processors." \
            "Pick a machine described as x86 / AMD64, or as ARM64 / Ampere." ;;
   esac
 
@@ -437,7 +437,7 @@ phase_check() {
   mem_mb=$(( mem_kb / 1024 ))
   info "Memory: ${mem_mb} MB"
   if (( mem_mb < 1700 )); then
-    die "This machine has ${mem_mb} MB of memory, and OpenTraderWorld needs about 2 GB." \
+    die "This machine has ${mem_mb} MB of memory, and Open FinAI needs about 2 GB." \
         "At your provider, resize it to a plan with 2 GB or more, then run the same line again."
   fi
   (( mem_mb < 3500 )) && warn "Under 4 GB of memory: a swap file will be added so heavy work cannot kill the database."
@@ -692,15 +692,15 @@ SSHD
     if [[ "$DRY_RUN" == "1" ]]; then
       info "would append the same settings to /etc/ssh/sshd_config"
     else
-      sed -i '/^# >>> OpenTraderWorld >>>$/,/^# <<< OpenTraderWorld <<<$/d' /etc/ssh/sshd_config
-      { echo "# >>> OpenTraderWorld >>>"; printf '%s\n' "$body"; echo "# <<< OpenTraderWorld <<<"; } >> /etc/ssh/sshd_config
+      sed -i '/^# >>> Open FinAI >>>$/,/^# <<< Open FinAI <<<$/d' /etc/ssh/sshd_config
+      { echo "# >>> Open FinAI >>>"; printf '%s\n' "$body"; echo "# <<< Open FinAI <<<"; } >> /etc/ssh/sshd_config
     fi
   fi
 
   if [[ "$DRY_RUN" != "1" ]]; then
     if ! sshd -t 2>/dev/null; then
       rm -f "$drop"
-      sed -i '/^# >>> OpenTraderWorld >>>$/,/^# <<< OpenTraderWorld <<<$/d' /etc/ssh/sshd_config
+      sed -i '/^# >>> Open FinAI >>>$/,/^# <<< Open FinAI <<<$/d' /etc/ssh/sshd_config
       die "The remote-access settings were refused by the machine and have been undone." \
           "Nothing was changed. Run the same line again."
     fi
@@ -795,7 +795,7 @@ harden_docker() {
   if command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1; then
     info "Docker is already installed."
   else
-    info "Installing Docker (this is what runs OpenTraderWorld)."
+    info "Installing Docker (this is what runs Open FinAI)."
     apt_ensure ca-certificates curl gnupg
     local vendor="$OS_ID"
     [[ "$vendor" == "ubuntu" || "$vendor" == "debian" ]] || vendor="debian"
@@ -874,10 +874,10 @@ fetch_deploy() {
   # A configured install is never overwritten: extracting over it would clobber
   # .env, network.env and dns.env, which is the whole database and the domain.
   if [[ -f "$DIR/deploy/.env" ]]; then
-    info "OpenTraderWorld is already configured in $DIR — keeping it as it is."
+    info "Open FinAI is already configured in $DIR — keeping it as it is."
     return 1
   fi
-  info "Downloading OpenTraderWorld ($REPO@$REF)…"
+  info "Downloading Open FinAI ($REPO@$REF)…"
   [[ "$DRY_RUN" == "1" ]] && { info "would download and unpack into $DIR/deploy"; return 1; }
   apt_ensure curl tar
   local tmp src
@@ -885,10 +885,10 @@ fetch_deploy() {
   # shellcheck disable=SC2064
   trap "rm -rf '$tmp'" RETURN
   curl -fsSL "https://codeload.github.com/$REPO/tar.gz/$REF" | tar -xz -C "$tmp" \
-    || die "The download of OpenTraderWorld failed." "Run the same line again."
+    || die "The download of Open FinAI failed." "Run the same line again."
   src="$(find "$tmp" -mindepth 1 -maxdepth 1 -type d | head -n 1 || true)"
   [[ -f "$src/deploy/setup.sh" ]] || die \
-    "The downloaded copy of OpenTraderWorld is not the one expected ($REPO@$REF)." \
+    "The downloaded copy of Open FinAI is not the one expected ($REPO@$REF)." \
     "Report this at https://github.com/$REPO/issues — nothing was installed."
   rm -rf "$DIR/deploy"
   install -d -o "$OTW_USER" -g "$OTW_USER" -m 755 "$DIR"
@@ -898,7 +898,7 @@ fetch_deploy() {
 }
 
 phase_install() {
-  step "3/4  Installing OpenTraderWorld"
+  step "3/4  Installing Open FinAI"
   ADMIN_PASS="$(gen_secret)"
 
   if ! fetch_deploy; then
@@ -931,7 +931,7 @@ phase_install() {
   su - "$OTW_USER" -c "$cmd" || rc=$?
   rm -f "$passfile"
   (( rc == 0 )) || die \
-    "OpenTraderWorld could not be started." \
+    "Open FinAI could not be started." \
     "Run the same line again. If it stops here twice, send us what it printed:" \
     "    https://github.com/$REPO/issues"
 }
@@ -997,7 +997,7 @@ OTWCONF
 
   write_file /etc/systemd/system/otw-backup.service 0644 <<UNIT
 [Unit]
-Description=OpenTraderWorld nightly backup
+Description=Open FinAI nightly backup
 After=docker.service
 Requires=docker.service
 
@@ -1010,7 +1010,7 @@ UNIT
   # their database at the same second; the spread is per-machine and stable.
   write_file /etc/systemd/system/otw-backup.timer 0644 <<TIMER
 [Unit]
-Description=OpenTraderWorld nightly backup
+Description=Open FinAI nightly backup
 
 [Timer]
 OnCalendar=*-*-* 03:20:00
@@ -1066,7 +1066,7 @@ final_card() {
   local card
   card="$(cat <<CARD
 
-  Your OpenTraderWorld is ready.
+  Your Open FinAI is ready.
 
   Address    https://$DOMAIN
   Username   $ADMIN_USER
@@ -1105,7 +1105,7 @@ if [[ "$LOGIN_MODE" == "key" ]]; then
 else
   info "   From then on you sign in as \"$OTW_USER\", and never as root."
 fi
-info "3. It installs OpenTraderWorld."
+info "3. It installs Open FinAI."
 info "4. It gets the padlock for https://$DOMAIN and prints your password."
 info "5. It sets up a backup every night, and takes the first one straight away."
 echo

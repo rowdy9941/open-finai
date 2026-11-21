@@ -1,6 +1,6 @@
 # Modules overview
 
-OpenTraderWorld is a set of **modules**, feature bundles you switch on individually in **Settings → Modules**. Everything ships with the app; installing a module makes it appear in the module switcher (top left) and on the dashboard. Detach a module to hide it again (its data is kept unless you delete it too).
+Open FinAI is a set of **modules**, feature bundles you switch on individually in **Settings → Modules**. Everything ships with the app; installing a module makes it appear in the module switcher (top left) and on the dashboard. Detach a module to hide it again (its data is kept unless you delete it too).
 
 The [dashboard, search and notifications](/modules/dashboard) sit above all of them and are always there.
 

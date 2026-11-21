@@ -49,7 +49,7 @@ No hay código de respaldo ni correo de recuperación, por la misma razón por l
 restablecimiento de contraseña. Recupera desde la shell de la máquina:
 
 ```bash
-docker exec -it opentraderworld-core-1 /app/otw-core disable-totp USERNAME
+docker exec -it openfinai-core-1 /app/otw-core disable-totp USERNAME
 ```
 
 Se eliminan el segundo factor y su secreto y se cierran todas las sesiones. Inicia sesión con

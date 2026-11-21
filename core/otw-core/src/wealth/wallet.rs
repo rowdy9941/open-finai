@@ -90,7 +90,7 @@ pub fn wei_to_eth(hex: &str) -> Result<f64, String> {
 fn client() -> Result<reqwest::Client> {
     reqwest::Client::builder()
         .timeout(Duration::from_secs(15))
-        .user_agent("OpenTraderWorld/wealth")
+        .user_agent("Open FinAI/wealth")
         .build()
         .map_err(|e| anyhow!("building http client: {e}"))
 }

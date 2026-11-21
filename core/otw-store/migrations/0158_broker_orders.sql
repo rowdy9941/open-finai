@@ -1,4 +1,4 @@
--- Every order leg OpenTraderWorld sent to a broker, keyed by its client id, and where it
+-- Every order leg Open FinAI sent to a broker, keyed by its client id, and where it
 -- stands as far as OTW knows: the state that survives a restart (onboarding spec 6.1).
 --
 -- A leg is written `pending` before the call leaves, so a client id is sent at most once per

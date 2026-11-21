@@ -508,7 +508,7 @@ fn refusals_name_the_code_and_the_fix() {
     assert_eq!(fut_err("2005").unwrap().canon, Canon::Rejected(Refusal::Funds));
     assert_eq!(fut_err("2008").unwrap().canon, Canon::Rejected(Refusal::ReduceOnly));
     let e = spot_err(400, "999999").unwrap();
-    assert!(!e.mapped && e.canon == Canon::Unknown && e.message.contains("MEXC answered code 999999 (m), which OpenTraderWorld does not map"), "{e:?}");
+    assert!(!e.mapped && e.canon == Canon::Unknown && e.message.contains("MEXC answered code 999999 (m), which Open FinAI does not map"), "{e:?}");
     // A 2xx success body is no error; a spot rate limit carries its wait.
     assert!(spot().decode_error(&http_frame(1, "spot_order", 200, SPOT_NEW)).is_none());
     assert!(futures().decode_error(&http_frame(1, "fut_create", 200, FUT_PLACE)).is_none());

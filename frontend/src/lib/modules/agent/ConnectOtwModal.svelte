@@ -1,5 +1,5 @@
 <script>
-  // One-click connect for the built-in OpenTraderWorld gateway. Collapses what would
+  // One-click connect for the built-in Open FinAI gateway. Collapses what would
   // otherwise be a trip to Settings → AI agents into a single action: flip the global
   // `mcp_enabled` switch if it is off, mint a bearer token with the chosen per-module
   // permissions, then show that token once (the backend only stores its hash).

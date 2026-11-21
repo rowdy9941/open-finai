@@ -81,7 +81,7 @@ pub(super) fn mapped(code: &str, msg: &str) -> VenueError {
     match row(code) {
         Some((_, Unknown, _)) => VenueError::new(Unknown, Some(code.to_string()), format!("Bitfinex answered: {msg} (code {code}), so the order may have gone through")),
         Some((_, canon, _)) => VenueError::new(*canon, Some(code.to_string()), format!("Bitfinex refused it: {msg} (code {code})")),
-        None => VenueError::unmapped(Some(code.to_string()), format!("Bitfinex answered code {code} ({msg}), which OpenTraderWorld does not map")),
+        None => VenueError::unmapped(Some(code.to_string()), format!("Bitfinex answered code {code} ({msg}), which Open FinAI does not map")),
     }
 }
 
@@ -130,7 +130,7 @@ fn refused(n: &Notification) -> VenueError {
     match n.status.as_str() {
         "ERROR" | "FAILURE" if n.kind.starts_with("oc") => VenueError::new(Rejected(Refusal::Final), n.code.clone(), message),
         "ERROR" | "FAILURE" => VenueError::new(Rejected(Refusal::Other), n.code.clone(), message),
-        other => VenueError::unmapped(n.code.clone(), format!("Bitfinex answered {other:?} to the {} request ({words}), which OpenTraderWorld does not map", n.kind)),
+        other => VenueError::unmapped(n.code.clone(), format!("Bitfinex answered {other:?} to the {} request ({words}), which Open FinAI does not map", n.kind)),
     }
 }
 
@@ -152,7 +152,7 @@ pub(super) fn decode(frame: &RawFrame) -> Option<VenueError> {
             "ERR_RATE_LIMIT" => VenueError::new(RateLimited, Some(err.clone()), "Bitfinex refused it: rate limited, the IP is blocked for 60 seconds (code ERR_RATE_LIMIT)"),
             // An outage object (`temporarily_unavailable`) or any other word: the venue may
             // have acted.
-            _ => VenueError::unmapped(Some(err.clone()), format!("Bitfinex answered code {err} (HTTP {status}), which OpenTraderWorld does not map")),
+            _ => VenueError::unmapped(Some(err.clone()), format!("Bitfinex answered code {err} (HTTP {status}), which Open FinAI does not map")),
         }
     } else {
         let c = http::classify(frame, "bitfinex")?;
@@ -191,7 +191,7 @@ mod tests {
         }
         let e = decode(&http_frame(1, "orderSubmit", 500, r#"["error",99999,"new"]"#)).unwrap();
         assert_eq!((e.canon, e.mapped), (Unknown, false));
-        assert_eq!(e.message, "Bitfinex answered code 99999 (new), which OpenTraderWorld does not map");
+        assert_eq!(e.message, "Bitfinex answered code 99999 (new), which Open FinAI does not map");
     }
 
     /// The read path retries these; the order path must not (the venue may have acted).
