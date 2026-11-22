@@ -11,8 +11,16 @@ RUN echo "error: the frontend image needs the Rust workspace as build context 'c
 
 FROM rust:1-slim AS wasm
 
+# See core/Dockerfile: the default 3 retries do not outlast a brief network blip.
+ENV CARGO_NET_RETRY=10 \
+    CARGO_HTTP_TIMEOUT=120
+
 RUN rustup target add wasm32-unknown-unknown
 COPY --from=core . /core
+# Same reason as core/Dockerfile: the toolchain file asks rustup to fetch the "stable" channel
+# manifest, which this image does not hold under that name. Drop it so the image's own
+# toolchain is used and the build stays off the network.
+RUN rm -f /core/rust-toolchain.toml
 COPY scripts/build-wasm.sh /build-wasm.sh
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/cache/bin \

@@ -1,0 +1,40 @@
+# Hyperliquid. Every claim below is sourced in PROVIDER.md.
+
+provider = "hyperliquid"
+label = "Hyperliquid"
+venue = "HYPERLIQUID"
+api_version = "info"
+maturity = "M1"
+asset_classes = ["perp", "spot"]
+instrument_discovery = "full"
+# Market data, candles and the L2 book are public. A wallet is only needed to trade or to
+# read an account, neither of which this adapter declares.
+auth = "none"
+native_timeframes = ["1m", "3m", "5m", "15m", "30m", "1h", "2h", "4h", "8h", "12h", "1d", "3d", "1w", "1M"]
+
+[history]
+# `allMids`: the last price of every listed instrument in one call.
+board = true
+# `l2Book`: one REST snapshot of the book, and the top of it for a quote.
+book_snapshot = true
+quote = true
+
+[history.candles]
+# The info endpoint returns at most 500 elements per time-range call; a wider range is paged
+# by moving `startTime` forward.
+max_items_per_call = 500
+paging = "time"
+# `candleSnapshot` includes the bar that is still forming and does not mark it.
+final_flag = false
+
+[book]
+# `l2Book` returns at most 20 levels a side.
+snapshot_depths = [20]
+delta = false
+
+# 1200 request weight per minute per IP across the info endpoint, and `candleSnapshot` is one
+# of the heavier calls. One request a second stays far below the ceiling.
+[[rate_limits]]
+scope = "ip"
+capacity = 1200
+refill_ms = 60000

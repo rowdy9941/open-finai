@@ -6,7 +6,13 @@ FROM caddy:2-builder-alpine AS builder
 # The pinned modules below are transitive dependencies of the last Caddy release, raised past
 # their published CVEs (trivy flags the built binary otherwise). Drop a pin once a Caddy
 # release ships that version or newer.
-RUN xcaddy build \
+#
+# The module and build caches are mounts rather than layer content: xcaddy pulls a few hundred
+# modules, and on a link that resets a download part-way (an IPv6 path can do that) a retry
+# then resumes instead of starting the whole fetch over.
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    xcaddy build \
     --with github.com/caddy-dns/duckdns \
     --with github.com/caddy-dns/cloudflare \
     --replace golang.org/x/crypto=golang.org/x/crypto@v0.57.0 \

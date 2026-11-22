@@ -7,7 +7,7 @@ repository.workspace = true
 description = "Open FinAI connector framework: one module per venue, each behind its own feature"
 
 [features]
-default = ["alpaca", "alphavantage", "binance", "bitfinex", "bitget", "bybit", "capitalcom", "coinbase", "deribit", "eodhd", "forexcom", "gateio", "ibkr", "kraken", "kraken_futures", "kucoin", "massive", "mexc", "ninjatrader", "oanda", "okx", "tradestation", "yahoo"]
+default = ["alpaca", "alphavantage", "binance", "bitfinex", "bitget", "bybit", "capitalcom", "coinbase", "deribit", "eodhd", "forexcom", "gateio", "hyperliquid", "ibkr", "kraken", "kraken_futures", "kucoin", "massive", "mexc", "ninjatrader", "oanda", "okx", "tradestation", "yahoo"]
 alpaca = []
 alphavantage = []
 binance = []
@@ -20,6 +20,7 @@ deribit = []
 eodhd = []
 forexcom = []
 gateio = []
+hyperliquid = []
 ibkr = []
 kraken = []
 kraken_futures = []

@@ -1,6 +1,12 @@
 # ── Build stage ──────────────────────────────────────────────────────────────
 FROM rust:1-slim AS builder
 
+# A release build fetches several hundred crates. The default is 3 retries with a short
+# backoff, which a brief network blip outlasts and which fails the whole build. Ten retries
+# and a longer per-request timeout ride out a flaky link; neither changes the output.
+ENV CARGO_NET_RETRY=10 \
+    CARGO_HTTP_TIMEOUT=120
+
 WORKDIR /build
 
 # Copy the whole workspace and build the core binary in release mode.
@@ -8,6 +14,14 @@ WORKDIR /build
 # change recompiles only the touched crates. A cache mount is not part of the layer: the
 # binary is copied out of it for the runtime stage.
 COPY . .
+
+# rust-toolchain.toml asks for channel "stable". This image ships a pinned release under its
+# version number, not under the name "stable", so leaving the file in place makes rustup
+# download the stable channel manifest from static.rust-lang.org on every build — a network
+# dependency that has already failed builds. The image's own toolchain is that same stable
+# release, so dropping the file selects it and touches the network for nothing.
+RUN rm -f rust-toolchain.toml
+
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/usr/local/cargo/git \
     --mount=type=cache,target=/build/target \

@@ -1034,12 +1034,23 @@ pub fn alphavantage() -> Option<NativeHist<AlphaVantage>> {
 }
 
 use otw_connector_providers::eodhd::Eodhd;
-
 static EODHD: OnceLock<Option<Arc<Driver<Eodhd>>>> = OnceLock::new();
 
 /// EODHD through the framework.
 pub fn eodhd() -> Option<NativeHist<Eodhd>> {
     Some(NativeHist::new(shared_driver(&EODHD, "eodhd", || Eodhd::new().ok())?, &super::caps::EODHD))
+}
+
+use otw_connector_providers::hyperliquid::Hyperliquid;
+
+static HYPERLIQUID: OnceLock<Option<Arc<Driver<Hyperliquid>>>> = OnceLock::new();
+
+/// Hyperliquid through the framework.
+pub fn hyperliquid() -> Option<NativeHist<Hyperliquid>> {
+    Some(NativeHist::new(
+        shared_driver(&HYPERLIQUID, "hyperliquid", || Hyperliquid::new().ok())?,
+        &super::caps::HYPERLIQUID,
+    ))
 }
 
 use otw_connector_providers::massive::Massive;

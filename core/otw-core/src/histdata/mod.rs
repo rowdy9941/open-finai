@@ -407,6 +407,7 @@ fn static_connectors() -> Vec<Box<dyn Connector>> {
         native::bitfinex().map(|c| Box::new(c) as Box<dyn Connector>),
         native::deribit().map(|c| Box::new(c) as Box<dyn Connector>),
         native::alphavantage().map(|c| Box::new(c) as Box<dyn Connector>),
+        native::hyperliquid().map(|c| Box::new(c) as Box<dyn Connector>),
         native::eodhd().map(|c| Box::new(c) as Box<dyn Connector>),
         native::yahoo().map(|c| Box::new(c) as Box<dyn Connector>),
         native::alpaca().map(|c| Box::new(c) as Box<dyn Connector>),

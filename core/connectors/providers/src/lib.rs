@@ -25,6 +25,8 @@ pub mod eodhd;
 pub mod forexcom;
 #[cfg(feature = "gateio")]
 pub mod gateio;
+#[cfg(feature = "hyperliquid")]
+pub mod hyperliquid;
 #[cfg(feature = "ibkr")]
 pub mod ibkr;
 #[cfg(feature = "kraken")]

@@ -1,0 +1,37 @@
+# Build-time network override for Linux hosts whose Docker build containers cannot resolve DNS.
+#
+# Symptom (only the build fails, the running stack is fine):
+#   #35 error: failed to download from `https://static.crates.io/crates/...`
+#   #35 Caused by: [6] Could not resolve hostname (Could not resolve host: static.crates.io)
+#
+# Cause: BuildKit copies the host's upstream resolver into the build container. On hosts
+# where systemd-resolved's upstream is an IPv6 nameserver and the build network has no IPv6
+# route, every DNS lookup inside `RUN` fails with "Network is unreachable". `docker run`
+# is unaffected, because Docker rewrites loopback resolvers to 8.8.8.8 — BuildKit does not.
+#
+# Verify before using this file:
+#   docker build -f - . <<'EOF'
+#   FROM busybox:1.38
+#   RUN cat /etc/resolv.conf; nslookup index.crates.io
+#   EOF
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.hostnet.yml --env-file .env build
+#
+# `network: host` makes build containers share the host network namespace, so they read the
+# host's resolv.conf (127.0.0.53) and resolve normally. It affects the BUILD only; the
+# runtime network is unchanged.
+#
+# Do not use this on Docker Desktop for macOS or Windows: `host` there does not mean the
+# host's network stack for builds. Those platforms resolve normally without it.
+
+services:
+  caddy:
+    build:
+      network: host
+  frontend:
+    build:
+      network: host
+  core:
+    build:
+      network: host

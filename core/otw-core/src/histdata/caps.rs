@@ -371,6 +371,31 @@ pub(crate) static COINBASE: Capability = Capability {
     stream_note: "Live candles are aggregated from the public trade feed, keyless like the history.",
 };
 
+pub(crate) static HYPERLIQUID: Capability = Capability {
+    provider: "hyperliquid",
+    label: "Hyperliquid",
+    website: "https://hyperliquid.xyz",
+    docs_url: "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint",
+    rate_limit: "Keyless public API: ~1200 request weight/min per IP across the info endpoint. A time-range call returns at most 500 elements, so wide downloads page. No 429 seen under normal use.",
+    required_secrets: &[],
+    // Perpetuals and spot pairs are both crypto.
+    asset_types: &["crypto"],
+    timeframes: &["1m", "3m", "5m", "15m", "30m", "1h", "2h", "4h", "8h", "12h", "1d", "3d", "1w", "1M"],
+    adjusted: false,
+    max_bars_per_req: 500,
+    // ~1200 weight/min and `candleSnapshot` is one of the heavier calls: 1 req/s is far under it.
+    min_interval_ms: 1000,
+    searchable: false,
+    config_fields: &[],
+    testable: false,
+    fundamentals: &[],
+    // The candle and trade sockets exist (wss://api.hyperliquid.xyz/ws) but the live adapter
+    // is not wired yet, so live is not offered rather than offered and broken.
+    stream_asset_types: &[],
+    stream_timeframes: &[],
+    stream_note: "Live streaming is not wired yet; history only for now.",
+};
+
 pub(crate) static KRAKEN: Capability = Capability {
     provider: "kraken",
     label: "Kraken",
